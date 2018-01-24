@@ -6,6 +6,94 @@
     <script src="jquery-3.3.1.js"></script>
 </head>
 <body>
-    
-</body>
+    <h1>Producto</h1>
+    <br>
+    <label for="cjtxt1">Codigo: </label>
+    <input type="text" id="cjtxt1"/>
+    <br><br>
+    <label for="cjtxt2">Nombre: </label>
+    <input type="text" id="cjtxt2"/>
+    <br><br>
+    <label for="cjtxt3">Precio: </label>
+    <input type="text" id="cjtxt3"/>
+    <br><br>
+    <label for="cjtxt4">Cantidad: </label>
+    <input type="text" id="cjtxt4"/>
+    <br><br>
+    <input type="button" value="Registrar Producto" onclick="registrarProducto()"/>
+  </body>
+    <script>
+        var producto = {
+            codigo: "001",
+            nombre: "Camisa Roja",
+            precio: 35000,
+            cantidad: 8,
+
+            init: function(propiedades){
+                producto.propiedades = propiedades;
+            },
+
+            leerProducto: function(){
+                return producto.propiedades;
+            }
+        };
+
+        function registrarProducto(){
+            var codigo = document.getElementById("cjtxt1").value;
+            var nombre = document.getElementById("cjtxt2").value;
+            var precio = document.getElementById("cjtxt3").value;
+            var cantidad = document.getElementById("cjtxt4").value; 
+
+            var propiedades = {
+                codigo: codigo,
+                nombre: nombre,
+                precio: precio,
+                cantidad: cantidad
+            }
+
+            producto.init(propiedades);
+            limpiarForm();
+            alert("Producto guardado");
+            mostrarCodigo();
+            mostrarNombre();
+            mostrarPrecio();
+            mostrarTotal();
+        }
+
+        function limpiarForm(){
+            document.getElementById("cjtxt1").value = "";
+            document.getElementById("cjtxt2").value = "";
+            document.getElementById("cjtxt3").value = "";
+            document.getElementById("cjtxt4").value = "";
+            
+        }
+
+        function mostrarCodigo(){
+            var propiedades = producto.leerProducto();
+
+            console.log("El codigo del producto es: "+propiedades.codigo);
+        }
+
+        function mostrarNombre(){
+            var propiedades = producto.leerProducto();
+
+            console.log("El nombre del producto es: "+propiedades.nombre);
+        }
+
+        function mostrarPrecio(){
+            var propiedades = producto.leerProducto();
+
+            console.log("El precio del producto es: $"+propiedades.precio);
+        }
+
+        function mostrarTotal(){
+            var propiedades = producto.leerProducto();
+
+            var precio1 = parseFloat(propiedades.precio);
+            var cantidad1 = parseFloat(propiedades.cantidad);
+            var total = precio1*cantidad1;
+
+            console.log("El total a pagar por el producto pedido es: $"+total);
+        }
+    </script>
 </html>
