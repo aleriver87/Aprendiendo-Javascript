@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio usando metodo attr</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                var mensaje = "<h1>IDs</h1>";
+                var idInput = $("#miInput").attr("id");
+                var idEnca = $("#miEnca").attr("id");
+                var idTabla = $("#miTabla").attr("id");
+                var idImagen = $("#miImagen").attr("id");
+
+                mensaje += idInput + "<br>";
+                mensaje += idEnca + "<br>";
+                mensaje += idTabla + "<br>";
+                mensaje += idImagen + "<br>";
+
+                $("#mensaje").html(mensaje);
+            });
+
+            $("#boton2").click(function(){
+                $("#miInput").attr("size","100");
+                $("#miInput").attr("placeholder","Cambio de placeholder!!");
+            });
+
+            $("#boton3").click(function(){
+                $("#miEnca").attr("align","right");
+            });
+
+            $("#boton4").click(function(){
+                $("#miTabla").attr("border","5");
+                $("#miTabla").attr("cellpadding","10");
+            });
+
+            $("#boton5").click(function(){
+                $("#miImagen").attr("src","f2.jpg");
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="miInput" size="30" placeholder="Ingrese un dato"/>
+    <h1 id="miEnca" align="center">El principio de la sabiduria es el temor a Dios.</h1>
+    <table id="miTabla" border="1" cellpadding="5">
+        <tr>
+            <td>Rojo</td>
+            <td>Verde</td>
+        </tr>
+        <tr>
+            <td>Azul</td>
+            <td>Naranja</td>
+        </tr>
+    </table>
+    <img id="miImagen" width="200" height="200" src="f1.jpg">
+    <p id="mensaje"></p>
+    <br><br>
+    <button id="boton1">Mostrar IDs</button>
+    <button id="boton2">Cambiar Input</button>
+    <button id="boton3">Cambiar Encabezado</button>
+    <button id="boton4">Cambiar Tabla</button>
+    <button id="boton5">Cambiar Imagen</button>
+</body>
+</html>
