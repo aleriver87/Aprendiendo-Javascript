@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Alertas PopUp</title>
+    </head>
+    <body onload="alerta1()">
+        <h2>Cuadro de Alerta</h2>
+        <h2>Cuadro prompt</h2>
+        <p id="mensaje"></p>
+        <p id="mensaje1"></p>
+        <script>
+            function alerta1(){
+                alert("Cuadro de Alerta");
+
+                var edad = prompt("Digite su edad:");
+
+                if(edad != null){
+                    document.getElementById("mensaje").innerHTML = "Usted tiene "+ edad + " a&ntilde;os";
+                }
+
+                if(confirm("Desea ingresar?")==true){
+                    preguntas();
+                }else {
+                    window.close();
+                }
+
+                if(confirm("Permite realizar una serie de preguntas?")==true){
+                    preguntas2();
+                }else{
+
+                }
+            }
+
+            function preguntas(){
+                var nombre = prompt("Hola, Como te llamas?");
+                alert("Bienvenido "+nombre);
+            }
+
+            function preguntas2(){
+                var nombre = prompt("Cual es su nombre : ");
+                var apellidos = prompt("Cuales son sus apellidos :");
+                var edad = prompt("Que edad tiene : ");
+                var ciudad = prompt("Ciudad donde reside :");
+
+                if(nombre != null){
+                    document.getElementById("mensaje1").innerHTML = "Usted se llama "+nombre +" "+ apellidos + " y tiene "+edad+ " a&ntilde;os y reside en " +ciudad;
+                }
+                
+            }
+
+        </script>
+    </body>
+</html>

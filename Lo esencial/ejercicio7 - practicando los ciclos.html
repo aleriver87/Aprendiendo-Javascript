@@ -1,0 +1,71 @@
+<!DOCTYPE>
+<html>
+    <meta charset="UTF8">
+    <head>Practicando los ciclos</head>
+    <body>
+        <h1>Ciclo FOR</h1>
+        <p id="a1"></p>
+
+        <h1>Ciclo FOR IN</h1>
+        <p id="a2"></p>
+
+        <h1>Ciclo WHILE</h1>
+        <p id="a3"></p>
+
+        <h1>Ciclo DO WHILE</h1>
+        <p id="a4"></p>
+    </body>
+    <script>
+        //Ciclo FOR
+        var texto="";
+
+        for(var i=1; i<=100; i++){
+            if(i%2 == 0){
+                texto+=i+"<br>";
+            }
+        }
+        document.getElementById("a1").innerHTML=texto;     
+        
+        //Ciclo FOR IN
+        var texto1 = "Objetos : <br>"; 
+
+        var objeto = {
+            id: "A001",
+            nombre: "calculadora",
+            telefono: "2232-0026"
+        };
+
+        var x;
+
+        for (x in objeto){
+            texto1 += objeto[x]+"<br>";
+        }
+        document.getElementById("a2").innerHTML = texto1;
+    
+        //Ciclo WHILE
+        var texto2 = "N&uacute;meros impares del 1 al 100 <br>";
+
+        var x = 1;
+
+        while(x<=100){
+            if(x%2 != 0){
+                texto2+=x+"<br>";
+            }
+            x++;
+        }
+        document.getElementById("a3").innerHTML = texto2;
+
+        //Ciclo DO WHILE
+        var texto3 = "Equipos de f&uacute;tbol : <br>";
+
+        var equipos = ["Milan","Liverpool","Barcelona","Chelsea","Bayern"];
+        var x2 = 0;
+
+        do{
+            texto3 += equipos[x2]+"<br>";
+            x2++;
+        }while (x2 < equipos.length)        
+        document.getElementById("a4").innerHTML = texto3;
+
+    </script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function AgregarCookie(nombre,valor,fecha){
+                var d = new Date();
+                d.setTime(d.getTime()+(fecha+24+60+60+1000));
+                var expiracion = "expiracion= "+ d.toGMTString();
+                document.cookie = nombre +"="+varlor+"; "+expiracion; //Agregar la cookie al navegador
+            }
+
+            function obtenerCookie(nombre){
+                var name = nombre + "=";
+                var ca = document.cookie.split(';');
+                for (var i=0; i<ca.length; i++){
+                    var c = ca[i];
+                    while (c.charAt(0)==' ') c = c.substring(1);
+                    if(c.indexOf(name)!= -1){
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            function verificarCookie(){
+                var usuario = obtenerCookie("edad");
+                if(usuario != ""){
+                    alert("Su edad es "+ usuario);
+                } else {
+                    usuario = prompt("Por favor ingresa tu edad: ","");
+                    if(usuario != "" && usuario != null){
+                        AgregarCookie("edad",usuario,20);
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Implementacion de la cookie</h2>
+        <br>
+        <p id="mensaje"></p>
+        <br>
+        <button type="button" onclick="verificarCookie()">Agregar Cookie</button>
+    </body>
+</html>

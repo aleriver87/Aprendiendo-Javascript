@@ -1,0 +1,41 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Rotando pagina</title>
+</head>
+<body>
+    <img id="miImagen" width="200px" height="200px" src="f1.jpg">
+    <br>
+    <button onclick="comenzar()">Comenzar</button>
+    <button onclick="terminar()">Terminar</button>
+
+    <script>
+        var indice = 0;
+        var funcionComenzar = null;
+
+        function comenzar(){
+            var listaImagenes = ['f1.jpg','f2.jpg','f3.jpg','f4.jpg'];
+
+            if(indice <= 3){
+                document.getElementById('miImagen').src = listaImagenes[indice];
+            } else {
+                indice = 0;
+                document.getElementById('miImagen').src = listaImagenes[indice];
+            }
+
+            indice += 1;
+
+            funcionComenzar= setTimeout(function(){
+                comenzar(indice)
+            },2000);
+        }
+
+            function terminar(){
+                clearTimeout(funcionComenzar);
+            }
+
+        
+    </script>
+</body>
+</html>

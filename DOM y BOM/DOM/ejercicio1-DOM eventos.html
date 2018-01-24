@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function evento_onkeypress(){
+                alert("Has presionado una tecla")
+            }
+
+            function evento_onclick(){
+                alert("Has hecho clic sobre el parrafo");
+            }
+
+            function cargo(){
+                alert("La pagina ha cargado correctamente");
+            }
+        </script>
+    </head>
+    <body onkeypress="evento_onkeypress()" onload="cargo()">
+        <p id="parrafo" onclick="evento_onclick()">Este es mi parrafo</p>
+    </body>
+</html>

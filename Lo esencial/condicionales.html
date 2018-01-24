@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html>
+    <meta charset="UTF8">
+    <head>
+        Condicional IF
+    </head>
+    <body>
+        <p id="a1"></p>
+        <p id="a2"></p>
+        <button onclick="verificarEdad()">Verificar la edad</button> 
+
+        <p id="a3"></p>
+        <p id="a4"></p>
+        <button onclick="verificarParidad()">Verificar n&uacute;mero</button>
+
+        <p id="a5"></p>
+        <p id="a6"></p>
+        <button onclick="validarNotas()">Validar nota</button>
+    
+        <p id="a7"></p>
+        <p id="a8"></p>
+        <button onclick="evaluarDia()">Evaluar dia</button>
+    </body>
+    <script>
+        var edad = 17;
+        document.getElementById("a1").innerHTML = "La edad es: "+edad;
+        function verificarEdad() {
+            if(edad >= 18){
+            document.getElementById("a2").innerHTML = "Es mayor de edad";
+        }
+            else {
+            document.getElementById("a2").innerHTML = "Es menor de edad";
+            }      
+        }
+
+        var numero = 14;
+        document.getElementById("a3").innerHTML = "El n&uacute;mero es: "+numero;
+
+        function verificarParidad() {
+            if(numero%2 == 0){
+                document.getElementById("a4").innerHTML = "El n&uacute;mero es par";
+            }
+            else {
+                document.getElementById("a4").innerHTML = "El n&uacute;mero es impar";
+            }
+        }
+
+        var nota = 4;
+        document.getElementById("a5").innerHTML = "La nota es: "+nota;
+
+        function validarNotas(){
+            if(nota >= 3 && nota < 4) {
+                document.getElementById("a6").innerHTML = "Su nota es de nivel medio";
+            } else if (nota >= 4 && nota < 5){
+                document.getElementById("a6").innerHTML = "Su nota es de nivel alto";
+            } else {
+                document.getElementById("a6").innerHTML = "Su nota es de nivel bajo";
+            }
+        }
+
+        var dia = 5;
+        document.getElementById("a7").innerHTML = "El d&iacute;a es: "+ dia;
+
+        function evaluarDia(){
+            switch (dia){
+                case 1 :
+                document.getElementById("a8").innerHTML = "El d&iacute;a es Lunes";
+                break;
+                case 2 :
+                document.getElementById("a8").innerHTML = "El d&iacute;a es Martes";
+                break;
+                case 3 :
+                document.getElementById("a8").innerHTML = "El d&iacute;a es Mi&eacute;rcoles";
+                break;
+                case 4 :
+                document.getElementById("a8").innerHTML = "El d&iacute;a es Jueves";
+                break;
+                case 5 :
+                document.getElementById("a8").innerHTML = "El d&iacute;a es Viernes";
+                break;
+            } 
+        }
+    </script>
+</html>

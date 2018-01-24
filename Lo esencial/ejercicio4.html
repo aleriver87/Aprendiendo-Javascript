@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>Mis ejercicios con Math</head>
+    <body>
+        <h1>Calculando Coseno</h1>
+        
+        <p id="a1"></p>
+        <p id="a2"></p>
+        <p id="a3"></p>
+        <p id="a4"></p>
+        <p id="a5"></p>
+        <p id="a6"></p>
+        
+        <h1>Calculando Seno</h1>
+        
+        <p id="b1"></p>
+        <p id="b2"></p>
+        <p id="b3"></p>
+        <p id="b4"></p>
+        <p id="b5"></p>
+        <p id="b6"></p>
+        
+        <h1>Calculando Potencia</h1>
+        
+        <p id="c1"></p>
+        <p id="c2"></p>
+        <p id="c3"></p>
+        <p id="c4"></p>
+        <p id="c5"></p>
+        
+        <h1>Calculando raiz cuadrada</h1>
+        
+        <p id="d1"></p>
+        <p id="d2"></p>
+        <p id="d3"></p>
+        <p id="d4"></p>
+        <p id="d5"></p>
+        <p id="d6"></p>
+        
+        <h1>Operadores logicos</h1>
+        
+        <p id="e1"></p>
+        <p id="e2"></p>
+        <p id="e3"></p>
+        <p id="e4"></p>
+        <p id="e5"></p>
+        <p id="e6"></p>
+        
+        <h1>Concatenando carpetas</h1>
+        
+        <p id="f1"></p>
+        
+    </body>
+    <script>
+        var cos1 = Math.cos(90);
+        var cos2 = Math.cos(45);
+        var cos3 = Math.cos(180);
+        var cos4 = Math.cos(270);
+        var cos5 = Math.cos(70);
+        var cos6 = Math.cos(120);
+
+        document.getElementById("a1").innerHTML = "Cos(90) = " + cos1;
+        document.getElementById("a2").innerHTML = "Cos(45) = " + cos2;
+        document.getElementById("a3").innerHTML = "Cos(180) = " + cos3;
+        document.getElementById("a4").innerHTML = "Cos(270) = " + cos4;
+        document.getElementById("a5").innerHTML = "Cos(70) = " + cos5;
+        document.getElementById("a6").innerHTML = "Cos(120) = " + cos6;
+        
+        var sin1 = Math.sin(200);
+        var sin2 = Math.sin(15);
+        var sin3 = Math.sin(50);
+        var sin4 = Math.sin(130);
+        var sin5 = Math.sin(380);
+        var sin6 = Math.sin(30);
+
+        document.getElementById("b1").innerHTML = "Sin(200) = " + sin1;
+        document.getElementById("b2").innerHTML = "Sin(15) = " + sin2;
+        document.getElementById("b3").innerHTML = "Sin(50) = " + sin3;
+        document.getElementById("b4").innerHTML = "Sin(130) = " + sin4;
+        document.getElementById("b5").innerHTML = "Sin(380) = " + sin5;
+        document.getElementById("b6").innerHTML = "Sin(30) = " + sin6;
+        
+        var pow1 = Math.pow(12,3);
+        var pow2 = Math.pow(15,4);
+        var pow3 = Math.pow(144,2);
+        var pow4 = Math.pow(30,5);
+        var pow5 = Math.pow(8,6);
+
+        document.getElementById("c1").innerHTML = "12^3 = " + pow1;
+        document.getElementById("c2").innerHTML = "15^4 = " + pow2;
+        document.getElementById("c3").innerHTML = "144^2 = " + pow3;
+        document.getElementById("c4").innerHTML = "30^5 = " + pow4;
+        document.getElementById("c5").innerHTML = "8^6 = " + pow5;
+        
+        var sqrt1 = Math.sqrt(144);
+        var sqrt2 = Math.sqrt(9);
+        var sqrt3 = Math.sqrt(400);
+        var sqrt4 = Math.sqrt(64);
+        var sqrt5 = Math.sqrt(100);
+        var sqrt6 = Math.sqrt(169);
+
+        document.getElementById("d1").innerHTML = "Raiz cuadrada de 144 = " + sqrt1;
+        document.getElementById("d2").innerHTML = "Raiz cuadrada de  9 = " + sqrt2;
+        document.getElementById("d3").innerHTML = "Raiz cuadrada de  400 = " + sqrt3;
+        document.getElementById("d4").innerHTML = "Raiz cuadrada de  64 = " + sqrt4;
+        document.getElementById("d5").innerHTML = "Raiz cuadrada de  100 = " + sqrt5;
+        document.getElementById("d6").innerHTML = "Raiz cuadrada de 169 = " + sqrt6;
+        
+        aa = 12;
+        bb = 9;
+        cc = 23;
+        dd = 57;
+        ee = 7;
+        ff = 2;
+        gg = 93;
+        hh = 34;
+        ii = 5;
+        jj = 53;
+        kk = 76;
+        ll = 22;
+        mm = 50;
+        nn = 1;
+        oo = 3;
+        pp = 15;
+        qq = 14;
+        rr = 83;
+        ss = 6;
+        tt = 65;
+        uu = 100;
+
+        var log1 = aa > bb && cc < dd;
+        var log2 = ee < 2 || gg < cc;
+        var log3 = hh > ii && aa < kk;
+        var log4 = ll < mm && nn < oo;
+        var log5 = pp > qq && rr < jj;
+        var log6 = ss < ff || tt < uu;
+
+        document.getElementById("e1").innerHTML = "12 es mayor que 9 y 23 es menor que 57 = " + log1;
+        document.getElementById("e2").innerHTML = "7 es menor que 2 &oacute; 93 es menor que 23 = " + log2;
+        document.getElementById("e3").innerHTML = "34 es mayor que 5 y 12 es menor que 76 = " + log3;
+        document.getElementById("e4").innerHTML = "22 es menor que 50 y 1 es menor que 3 = " + log4;
+        document.getElementById("e5").innerHTML = "15 es mayor que 14 y 83 es menor que 53 = " + log5;
+        document.getElementById("e6").innerHTML = "6 es menor que 2 &oacute; 65 es menor que 100 = " + log6;
+        
+        cadena_unida = "";
+        cadena1 = "Vivir es ";
+        cadena2 = "nacer";
+        cadena3 = " a cada instante";
+
+        cadena_unida += cadena1;
+        cadena_unida += cadena2;
+        cadena_unida += cadena3;
+
+        document.getElementById("f1").innerHTML = cadena_unida;
+    </script>
+</html>

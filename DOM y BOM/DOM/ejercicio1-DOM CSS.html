@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function CambiarFuente(){
+                document.getElementById("texto1").style.fontFamily = "Courier New";
+                document.getElementById("texto2").style.fontFamily = "Verdana";
+            }
+
+            function CambiarFondo(){
+                document.getElementById("texto1").style.backgroundColor = "yellow";
+                document.getElementById("texto2").style.backgroundColor = "blue";
+            }
+
+            function CambiarDiv(){
+                var divs = document.getElementsByTagName("div");
+
+                var atributos ="";
+
+                var miDiv = document.getElementById("miDiv");
+
+                for(var i=0; i<miDiv.attributes.length; i++){
+                    atributos += miDiv.attributes[i].name+" : "+miDiv.attributes[i].value + "<br>";
+                }
+                document.getElementById("p1").innerHTML = atributos;
+
+                for(var i=0; i<divs.length; i++){
+                    divs[i].style.backgroundColor="blue";
+                    divs[i].style.color="yellow";
+                    divs[i].style.width="500px";
+                    divs[i].style.height="500px";
+                    divs[i].style.fontSize="xx-large";
+                }
+                                             
+                for(var i=0; i<miDiv.attributes.length; i++){
+                    atributos += miDiv.attributes[i].name+" : "+miDiv.attributes[i].value + "<br>";
+                }
+                document.getElementById("p2").innerHTML = atributos;
+                
+            }
+        </script>
+    </head>
+    <body>
+        <p id="texto1">
+            Mi primer texto!!!
+        </p>
+        <p id="texto2">
+            Mi segundo texto!!!
+        </p>
+        <p id="p1"></p>
+        <div id="miDiv" style="background-color:pink">
+            Mi div!!!
+        </div>
+        <p id="p2"></p>
+        <button onclick="CambiarFuente()">Cambiar fuente</button>
+        <button onclick="CambiarFondo()">Cambiar color de fondo</button>
+        <button onclick="CambiarDiv()">Cambiar Div</button>
+    </body>
+</html>

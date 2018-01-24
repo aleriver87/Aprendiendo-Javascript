@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>C&aacute;lculo de notas</title>
+    </head>
+    <body>
+        <h1> C&aacute;lculo de notas de los alumnos de JavaScript de Next U</h1>
+        <table>
+            <tr> <!-- Creacion de botones -->
+                <th><button onclick="mostrarListado()">Mostrar listado de alumnos</button></th>
+                <th><button onclick="notaProm()">Mostrar nota promedio</button></th>
+            </tr>
+            <tr>
+                <th><button onclick="mayorNota()">Alumno con la mayor nota</button></th>
+                <th><button onclick="menorNota()">Alumno con la menor nota</button></th>
+            </tr>
+        </table>
+        <!-- Area en donde se mostrara la informacion -->
+        <p id="alumnos"></p>
+    </body>
+    <script>
+        //Definiendo JSON con el listado de alumnos
+        var alumnosNextU = '{"alumnos":['+
+        '{"codigo":"A005","nombre":"Jose Bonilla","nota":"8.5"},'+
+        '{"codigo":"A002","nombre":"Helmer Iraheta","nota":"8.5"},'+
+        '{"codigo":"A003","nombre":"Sofia Tamayo","nota":"7.3"},'+
+        '{"codigo":"A004","nombre":"Maira Conrado","nota":"6"},'+
+        '{"codigo":"A006","nombre":"Fernando Pena","nota":"4"},'+
+        '{"codigo":"A007","nombre":"Rolando Arriaza","nota":"9.9"},'+
+        '{"codigo":"A008","nombre":"Nelson Ortega","nota":"7.4"},'+
+        '{"codigo":"A001","nombre":"Alejandra Rivera","nota":"10"},'+
+        '{"codigo":"A009","nombre":"Darwin Bermudez","nota":"4.5"},'+
+        '{"codigo":"A010","nombre":"Daniela Alvarado","nota":"7.7"}'+']}';
+
+        var alumnosJSON = JSON.parse(alumnosNextU);
+
+        //Funcion de lectura del JSON
+        function leerJSON(json){
+            var i=0;
+            var out = "/********************** LISTADO DE ALUMNOS ***********************/";
+            for(i=0;i<json.alumnos.length;i++){
+                out += "<br>C&oacute;digo: "+json.alumnos[i].codigo+"<br> Nombre: "+json.alumnos[i].nombre+"<br> Nota: "+json.alumnos[i].nota+"<br>";
+            }
+            document.getElementById("alumnos").innerHTML = out;
+        }
+        
+        //Funcion para calcular promedio de notas del JSON
+        function calculoProm(json){
+            var i=0;
+            var prom = 0; //Variable que contendra el promedio
+            var suma = 0; //Variable que contendra la suma de todas las notas
+            var total = json.alumnos.length; //Variable que contiene la cantidad de registros del JSON
+            for(i=0;i<json.alumnos.length;i++){
+               suma += parseFloat(json.alumnos[i].nota);
+            }
+            prom = suma/total;
+            document.getElementById("alumnos").innerHTML="La nota promedio es: "+prom;
+        }
+
+        //Funcion para seleccionar al alumno con la nota mayor
+        function seleccionNotaMayor(json){
+            var i=0;
+            var notaMayor = 0; //Variable que contendra la nota mayor al ir evaluando una por una
+            var nombreAlumno = ""; //Variable que contendra el nombre del alumno con la mayor nota
+
+            for(i=0;i<json.alumnos.length;i++){
+                if(notaMayor>=parseFloat(json.alumnos[i].nota)){
+                    notaMayor = notaMayor;
+                    console.log("La nota mayor se mantiene en:"+notaMayor);
+                } else{
+                    notaMayor = parseFloat(json.alumnos[i].nota);
+                    nombreAlumno = json.alumnos[i].nombre;
+                    console.log("La nota mayor cambio a: "+notaMayor)
+                }
+            }
+            document.getElementById("alumnos").innerHTML = "La nota mayor es de: "+notaMayor+" pertenece al alumno: "+nombreAlumno;
+        }
+
+        //Funcion para seleccionar al alumno con la nota menor
+        function seleccionNotaMenor(json){
+            var i=0;
+            var notaMenor = 100; //Variable que contiene la nota menor del JSON - se inicializa con un numero mayor al maximo de nota para que cambie la nota en la primera evaluacion
+            var nombreAlumno = ""; //Variable que contiene el nombre del alumno con la menor nota
+
+            for(i=0;i<json.alumnos.length;i++){
+                if(notaMenor<=parseFloat(json.alumnos[i].nota)){
+                    notaMenor = notaMenor;
+                    console.log("La nota menor se mantiene en:"+notaMenor);
+                } else{
+                    notaMenor = parseFloat(json.alumnos[i].nota);
+                    nombreAlumno = json.alumnos[i].nombre;
+                    console.log("La nota menor cambio a: "+notaMenor)
+                }
+            }
+            document.getElementById("alumnos").innerHTML = "La nota menor es de: "+notaMenor+" pertenece al alumno: "+nombreAlumno;
+        }
+
+        function mostrarListado(){
+            leerJSON(alumnosJSON);
+        }
+
+        function notaProm(){
+            calculoProm(alumnosJSON);
+        }
+
+        function mayorNota(){
+            seleccionNotaMayor(alumnosJSON);
+        }
+
+        function menorNota(){
+            seleccionNotaMenor(alumnosJSON);
+        }
+
+    </script>
+</html>

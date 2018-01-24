@@ -1,0 +1,70 @@
+#encabezado{
+    background: #29B6F6;
+    padding: 10px 100px 0px 100px;
+    position: relative;
+    top: 0%;
+    left: 25%;
+    width: 25%;
+    height: 5%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+}
+
+body{
+    background: #0D47A1;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color: azure;
+    text-shadow: 0.1em 0.1em #333; 
+}
+
+#contenedor{
+    background: #0277BD;
+    padding: 10px 125px 10px 75px;
+    position: relative;
+    top: -2%;
+    left: 25%;
+    width: 25%;
+    height: 5%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+#contenedor1{
+    background: #039BE5;
+    padding: 10px 125px 10px 75px;
+    position: relative;
+    top: 0%;
+    left: 25%;
+    width: 25%;
+    height: 5%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+}
+
+button{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 150px;
+}
+
+#tabla_estudiantes{
+    border:#01579B 2px solid;
+    margin: 5px;
+    padding: 5px;
+}
+
+td{
+    padding: 10px;
+}
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function CambiarStyle(){
+                document.getElementById("titulo").style.backgroundColor="red";
+                document.getElementById("titulo").style.backgroundColor="red";
+
+                document.getElementById("jugador1").style.backgroundColor="blue";
+                document.getElementById("gol1").style.backgroundColor="blue";
+                document.getElementById("jugador2").style.backgroundColor="blue";
+                document.getElementById("gol2").style.backgroundColor="blue";
+                document.getElementById("jugador3").style.backgroundColor="blue";
+                document.getElementById("gol3").style.backgroundColor="blue";
+
+
+                document.getElementById("jugador1").style.fontStyle="italic";
+                document.getElementById("gol1").style.fontStyle="italic";
+                document.getElementById("jugador2").style.fontStyle="italic";
+                document.getElementById("gol2").style.fontStyle="italic";
+                document.getElementById("jugador3").style.fontStyle="italic";
+                document.getElementById("gol3").style.fontStyle="italic";
+
+                document.getElementById("jugador1").style.fontWeight = "bold";
+                document.getElementById("gol1").style.fontWeight = "bold";
+                document.getElementById("jugador2").style.fontWeight = "bold";
+                document.getElementById("gol2").style.fontWeight = "bold";
+                document.getElementById("jugador3").style.fontWeight = "bold";
+                document.getElementById("gol3").style.fontWeight = "bold";
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr id="titulo">
+                <th>Jugadores</th>
+                <th>Goles</th>
+            </tr>
+            <tr>
+                <th id="jugador1">James Rodriguez</th>
+                <th id="gol1">6</th>
+            </tr>
+            <tr>
+                <th id="jugador2">Neymar</th>
+                <th id="gol2">4</th>
+            </tr>
+            <tr>
+                <th id="jugador3">Lionel Messi</th>
+                <th id="gol3">4</th>
+            </tr>
+            <tr>
+                <th><button onclick="CambiarStyle()">Cambiar</button></th>
+            </tr>
+        </table>
+    </body>
+</html>

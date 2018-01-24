@@ -1,0 +1,49 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body onload="navegador()">
+    <h2>El nombre de tu Navegador</h2>
+
+    <p id="nombre"></p>
+    <p id="nombre1"></p>
+    <p id="nombre2"></p>
+    <p id="nombre3"></p>
+    <p id="nombre4"></p>
+    <p id="nombre5"></p>
+
+    <h2>Navegador del BOM</h2>
+    <button onclick="mostrarPropiedades()">Mostrar Propiedades</button>
+    <p id="mensaje"></p>
+</body>
+<script>
+    function navegador(){
+        document.getElementById("nombre").innerHTML = "El navegador es appCodeName : " + navigator.appCodeName;
+        document.getElementById("nombre1").innerHTML = "El navegador es appName : " + navigator.appName;
+        document.getElementById("nombre2").innerHTML = "El navegador es appVersion : " + navigator.appVersion;
+        document.getElementById("nombre3").innerHTML = "El navegador es language : " + navigator.language;
+        document.getElementById("nombre4").innerHTML = "El navegador es onLine : " + navigator.onLine;
+        document.getElementById("nombre5").innerHTML = "Esta Java activado : " + navigator.javaEnabled();
+    }
+
+    function mostrarPropiedades(){
+        var mensaje = "";
+
+        mensaje += "<b>Cookies Habilitadas: </b>"+ navigator.cookieEnabled+"<br>";
+        mensaje += "<b>Plataforma: </b>"+navigator.platform + "<br>";
+        mensaje += "<b>El nombre Motor del Navegador: </b>"+navigator.product+"<br>";
+        mensaje += "<b>Tipos MIME soportados: </b>"+"<br>";
+
+        for (var i=0; i<navigator.mimeTypes.length; i++){
+            mensaje += "-"+navigator.mimeTypes[i].type+"<br>";
+        }
+        mensaje += "<b> Plugins:</b>"+"<br>";
+
+        for (var j=0; j<navigator.plugins.length; i++){
+            mensaje += navigator.plugins[j].name + "<br>";
+        }
+        document.getElementById("mensaje").innerHTML=mensaje;
+    }
+</script>
+</html>

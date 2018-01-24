@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1 id="miEnca">Mi encabezado h1!!!!</h1>
+
+        <div id="miDiv">Mi div!!!!</div>
+
+        <input id="miInput">
+
+        <h1 id="enca1">Mi segundo encabezado!!!</h1>
+        <button id="boton1">Boton1</button>
+
+    </body>
+    <script>
+            var elemento = document.getElementById("miEnca");
+            elemento.addEventListener("click",function(){
+                elemento.innerHTML = "Encabezado h1 Cambiado!!!";
+            });
+
+            document.getElementById("miDiv").addEventListener("click",cambiarDiv);
+
+            function cambiarDiv() {
+                document.getElementById("miDiv").style.backgroundColor="green";
+                document.getElementById("miDiv").style.fontSize="xx-large";
+                document.getElementById("miDiv").style.width = "400px";
+                document.getElementById("miDiv").style.height = "400px";
+            }     
+
+            var elemento2 = document.getElementById("miInput");
+            elemento2.addEventListener("click",cambiar1);
+            elemento2.addEventListener("blur",cambiar2);
+            
+            function cambiar1(){
+                elemento2.style.width= "150px";
+                elemento2.style.height= "50px";
+            } 
+
+            function cambiar2(){
+                elemento2.style.color = "orange";
+                elemento2.style.backgroundColor="blue";
+            }
+
+            document.getElementById("boton1").addEventListener("click",mostrarMensaje1);
+            document.getElementById("enca1").addEventListener("mouseout",mostrarMensaje2);
+            
+            function mostrarMensaje1(){
+                document.getElementById("enca1").innerHTML="Se realizo un evento click";
+            }
+
+            function mostrarMensaje2(){
+                document.getElementById("enca1").innerHTML="Se realizo un evento mouseout!!!";
+            }
+            var i=0;
+            window.addEventListener("resize", function() {
+
+                var parrafo = document.createElement("p");
+                var texto = document.createTextNode("Nuevo parrafo creado!!"+ i);
+                parrafo.appendChild(texto);
+                document.body.prepend(parrafo);
+                i++;
+            });
+
+    </script>
+</html>

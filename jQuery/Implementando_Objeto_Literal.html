@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Datos de la Empresa</title>
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+    <h1>Datos de la Empresa</h1>
+    <label for="cjtxt1">Nit</label>
+    <input type="text" id="cjtxt1">
+    <br><br>
+    <label for="cjtxt2">Nombre</label>
+    <input type="text" id="cjtxt2">
+    <br><br>
+    <label for="cjtxt3">Direccion</label>
+    <input type="text" id="cjtxt3">
+    <br><br>
+    <label for="cjtxt4">Telefono1</label>
+    <input type="text" id="cjtxt4">
+    <br><br>
+    <label for="cjtxt5">Telefono2</label>
+    <input type="text" id="cjtxt5">
+    <br><br>
+    <label for="cjtxt6">Telefono3</label>
+    <input type="text" id="cjtxt6">
+    <br><br>
+    <label for="cjtxt7">E-mail</label>
+    <input type="text" id="cjtxt7">
+    <br><br>
+    <label for="cjtxt8">Pagina Web</label>
+    <input type="text" id="cjtxt8">
+    <br><br>
+    <label for="cjtxt9">Horarios</label>
+    <input type="text" id="cjtxt9">
+    <br><br>
+    <input type="button" value="Registrar Empresa" onclick="registrarEmpresa()"/>
+    <input type="button" value="Mostrar Empresa" onclick="mostrarEmpresa()"/>
+    <br><br>
+    <p id="mensaje"></p>
+</body>
+    <script>
+        //Objeto literal llamado empresa
+        var empresa = {
+            nit:null,
+            nombre:null,
+            direccion:null,
+            email:null,
+            paginaweb:null,
+            horarios:null,
+
+            init:function(propiedades){
+                empresa.propiedades = propiedades;
+            },
+            leerPropiedades : function(){
+                return empresa.propiedades;
+            }
+        };
+
+        function registrarEmpresa(){
+            var nit = document.getElementById("cjtxt1").value;
+            var nombre = document.getElementById("cjtxt2").value;
+            var direccion = document.getElementById("cjtxt3").value;
+            var telefono1 = document.getElementById("cjtxt4").value;
+            var telefono2 = document.getElementById("cjtxt5").value;
+            var telefono3 = document.getElementById("cjtxt6").value;
+            var email = document.getElementById("cjtxt7").value;
+            var paginaweb = document.getElementById("cjtxt8").value;
+            var horarios = document.getElementById("cjtxt9").value;
+            var telefonos = [telefono1, telefono2, telefono3];
+
+            var propiedades = {
+                nit:nit,
+                nombre:nombre,
+                direccion:direccion,
+                telefonos:telefonos,
+                email:email,
+                paginaweb:paginaweb,
+                horarios:horarios
+            }
+            empresa.init(propiedades);
+            limpiarCampos();
+            alert("Empresa Guardada");
+        }
+
+        function mostrarEmpresa(){
+            var mensaje = "<h1>Empresa</h1><br>";
+            var propiedades = empresa.leerPropiedades();
+
+            mensaje += "Nit: "+ propiedades.nit +"<br>";
+            mensaje += "Nombre: "+ propiedades.nombre +"<br>";
+            mensaje += "Direccion: "+propiedades.direccion + "<br>";
+            mensaje += "Telefono1: "+propiedades.telefonos[0] +"<br>";
+            mensaje += "Telefono2: "+propiedades.telefonos[1] +"<br>";
+            mensaje += "Telefono3: "+propiedades.telefonos[2] + "<br>";
+            mensaje += "E-mail: " +propiedades.email +"<br>";
+            mensaje += "Pagina Web: "+propiedades.paginaweb + "<br>";
+            mensaje += "Horarios: " + propiedades.horarios+"<br>";
+
+            document.getElementById("mensaje").innerHTML = mensaje;
+
+        }
+
+        function limpiarCampos(){
+            document.getElementById("cjtxt1").value = "";
+            document.getElementById("cjtxt2").value = "";
+            document.getElementById("cjtxt3").value = "";
+            document.getElementById("cjtxt4").value = "";
+            document.getElementById("cjtxt5").value = "";
+            document.getElementById("cjtxt6").value = "";
+            document.getElementById("cjtxt7").value = "";
+            document.getElementById("cjtxt8").value = "";
+            document.getElementById("cjtxt9").value = "";
+        }
+    </script>
+</html>

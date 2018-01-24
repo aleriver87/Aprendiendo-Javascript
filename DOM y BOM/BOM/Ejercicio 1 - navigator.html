@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="info()">
+        <H1>Informaci&oacute;n del Navegador</H1>
+        <p id="mensaje"></p>
+        <button onclick="plug()">Mostrar plugins</button>
+        <p id="mensaje2"></p>
+    </body>
+    <script>
+        function info(){
+            var mensaje = "";
+
+            mensaje += "appName : "+navigator.appName +"<br>";
+            mensaje += "appCodeName : "+navigator.appCodeName +"<br>";
+            mensaje += "appVersion : "+navigator.appVersion +"<br>";
+            mensaje += "language : "+navigator.language +"<br>";
+            mensaje += "platform : "+navigator.platform +"<br>";
+            mensaje += "product : "+navigator.product +"<br>";
+            mensaje += "onLine : "+navigator.onLine +"<br>";
+            mensaje += "JavaEnabled : "+navigator.javaEnabled +"<br>";
+            mensaje += "userAgent : "+navigator.userAgent +"<br>";
+            mensaje += "cookieEnabled : "+navigator.cookieEnabled +"<br>";
+
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+
+        function plug(){
+            var mensaje2 = "";
+            
+            mensaje2 += "<br>Plugins: <br>";
+
+            for(var i=0; i<navigator.plugins.length; i++){
+                mensaje2 += "- "+navigator.plugins[i].name+"<br>";
+            }
+            document.getElementById("mensaje2").innerHTML = mensaje2;
+        }
+    </script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio con eventos de tiempo</title>
+    <style>
+        #miReloj{
+            background-color: black;
+            font-size: xx-large;
+            font-family: "Courier";
+            color: #04ff00;
+            width: 250px;
+            border: 2px solid #000;
+            padding: 5px 10px 5px 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="miReloj">
+        <p id="numero">0</p>
+    </div>
+    <br>
+    <button onclick="iniciarConteo()">Iniciar Conteo</button>
+</body>
+    <script>
+        var funcionConteo;
+        var variable = 0;
+
+        function iniciarConteo(){
+            variable += 10;
+            document.getElementById("numero").innerHTML = variable;
+
+            funcionConteo = setTimeout(iniciarConteo,2000);
+
+            if(variable >= 150){
+                clearTimeout(funcionConteo);
+                console.log('entro');
+            }
+        }
+
+
+    </script>
+</html>

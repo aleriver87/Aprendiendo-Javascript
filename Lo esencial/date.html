@@ -1,0 +1,53 @@
+<!DOCTYPE>
+<html>
+    <head>Date</head>
+    <body>
+        <h1>Aprendiendo a usar el objeto Date</h1>
+
+        <p id="d1"></p>
+        <p id="d2"></p>
+        <p id="d3"></p>
+
+        <h1>Objeto Date Metodos</h1>
+
+        <p id="d4"></p>
+        <p id="d5"></p>
+        <p id="d6"></p>
+        <p id="d7"></p>
+        <p id="d8"></p>
+        <p id="d9"></p>
+        <p id="d10"></p>
+        <p id="d11"></p>
+    </body>
+    <script>
+        //Objeto Date
+
+        var date1 = new Date();
+        var date2 = new Date("November 10, 2013 00:05:00");
+        var date3 = new Date(2018,7,3);
+
+        document.getElementById("d1").innerHTML = date1;
+        document.getElementById("d2").innerHTML = date2;
+        document.getElementById("d3").innerHTML = date3;
+        console.log(date3>date1);
+
+        //Objeto Date Metodos
+
+        document.getElementById("d4").innerHTML = date1.getFullYear();
+        date1.setFullYear(2018);
+        document.getElementById("d5").innerHTML = date1.getFullYear();
+
+        document.getElementById("d6").innerHTML = date2.getMonth();
+        date2.setMonth(5);
+        document.getElementById("d7").innerHTML = date2.getMonth();
+
+        document.getElementById("d8").innerHTML = date3.getDate();
+        date3.setDate(4);
+        document.getElementById("d9").innerHTML = date3.getDate();
+
+        document.getElementById("d10").innerHTML = date1.getHours();
+        date1.setHours(4);
+        document.getElementById("d11").innerHTML = date1.getHours();
+
+    </script>
+</html>

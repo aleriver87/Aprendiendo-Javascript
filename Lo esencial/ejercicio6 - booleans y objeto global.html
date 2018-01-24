@@ -1,0 +1,128 @@
+<!DOCTYPE>
+<html>
+    <head>Booleans y Objeto global</head>
+
+    <body>
+        <h1>Comparaciones</h1>
+
+        <p id="a1"></p>
+        <p id="a2"></p>
+        <p id="a3"></p>
+        <p id="a4"></p>
+        <p id="a5"></p>
+        <p id="a6"></p>
+        <p id="a7"></p>
+        <p id="a8"></p>
+        <p id="a9"></p>
+        <p id="a10"></p>
+
+        <h1>Pasando cadenas de texo a enteros parseInt()</h1>
+
+        <p id="a11"></p>
+        <p id="a12"></p>
+        <p id="a13"></p>
+        <p id="a14"></p>
+        <p id="a15"></p>
+        <p id="a16"></p>
+        <p id="a17"></p>
+        <p id="a18"></p>
+        <p id="a19"></p>
+        <p id="a20"></p>
+
+        <h1>Pasando cadenas de texo a flotantes parseFloat()</h1>
+
+        <p id="a21"></p>
+        <p id="a22"></p>
+        <p id="a23"></p>
+        <p id="a24"></p>
+        <p id="a25"></p>
+        <p id="a26"></p>
+        <p id="a27"></p>
+        <p id="a28"></p>
+        <p id="a29"></p>
+        <p id="a30"></p>
+
+        <h1>Codificando URLs a trav&eacute;s del m&eacute;todo encodeURIComponent()</h1>
+
+        <p id="a31"></p>
+        <p id="a32"></p>
+        <p id="a33"></p>
+    </body>
+    <script>
+        //Declarando variables
+        var comparacion1 = 7>5;
+        var comparacion2 = 8<3;
+        var comparacion3 = "Oso" == "OsO";
+        var comparacion4 = 45<15;
+        var comparacion5 = 33>12;
+        var comparacion6 = 134<48;
+        var comparacion7 = 30>40;
+        var comparacion8 = "Castor" != "castor";
+        var comparacion9 = 83>28;
+        var comparacion10 = 64<77;
+
+        document.getElementById("a1").innerHTML = comparacion1;
+        document.getElementById("a2").innerHTML = comparacion2;
+        document.getElementById("a3").innerHTML = comparacion3;
+        document.getElementById("a4").innerHTML = comparacion4;
+        document.getElementById("a5").innerHTML = comparacion5;
+        document.getElementById("a6").innerHTML = comparacion6;
+        document.getElementById("a7").innerHTML = comparacion7;
+        document.getElementById("a8").innerHTML = comparacion8;
+        document.getElementById("a9").innerHTML = comparacion9;
+        document.getElementById("a10").innerHTML = comparacion10;
+
+        var cadena1 = "3.1416";
+        var cadena2 = "180.54356";
+        var cadena3 = "4002";
+        var cadena4 = "45.6565";
+        var cadena5 = "2014";
+        var cadena6 = "4.536";
+        var cadena7 = "37.853";
+        var cadena8 = "56.954";
+        var cadena9 = "638.395";
+        var cadena10 = "6.8943";
+
+        document.getElementById("a11").innerHTML = parseInt(cadena1);
+        document.getElementById("a12").innerHTML = parseInt(cadena2);
+        document.getElementById("a13").innerHTML = parseInt(cadena3);
+        document.getElementById("a14").innerHTML = parseInt(cadena4);
+        document.getElementById("a15").innerHTML = parseInt(cadena5);
+        document.getElementById("a16").innerHTML = parseInt(cadena6);
+        document.getElementById("a17").innerHTML = parseInt(cadena7);
+        document.getElementById("a18").innerHTML = parseInt(cadena8);
+        document.getElementById("a19").innerHTML = parseInt(cadena9);
+        document.getElementById("a20").innerHTML = parseInt(cadena10);
+        
+        var cadena1 = "3.1416 Hola";
+        var cadena2 = "180.54356 Probando a ver si sirve";
+        var cadena3 = "4002 BUENAS TARDES";
+        var cadena4 = "94.5 vox fm";
+        var cadena5 = "2014 a&ntilde;o";
+        var cadena6 = "4.536 minutos para el despegue";
+        var cadena7 = "37.853 e2";
+        var cadena8 = "56.954 probando";
+        var cadena9 = "638.395 sigo probando";
+        var cadena10 = "6.8943 el &uacute;ltimo";
+
+        document.getElementById("a21").innerHTML = parseFloat(cadena1);
+        document.getElementById("a22").innerHTML = parseFloat(cadena2);
+        document.getElementById("a23").innerHTML = parseFloat(cadena3);
+        document.getElementById("a24").innerHTML = parseFloat(cadena4);
+        document.getElementById("a25").innerHTML = parseFloat(cadena5);
+        document.getElementById("a26").innerHTML = parseFloat(cadena6);
+        document.getElementById("a27").innerHTML = parseFloat(cadena7);
+        document.getElementById("a28").innerHTML = parseFloat(cadena8);
+        document.getElementById("a29").innerHTML = parseFloat(cadena9);
+        document.getElementById("a30").innerHTML = parseFloat(cadena10);
+
+        var url1 = "http://nextuniversity.com/es/";
+        var url2 = "http://www.w3.org/";
+        var url3 = "http://www.facebook.com/";
+
+        document.getElementById("a31").innerHTML = encodeURIComponent(url1);
+        document.getElementById("a32").innerHTML = encodeURIComponent(url2);
+        document.getElementById("a33").innerHTML = encodeURIComponent(url3);
+
+    </script>
+</html>

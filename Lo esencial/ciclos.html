@@ -1,0 +1,77 @@
+<!DOCTYPE>
+<html>
+    <head>Practicando ciclos de JavaScript</head>
+    <body>
+        <h1>Ciclo FOR</h1>
+        <p id="salida"></p>
+        <button onclick="mostrar_equipos()">Mostrar equipos</button>
+    
+        <h1>Ciclo FOR IN</h1>
+        <p id="salida1"></p>
+        <button onclick="mostrar_producto()">Mostrar Productos</button>
+    
+        <h1>Ciclo WHILE</h1>
+        <p id="salida2"></p>
+        <button onclick="conteo()">Iniciar conteo</button>
+
+        <h1>Ciclo DO WHILE</h1>
+        <p id="salida3"></p>
+        <button onclick="conteo1()">Iniciar Conteo</button>
+
+    </body>
+    <script>
+        function mostrar_equipos(){
+
+            var texto = "Equipos <br>";
+
+            var equipos = ["Liverpool","Barcelona","Juventus","Madrid"];
+
+            for (var i=0; i< equipos.length; i++){
+                texto+=equipos[i]+"<br>";
+            }
+            document.getElementById("salida").innerHTML=texto;
+        }
+        
+        function mostrar_producto(){
+            var texto1 = "Producto: <br>";
+
+            var producto = {
+                codigo : "001",
+                nombre : "lapiz",
+                precio : 2000
+            };
+
+            var x;
+
+            for (x in producto){
+                texto1+=producto[x]+"<br>";
+            }
+            document.getElementById("salida1").innerHTML = texto1;
+        }
+
+        function conteo() {
+            var contador=1;
+            var texto="";
+
+            while(contador<=50){
+                texto+=contador+"<br>";
+                contador++;
+            }
+
+            document.getElementById("salida2").innerHTML=texto;
+
+        }
+
+        function conteo1(){
+            var contador1 = 50;
+            var texto="";
+
+            do {
+                texto += contador1 + "<br>";
+                contador1++;
+            } while (contador1 <=100)
+
+            document.getElementById("salida3").innerHTML = texto;
+        }
+    </script>
+</html>

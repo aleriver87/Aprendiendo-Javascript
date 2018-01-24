@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+        th{
+            text-align: "left";
+        }
+        </style>
+    </head>
+    <body>
+        <div>
+        <h1 id="titulo"><center>Registro de Estudiantes</center></h1>
+        <center>
+        <table>
+            <form>
+                <tr>
+                    <th id="c">Nombres:</th>
+                    <th><input type="text" id="nombres"></th>
+                </tr>
+                <tr>
+                    <th>Apellidos:</th>
+                    <th><input type="text" id="apellidos"></th>
+                </tr>
+                <tr>
+                    <th>Direcci&oacute;n:</th>
+                    <th><input type="text" id="direccion"></th>
+                </tr>
+                <tr>
+                    <th>Edad:</th>
+                    <th><input type="text" id="edad"></th>
+                </tr>
+                <tr>
+                    <th>Fecha de Nacimiento:</th>
+                    <th><input type="date" id="nacimiento"></th>
+                </tr>
+                <tr>
+                    <th>Lugar de Nacimiento:</th>
+                    <th><input type="text" id="lugar_nac"></th>
+                </tr>
+                <tr>
+                    <th>Estado Civil:</th>
+                    <th><select id="estado">
+                            <option value="" >Seleccione una opci&oacute;n</option>
+                            <option value="0">Soltero</option>
+                            <option value="1">Casado</option>
+                            <option value="2">Viudo</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th><input type="submit" onclick="Reg_Alumno()" value="Registrar Alumno"></th>
+                    <th><input type="button" onclick="Cambiar_titulo()" value="Cambiar Titulo"></th>
+                    <th><input type="button" onclick="Cambiar_color()" value="Cambiar color"></th>
+                </tr>
+            </form>
+        </table>
+        </center>
+        </div>
+    </body>
+    <script>
+        function Reg_Alumno(){
+            alert("El alumno ha sido registrado exitosamente");
+        }
+
+        function Cambiar_color(){
+            var divs = document.getElementsByTagName("div");
+            
+            for(var i=0; i<divs.length; i++){
+                divs[i].style.color = "red";
+            } 
+        }
+
+        function Cambiar_titulo(){
+            var texto = document.getElementById("titulo");
+            texto.innerHTML = "<center>Registro de Docentes</center>";
+        }
+    </script>
+</html>

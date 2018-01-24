@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CreateElement</title>
+        <script>
+            function crearElemento(){
+                var encabezado = document.createElement("h1");
+                var texto = document.createTextNode("Mi nuevo encabezado"); //createTextNode permite crear un nodo de tipo texto.
+                encabezado.appendChild(texto); //el metodo appendChild explicara mas adelante
+
+                document.body.appendChild(encabezado);//el metodo appendChild y el objeto document.body se explicaran mas adelante
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="crearElemento()">Crear Encabezado</button>
+    </body>
+</html>

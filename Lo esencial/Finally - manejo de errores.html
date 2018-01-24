@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html>
+    <meta charset="UTF9">
+    <head>Practicando el Finally en el manejo de errores</head>
+    <body>
+        <h1>Practicando el FINALLY en el manejo de errores</h1>
+
+        <p id="mensaje"></p>
+        <button onclick="miFuncion()">Ejecutar Funcion 1</button>
+    </body>
+    <script>
+        function miFuncion(){
+            try{
+                var edad = 60;
+                calcular(edad); //La funcion calcular no esta definida
+            } catch (error){
+                alert("Existe un error "+error.message);
+            } finally{
+                document.getElementById("mensaje").innerHTML = "Seguimos pese al error";
+            }
+        }
+    </script>
+</html>

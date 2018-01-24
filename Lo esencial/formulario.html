@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Construcci&oacute;n de formulario</title>
+
+        <!-- Iniciamos nuestro JavaScript -->
+        <script>
+            function evento_onload(){
+                alert("Bienvenido a nuestro formulario de Registro de Usuarios.");
+            }
+            function evento_onclick(){
+                alert("Los datos han sido enviados correctamente");
+            }
+            function evento_onfocus(elemento){
+                elemento.style.background = "#555666";
+            }
+            function evento_oncopy(){
+                alert("El texto ha sido copia");
+            }
+            function evento_onblur(elemento){
+                elemento.style.background="#ffffff"
+            }
+        </script>
+    </head>
+    <body onload="evento_onload()">
+        <h1>Registro de usuarios</h1>
+        <h4>Formulario</h4>
+        <table>
+            <form id="formulario">
+                <tr>
+                    <td><label>Nombres:</label></td>
+                    <td><input id="nombres" name="nombres" type="text" onfocus="evento_onfocus(this)" onblur="evento_onblur(this)"></td>
+                </tr>
+                <tr>
+                    <td><label>Apellidos:</label></td>
+                    <td><input id="apellidos" name="apellidos" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Identificaci&oacute;n:</label></td>
+                    <td><input id="identificacion" name="identificacion" type="text" oncopy="evento_oncopy()"></td>
+                </tr>
+                <tr>
+                    <td><label>Sexo:</label></td>
+                    <td><select id="sexo" name="sexo">
+                        <option name="" value="">Seleccione una opci&oacute;n</option>
+                        <option name="masculino" value="masculino">Masculino</option>
+                        <option name="femenino" value="femenino">Femenino</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>E-mail:</label></td>
+                    <td><input id="email" name="email" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Tel&eacute;fono:</label></td>
+                    <td><input id="telefono" name="telefono" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Direcci&oacute;n:</label></td>
+                    <td><input id="direccion" name="direccion" type="text"></td>
+                </tr>
+                <tr>
+                    <td><input id="enviar" name="enviar" type="submit" value="Enviar" onclick="evento_onclick()"></td>
+                </tr>
+            </form>
+        </table>
+    </body>
+</html>

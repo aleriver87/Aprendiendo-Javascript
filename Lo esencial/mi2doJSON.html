@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Mi segundo JSON</title>
+    </head>
+    <body>
+        <p id="empresas"></p>
+    </body>
+    <script type="text/javascript"> 
+        var jsonText = '{"empresas":['+
+        '{"nit":"3432-1","nombre":"TCC", "telefono":"3324993", "email":"tcc@hotmail.com"},'+
+        '{"nit":"5567-1","nombre":"Movistar","telefono":"3556566","email":"movistar@hotmail.com"},'+
+        '{"nit":"67657-1","nombre":"Nokia","telefono":"34978786","email":"nokia@hotmail.com"}'+ ']}';
+
+        var jsObj = JSON.parse(jsonText);
+
+        function leerJSON (json) {
+            var out = "--------------------------- EMPRESAS -----------------------------------------><br>";
+            var i;
+
+            for(i=0;i<json.empresas.length;i++){
+                out+="Nit:"+json.empresas[i].nit+"-"+"Nombre:"+json.empresas[i].nombre+"-"+
+                "Telefono:"+json.empresas[i].telefono+"-"+"E-mail:"+json.empresas[i].email+"<br>";
+            }
+            document.getElementById("empresas").innerHTML = out;
+        }
+        leerJSON(jsObj);
+    </script>
+</html>

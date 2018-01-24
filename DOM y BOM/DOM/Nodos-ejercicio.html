@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function verElementos(){
+                var texto ="";
+                var div =  document.getElementsByTagName("div")[0];
+
+              
+                for(var i=0; i<div.childNodes.length; i++){
+                    texto += div.childNodes[i].nodeName+"<br>";
+                }
+
+                document.getElementById("mensaje").innerHTML = texto;
+            }
+
+            function primerElemento(){
+                var div = document.getElementById("miDiv");
+                
+                document.getElementById("mensaje").innerHTML=div.firstChild.nodeName;
+            }
+
+            function ultimoElemento(){
+                var div = document.getElementById("miDiv");
+
+                document.getElementById("mensaje").innerHTML=div.lastChild.nodeName;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="miDiv"><h1 id="texto1">Primer texto</h1><p id="texto2">Segundo texto</p><h1>Elementos</h1><p>Nombre</p><br><input type="texto"><input type="submit" value="Aceptar"></div>
+        <br>
+            <button onclick="verElementos()">Ver tipo de Elementos</button>
+            <button onclick="primerElemento()">Primer Elemento</button>
+            <button onclick="ultimoElemento()">Ultimo Eleemento</button>
+        
+            <p id="mensaje"></p>
+        <script>
+                var cambiartexto = document.getElementById("texto2").childNodes[0].nodeValue;
+                document.getElementById("texto1").innerHTML=cambiartexto;
+        </script>
+    </body>
+</html>

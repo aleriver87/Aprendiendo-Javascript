@@ -1,0 +1,63 @@
+<!DOCTYPE>
+<html>
+    <meta charset="UTF8">
+    <head>Manejo de errores</head>
+
+    <body>
+        <h1>TRY-CATCH</h1>
+        <button onclick="miFuncion()">Probando mi Funcion</button>
+        <p id="a0"></p>
+
+        <h1>TRY-THROW-CATCH</h1>
+        <p id="a1"></p>
+        <p id="a2"></p>
+        <button onclick="miFuncion2()">Calcular raiz cuadrada</button>
+        
+        <h1>TRY-CATCH-FINALLY</h1>
+        <p id="a3"></p>
+        <button onclick="miFuncion3()">Ejecutar funci&oacute;n</button>
+
+    </body>
+    <script>
+        //TRY-CATCH
+        function miFuncion(){            
+            var numero1 = 50;
+            var numero2 = 50;
+            try{
+                var resultado = (numero1 + numero2)/numero3;
+            } catch (error) {
+                alert("Existe un error "+error.message);
+            }
+       }
+
+        //TRY-THROW-CATCH
+        function miFuncion2(){
+            
+            try{
+                var numero=-40;
+                var raiz = Math.sqrt(numero);
+                if(isNaN(raiz)){
+                    throw "No es posible calcular una raiz negativa!!!";
+                }
+            }  catch(error){
+                    alert("Existe un error: "+error);
+                }
+
+                document.getElementById("a1").innerHTML = numero;
+                document.getElementById("a2").innerHTML = raiz;
+        }
+
+        //TRY-CATCH-FINALLY
+        function miFuncion3(){
+            
+            try {
+                var estudiante = null;
+                alert(estudiante.nombre);
+            } catch (error) {
+                alert("Existe un error : "+error.message);
+            } finally {
+                document.getElementById("a3").innerHTML = "Estamos en la sentencia Finally!!!";
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hoja de Vida</title>
+    </head>
+    <body onload="saludo()">
+        <div align="center">
+            <h1 align="center">Informaci&oacute;n Personal</h1>
+            <form onreset = "reset()">
+            <table style="width:80%">
+                <tr>                       
+                    <th>Nombres:</th>
+                    <th><input type="text" id="nombres" onchange="mayusculas()"></th>
+                </tr>
+                <tr>
+                    <th>Apellidos:</th>
+                    <th><input type="text" id="apellidos" onchange="mayusculas()"></th>
+                </tr>
+                <tr>
+                    <th>Direcci&oacute;n:</th>
+                    <th><input type="text" id="direccion"></th>
+                </tr>
+                <tr>
+                    <th>Edad:</th>
+                    <th><input type="text" id="edad"></th>
+                </tr>
+                <tr>
+                    <th>Fecha de Nacimiento: </th>
+                    <th><input type="date" id="fecha"></th>
+                </tr>
+                <tr>
+                    <th>Lugar de Nacimiento:</th>
+                    <th><input type="text" id="nacimiento"></th>
+                </tr>
+                <tr>
+                    <th>Estado Civil:</th>
+                    <th><input type="text" id="estado"></th>
+                </tr>
+            </table>
+            <h1>Informaci&oacute;n Academica</h1>
+            <table>
+                <tr>
+                    <th>Universidad:</th>
+                    <th><input type="text" id="universidad"></th>
+                </tr>
+                <tr>
+                    <th>Profesi&oacute;n</th>
+                    <th><input type="text" id="profesion"></th>
+                </tr>
+                <tr>
+                    <th>Observaciones:</th>
+                    <th>
+                        <textarea onselect="seleccion()">Observaciones</textarea>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <button onclick="enviar()">Enviar</button>
+                    </th>
+                    <th>
+                        <input type="reset">
+                    </th>
+                </tr>
+            </table>
+            </form>
+        </div>
+    </body>
+    <script>
+            function saludo(){
+                alert("Bienvenido a su formato de Hoja de Vida");
+            }
+
+            function seleccion(){
+                alert("Se ha seleccionado el texto");
+            }
+
+            function enviar(){
+                alert("Su hoja de Vida ha sido guardada correctamente");
+                reset();
+            }
+
+            function reset(){
+                alert("Se ha restablecido el Texto");
+            }
+
+            function mayusculas(){
+                var x =  document.getElementById("nombres");
+                var y = document.getElementById("apellidos");
+
+                x.value = x.value.toUpperCase();
+                y.value = y.value.toUpperCase();
+            }
+
+    </script>
+</html>

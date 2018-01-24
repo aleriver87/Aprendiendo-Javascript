@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function nodosHijos(){
+                var texto = "";
+
+                var div =  document.getElementsByTagName("div")[0];
+
+                for (var i=0; i<div.childNodes.length; i++){//recorremos el arreglo de nodos hijos que nos devuelve la propiedad childNodes del elemento Div
+
+                    texto += div.childNodes[i].nodeName+"<br>";//Concatenamos el nombre de los nodos hijos a la variable de texto.
+    
+                }
+
+                document.getElementById("mensaje").innerHTML=texto; //cambiamos el html del parrafo con id mensaje con el string texto
+            }
+        </script>
+    </head>
+    <body>
+        <h3 id="texto1">
+            Navegando entre Nodos
+        </h3>
+        <p id="texto2">Hola Mundo</p>
+
+        <div><p>Parrafo 1</p><p>Parrafo 2</p><p>Parrafo 3</p></div>
+
+        <button onclick="nodosHijos()">Nodos Hijos</button>
+        <p id="mensaje"></p>
+
+        <script>
+            var cambiartexto = document.getElementById("texto1").childNodes[0].nodeValue;
+            document.getElementById("texto2").innerHTML=cambiartexto;
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <p>Mi parrafo 1</p>
+        <p>Mi parrafo 2</p>
+        <p>Mi parrafo 3</p>
+        <p>Mi parrafo 4</p>
+        <br>
+        <button onclick="CambiarColor()">Cambiar color de los parrafos</button>
+        <br>
+        <button onclick="cambiarTexto()">Cambiar texto de algunos divs</button> 
+    </body>
+    <script>
+        function CambiarColor(){
+            document.getElementsByTagName("p")[0].style.color = "orange";
+            document.getElementsByTagName("p")[1].style.color = "pink";
+            document.getElementsByTagName("p")[2].style.color = "cyan";
+            document.getElementsByTagName("p")[3].style.color = "red";    
+        }
+
+        function cambiarTexto(){
+            document.getElementsByTagName("p")[1].innerHTML = "Cambio de texto";
+            document.getElementsByTagName("p")[3].innerHTML = "Cambio de texto";
+            
+        }
+    </script>
+</html>

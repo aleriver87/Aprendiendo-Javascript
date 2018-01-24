@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicios del BOM - Location</title>
+    </head>
+    <body>
+        <button onclick="mostrarRuta()">Mostrar ruta actual</button>
+        <p id="ruta"></p>
+        <p id="ruta2" onclick="mostrarRuta2()">Presioname!!!</p>
+    </body>
+    
+    <script>
+        function mostrarRuta(){
+            var ruta = location.pathname; //Indica la ruta desde el disco duro si es un archivo, no incluye el protocolo del sitio
+            document.getElementById("ruta").innerHTML="La ruta del sitio actual es: "+ruta;
+        }
+
+        function mostrarRuta2(){
+            var ruta2 = location.href; //Este indica hasta el protocolo si es http o https o si es un file en nuestro equipo
+            document.getElementById("ruta2").innerHTML = "La ruta del sitio actual es: "+ruta2;
+        }
+    </script>
+</html>

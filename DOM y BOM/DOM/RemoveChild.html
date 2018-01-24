@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function removerElemento(){
+                var miDiv=document.getElementById("miDiv");
+                miDiv.removeChild(miDiv.childNodes[0]);//Se invoca el metodo removeChild pasandole como argumento el nodo hijo que se va a remover
+            }
+        </script>
+    </head>
+    <body>
+        <div id="miDiv">
+            <h1>Mi texto1</h1>
+            <h1>Mi texto2</h1>
+            <h1>Mi texto3</h1>
+        </div>
+
+        <button onclick="removerElemento()">Remover Encabezado</button>
+    </body>
+</html>

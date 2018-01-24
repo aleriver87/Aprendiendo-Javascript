@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function cambiar(){
+                document.getElementById("texto").innerHTML = "He cambiado el Texto";
+                document.getElementById("mensaje1").innerHTML = "NEXT UNIVERSITY";
+                document.getElementById("mensaje2").innerHTML = "Programa de certificacion de JavaScript";
+                document.getElementById("mensaje3").innerHTML = "Profesor: Gustavo De La Vega";
+                document.getElementById("mensaje4").innerHTML = "Demo: Manipulacion completa del DOM";
+                document.getElementById("mensaje5").innerHTML = "Continuemos!!";
+
+                document.getElementById("mensaje1").style.backgroundColor = "green";
+                document.getElementById("mensaje2").style.backgroundColor = "red";
+                document.getElementById("mensaje3").style.backgroundColor = "orange";
+                document.getElementById("mensaje4").style.backgroundColor = "cyan";
+                document.getElementById("mensaje5").style.backgroundColor = "blue";
+
+                nuevo_elemento = document.createElement("h1");
+                nuevo_elemento.setAttribute("id","mensaje6");
+
+            //    document.getElementById("miDiv").appendChild(nuevo_elemento); // lo pone abajo de los hijos de su padre
+                document.getElementById("miDiv").prepend(nuevo_elemento); //lo pone arriba de los hijos de su padre
+
+                document.getElementById("mensaje6").style.backgroundColor = "black";
+                document.getElementById("mensaje6").innerHTML = "Nuevo encabezado creado!!!";
+                document.getElementById("mensaje6").style.color="white";
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="texto">Hola JavaScript</h1>
+    
+        <div id="miDiv">
+            <h1 id="mensaje1">Probando Texto</h1>
+            <h1 id="mensaje2">Probando Texto 2</h1>
+            <h1 id="mensaje3">Probando Texto 3</h1>
+            <h1 id="mensaje4">Probando Texto 4</h1>
+            <h1 id="mensaje5">Probando Texto 5</h1>
+        </div>
+
+        <button onclick="cambiar()">Cambiar texto</button>
+
+    </body>
+</html>

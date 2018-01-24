@@ -1,0 +1,32 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <button onclick="usarSetInterval()">Usar setInterval</button>
+        <button onclick="pararSetInterval()">Detener setInterval</button>
+        <button onclick="usarSetTimeout()">Usar setTimeout</button>
+
+        <script>
+            var inval;
+
+            function usarSetInterval(){
+                inval = setInterval(function(){
+                    alert("Usando setInterval!!!");
+                }, 3000);
+            }
+
+            function pararSetInterval(){
+                clearInterval(inval)
+                alert("setInterval detenido!!")
+            }
+
+            function usarSetTimeout(){
+                setTimeout(function(){
+                    alert("Usando setTimeout!!!")
+                }, 3000);
+            }
+        </script>
+    </body>
+</html>

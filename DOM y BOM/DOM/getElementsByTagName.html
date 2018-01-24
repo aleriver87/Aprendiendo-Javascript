@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>getElementsByTagName</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td><a href="www.google.com">Ir a Google</a></td>
+            </tr>
+            <tr>
+                <td><a href="www.facebook.com">Ir a Facebook</a></td>
+            </tr>
+            <tr>
+                <td><a href="www.youtube.com">Ir a Youtube</a></td>
+            </tr>
+        </table>
+    </body>
+    <script>
+        var cantidad_a = document.getElementsByTagName("a");
+        alert("La cantidad de enlaces en este sitio son: "+cantidad_a.length);
+        document.write("Nuestro documento tiene " +cantidad_a.length +" enlaces");
+    </script>
+</html>

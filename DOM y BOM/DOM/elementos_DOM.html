@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculando Compra</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+            </tr>
+            <tr>
+                <th>Camisa</th>
+                <th><input type="text" value="30000" id="camisa_precio"disabled></th>
+                <th><input type="text" id="camisa_cantidad"></th>
+                <th><input type="text" id="camisa_subtotal" disabled></th>
+            </tr>
+            <tr>
+                <th>Gorra</th>
+                <th><input type="text" value="50000" id="gorra_precio" disabled></th>
+                <th><input type="text" id="gorra_cantidad"></th>
+                <th><input type="text" id="gorra_subtotal" disabled></th>
+            </tr>
+            <tr>
+                <th>Zapatos</th>
+                <th><input type="text" value="60000" id="zapatos_precio" disabled></th>
+                <th><input type="text" id="zapatos_cantidad"></th>
+                <th><input type="text" id="zapatos_subtotal" disabled></th>
+            </tr>
+            <tr>
+                <th>Pantal&oacute;n</th>
+                <th><input type="text" value="80000" id="pantalon_precio" disabled></th>
+                <th><input type="text" id="pantalon_cantidad"></th>
+                <th><input type="text" id="pantalon_subtotal" disabled></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Total de Compra:</th>
+                <th><input type="text" id="total_compra" disabled></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th><input type="button" value="Calcular Subtotales" onclick="calcularSubTotales()"></th>
+                <th><input type="button" value="Calcular Total" onclick="calcularTotal()"></th>
+            </tr>
+        </table>       
+    </body>
+    <script>
+        function  validacion(boton){
+            var cantidad_c = parseFloat(document.getElementById("camisa_cantidad").value);
+            var cantidad_g = parseFloat(document.getElementById("gorra_cantidad").value);
+            var cantidad_z = parseFloat(document.getElementById("zapatos_cantidad").value);
+            var cantidad_p = parseFloat(document.getElementById("pantalon_cantidad").value);
+            var boton = boton;
+
+            document.getElementById("camisa_subtotal").value = null;
+            document.getElementById("gorra_subtotal").value = null;
+            document.getElementById("zapatos_subtotal").value = null;
+            document.getElementById("pantalon_subtotal").value = null;
+            document.getElementById("total_compra").value = null;
+
+            if(!isNaN(cantidad_c)){
+                if(!isNaN(cantidad_g)){
+                    if(!isNaN(cantidad_z)){
+                        if(!isNaN(cantidad_p)){
+                            if(boton == 1){
+                                calcularSubTotales2(cantidad_c,cantidad_g,cantidad_z,cantidad_p);
+                            } else {
+                                calcularTotal2(cantidad_c,cantidad_g,cantidad_z,cantidad_p);
+                            }
+                          } else {
+                            alert("La cantidad ingresada de pantalones no es un dato numerico");
+                        } 
+                    }else {
+                        alert("La cantidad ingresada de zapato no es un dato numerico");
+                    }
+                } else{
+                    alert("La cantidad ingresada de gorras no es un dato numerico");
+                }
+            } else{
+                alert("La cantidad ingresada de camisas no es un dato numerico");
+            }
+        }
+
+        function calcularSubTotales(){
+            var boton = 1;
+            validacion(boton);
+        }
+
+        function calcularSubTotales2(c,g,z,p){
+
+            var precio_c = parseFloat(document.getElementById("camisa_precio").value);
+            var precio_g = parseFloat(document.getElementById("gorra_precio").value);
+            var precio_z = parseFloat(document.getElementById("zapatos_precio").value);
+            var precio_p = parseFloat(document.getElementById("pantalon_precio").value);
+ 
+            var a = document.getElementById("camisa_subtotal").value = c*precio_c;
+            var b = document.getElementById("gorra_subtotal").value = g*precio_g;
+            var c = document.getElementById("zapatos_subtotal").value = z*precio_z;
+            var d = document.getElementById("pantalon_subtotal").value = p*precio_p;
+        }
+
+        function calcularTotal(c,g,z,p){
+            var boton = 2;
+            validacion(boton);
+        }        
+
+        function calcularTotal2(c,g,z,p){
+            var precio_c = parseFloat(document.getElementById("camisa_precio").value);
+            var precio_g = parseFloat(document.getElementById("gorra_precio").value);
+            var precio_z = parseFloat(document.getElementById("zapatos_precio").value);
+            var precio_p = parseFloat(document.getElementById("pantalon_precio").value);
+ 
+            var a = document.getElementById("camisa_subtotal").value = c*precio_c;
+            var b = document.getElementById("gorra_subtotal").value = g*precio_g;
+            var c = document.getElementById("zapatos_subtotal").value = z*precio_z;
+            var d = document.getElementById("pantalon_subtotal").value = p*precio_p;
+
+            document.getElementById("total_compra").value = a+b+c+d;
+            
+        }
+            
+    </script>
+</html>

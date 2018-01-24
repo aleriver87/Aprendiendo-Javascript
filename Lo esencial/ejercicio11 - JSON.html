@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+                Mi primera practica con JSON
+        </title>
+    </head>
+    <body>
+        <p id="estudiantes"></p>
+    </body>
+    <script type="text/javascript">
+        var archivoJSON = '{ "estudiantes" :['+
+        '{"codigo":"A001", "nombre":"Alejandra Ivonne", "nota1":"10", "nota2":"8"},'+
+        '{"codigo":"A002","nombre":"Sofia Rivera","nota1":"8.9","nota2":"7.5"},'+
+        '{"codigo":"A003","nombre":"Jose Bonilla","nota1":9.5,"nota2":"9"}'
+        +']}';
+
+      var miJSON = JSON.parse(archivoJSON);
+
+        function leerJSON(json){
+            var out = "/************ ESTUDIANTES *************************/<br>";
+            var i = 0;
+
+            for(i=0; i<json.estudiantes.length;i++){
+                var notas1 = parseFloat(json.estudiantes[i].nota1);
+                var notas2 = parseFloat(json.estudiantes[i].nota2);
+                var prom = (notas1+notas2)/2;
+
+                out += "C&oacute;digo: "+json.estudiantes[i].codigo + "<br> Nombre: "+json.estudiantes[i].nombre+"<br> Promedio de notas: "+prom + "<br><BR>";
+            }
+            document.getElementById("estudiantes").innerHTML =  out;
+        }
+
+      leerJSON(miJSON);
+    </script>
+</html>

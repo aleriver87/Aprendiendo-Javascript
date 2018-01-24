@@ -1,0 +1,76 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Conversion de tipo de datos</title>
+    </head>
+    <body>
+        <h1>Convirtiendo numeros a cadenas de texto usando String()</h1>
+
+        <p>Crear un HTML que contenga un script donde se conviertan los siguientes valores a cadena de texto usando el método constructor String():</p>
+        <br>
+        <p id="a0"></p>
+        <p id="a1"></p>
+        <p id="a2"></p>
+        <p id="a3"></p>
+        <p id="a4"></p>
+        <p id="a5"></p>
+        <p id="a6"></p>
+        <p id="a7"></p>
+        <p id="a8"></p>
+        
+        <h1>Convirtiendo cadenas de texto a n&uacute;mero con Number()</h1>
+        
+        <p>Crear un HTML que contenga un script donde se conviertan los siguientes valores a valores numéricos usando el método constructor Number():</p>
+        <br>
+        <p id="b0"></p>
+        <p id="b1"></p>
+        <p id="b2"></p>
+        <p id="b3"></p>
+        <p id="b4"></p>
+        <p id="b5"></p>
+        <p id="b6"></p>
+        <p id="b7"></p>
+        
+    </body>
+    <script>
+        var a = 15;
+        var a1 = 3+4;
+        var a2 = true;
+        var a3 = false;
+        var a4 = Date();
+        var a5 = 30;
+        var a6 = 40*8;
+        var a7 = 4 > 5;
+        var a8 = 6 < 9;
+
+        document.getElementById("a0").innerHTML = "N&uacute;mero: " + a + " en texto: " + String(a);
+        document.getElementById("a1").innerHTML = "N&uacute;mero: " + a1 + " en texto: " + String(a1);
+        document.getElementById("a2").innerHTML = "N&uacute;mero: " + a2 + " en texto: " + String(a2);
+        document.getElementById("a3").innerHTML = "N&uacute;mero: " + a3 + " en texto: " + String(a3);
+        document.getElementById("a4").innerHTML = "N&uacute;mero: " + a4 + " en texto: " + String(a4);
+        document.getElementById("a5").innerHTML = "N&uacute;mero: " + a5 + " en texto: " + String(a5);
+        document.getElementById("a6").innerHTML = "N&uacute;mero: " + a6 + " en texto: " + String(a6);
+        document.getElementById("a7").innerHTML = "N&uacute;mero: " + a7 + " en texto: " + String(a7);
+        document.getElementById("a8").innerHTML = "N&uacute;mero: " + a8 + " en texto: " + String(a8);
+        
+        var b = "4.5";
+        var b1 = "42524";
+        var b2 = 45>9;
+        var b3 = 36<6;
+        var b4 = "56.252";
+        var b5 = "1.53";
+        var b6 = 90>100;
+        var b7 = 44<8;
+
+        document.getElementById("b0").innerHTML = "En texto : " + b + " N&uacute;mero: " + Number(b);
+        document.getElementById("b1").innerHTML = "En texto : " + b1 + " N&uacute;mero: " + Number(b1);
+        document.getElementById("b2").innerHTML = "En texto : " + b2 + " N&uacute;mero: " + Number(b2);
+        document.getElementById("b3").innerHTML = "En texto : " + b3 + " N&uacute;mero: " + Number(b3);
+        document.getElementById("b4").innerHTML = "En texto : " + b4 + " N&uacute;mero: " + Number(b4);
+        document.getElementById("b5").innerHTML = "En texto : " + b5 + " N&uacute;mero: " + Number(b5);
+        document.getElementById("b6").innerHTML = "En texto : " + b6 + " N&uacute;mero: " + Number(b6);
+        document.getElementById("b7").innerHTML = "En texto : " + b7 + " N&uacute;mero: " + Number(b7);
+
+    </script>
+</html>

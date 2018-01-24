@@ -1,0 +1,243 @@
+<!DOCTYPE>
+<html>
+    <head>Practicando los arreglos y las fechas</head>
+    <body>
+        <h1>Arrays</h1>
+
+        <p id="a1"></p>
+        <p id="a2"></p>
+        <p id="a3"></p>
+        <p id="a4"></p>
+        <p id="a5"></p>
+        <p id="a6"></p>
+
+        <h1>Con el constructor Array()</h1>
+
+        <p id="a7"></p>
+        <p id="a8"></p>
+        <p id="a9"></p>
+        <p id="a10"></p>
+        <p id="a11"></p>
+        <p id="a12"></p>
+
+        <h1>Arreglos con estructura de corchetes</h1>
+        
+        <p id="a13"></p>
+        <p id="a14"></p>
+        <p id="a15"></p>
+        <p id="a16"></p>
+        <p id="a17"></p>
+        <p id="a18"></p>
+
+        <h1>Arreglos con estructura de corchetes pero con reverse()</h1>
+        
+        <p id="a19"></p>
+        <p id="a20"></p>
+        <p id="a21"></p>
+        <p id="a22"></p>
+        <p id="a23"></p>
+        <p id="a24"></p>
+
+        <h1>Arreglos con estructura de corchetes en desorden</h1>
+
+        <p id="a25"></p>
+        <p id="a26"></p>
+        <p id="a27"></p>
+        <p id="a28"></p>
+        <p id="a29"></p>
+        <p id="a30"></p>
+
+        <h1>Arreglos con estructura de corchetes en orden</h1>
+        
+        <p id="a31"></p>
+        <p id="a32"></p>
+        <p id="a33"></p>
+        <p id="a34"></p>
+        <p id="a35"></p>
+        <p id="a36"></p>
+
+        <h1>Arreglos con estructura de corchetes separadas</h1>
+
+        <p id="a37"></p>
+        <p id="a38"></p>
+        <p id="a39"></p>
+        <p id="a40"></p>
+        <p id="a41"></p>
+        <p id="a42"></p>
+
+        <h1>Arreglos con estructura de corchetes concatenadas concat()</h1>
+        
+        <p id="a43"></p>
+        <p id="a44"></p>
+        <p id="a45"></p>
+
+       <h1>DATES</h1>
+
+        <p id="a46"></p>
+        <p id="a47"></p>
+        <p id="a48"></p>
+        <p id="a49"></p>
+        <p id="a50"></p>
+        <p id="a51"></p> 
+
+        <h1>DATES extrayendo los a&ntilde;os</h1>
+
+        <p id="a52"></p>
+        <p id="a53"></p>
+        <p id="a54"></p>
+        <p id="a55"></p>
+        <p id="a56"></p>
+        <p id="a57"></p> 
+
+        <h1>DATES extrayendo los meses</h1>
+
+        <p id="a58"></p>
+        <p id="a59"></p>
+        <p id="a60"></p>
+        <p id="a61"></p>
+        <p id="a62"></p>
+        <p id="a63"></p> 
+    </body>
+
+    <script>
+        //Declarando los arreglos
+        var animales = ["Zorro","Oso","Gorilla"];
+        var carros = ["Mazda","Nissan","Chevrolet"];
+        var celulares = ["Nokia", "Sony","Samsung"];
+        var equipos = ["Liverpol","Juventys","Milan"];
+        var jugadores = ["Messi","Ronaldo","Robben"];
+        var meses = ["Junio","Noviembre","Octubre"];
+
+        document.getElementById("a1").innerHTML = "animales = [" +animales+ "]";
+        document.getElementById("a2").innerHTML = "carros = [" +carros+ "]";
+        document.getElementById("a3").innerHTML = "celulares = [" +celulares+ "]";
+        document.getElementById("a4").innerHTML = "equipos = [" +equipos+ "]";
+        document.getElementById("a5").innerHTML = "jugadores = [" +jugadores+ "]";
+        document.getElementById("a6").innerHTML = "meses = [" +meses+ "]";
+        
+        //Declarando arrays con el constructor array()
+        var flores = new Array("Rosa","Margarita","Tulipan");
+        var marcas = new Array("Nike","Puma","Adidas");
+        var animals = new Array("Aguila","Canario","Paloma");
+        var animales_marinos = new Array("Tiburon","Ballena","Salmon");
+        var fruta = new Array("Uva","Manzana","Fresa");
+        var colores = new Array("Rojo","Azul","Verde");
+
+        document.getElementById("a7").innerHTML = "flores = (" +flores+ ")";
+        document.getElementById("a8").innerHTML = "marcas = (" +marcas+ ")";
+        document.getElementById("a9").innerHTML = "animals = (" +animals+ ")";
+        document.getElementById("a10").innerHTML = "animales marinos = (" +animales_marinos+ ")";
+        document.getElementById("a11").innerHTML = "fruta = (" +fruta+ ")";
+        document.getElementById("a12").innerHTML = "colores = (" +colores+ ")";
+        
+        //Declarando arrays con corchetes
+        var nombres = ["Maria","Pedro","Juan"];
+        var flotantes = [4.5,3.9,2.9];
+        var materias = ["Matematicas","Sociales","Castellano"];
+        var enfermedades = ["Sida","Cancer","Gastritis"];
+        var generos_musicales = ["Vallenato","Salsa","Pop"];
+        var dias = ["Lunes","Martes","Miercoles"];
+
+        document.getElementById("a13").innerHTML = "nombres = [" +nombres+ "]";
+        document.getElementById("a14").innerHTML = "flotantes = [" +flotantes+ "]";
+        document.getElementById("a15").innerHTML = "materias = [" +materias+ "]";
+        document.getElementById("a16").innerHTML = "enfermedades = [" +enfermedades+ "]";
+        document.getElementById("a17").innerHTML = "generos_musicales = [" +generos_musicales+ "]";
+        document.getElementById("a18").innerHTML = "dias = [" +dias+ "]";
+
+        document.getElementById("a19").innerHTML = "nombres = [" +nombres.reverse()+ "]";
+        document.getElementById("a20").innerHTML = "flotantes = [" +flotantes.reverse()+ "]";
+        document.getElementById("a21").innerHTML = "materias = [" +materias.reverse()+ "]";
+        document.getElementById("a22").innerHTML = "enfermedades = [" +enfermedades.reverse()+ "]";
+        document.getElementById("a23").innerHTML = "generos_musicales = [" +generos_musicales.reverse()+ "]";
+        document.getElementById("a24").innerHTML = "dias = [" +dias.reverse()+ "]";
+
+        //Ordenando alfabeticamente arreglos
+        var numeros1 = [1.74,1.53,1.43];
+        var numeros2 = [24,50,19];
+        var juegos = ["PES 2014", "FIFA 2015", "God of War"];
+        var organos = ["Higado", "Pulmones", "Cerebro"];
+        var redes_sociales = ["Facebook","Twiter","Instagram"];
+        var planetas = ["Venus","Mercurio","Pluton"];
+
+        document.getElementById("a25").innerHTML = "numeros1 = [" +numeros1+ "]";
+        document.getElementById("a26").innerHTML = "numeros2 = [" +numeros2+ "]";
+        document.getElementById("a27").innerHTML = "juegos = [" +juegos+ "]";
+        document.getElementById("a28").innerHTML = "organos = [" +organos+ "]";
+        document.getElementById("a29").innerHTML = "redes_sociales = [" +redes_sociales+ "]";
+        document.getElementById("a30").innerHTML = "planetas = [" +planetas+ "]";
+
+        document.getElementById("a31").innerHTML = "numeros1 = [" +numeros1.sort()+ "]";
+        document.getElementById("a32").innerHTML = "numeros2 = [" +numeros2.sort()+ "]";
+        document.getElementById("a33").innerHTML = "juegos = [" +juegos.sort()+ "]";
+        document.getElementById("a34").innerHTML = "organos = [" +organos.sort()+ "]";
+        document.getElementById("a35").innerHTML = "redes_sociales = [" +redes_sociales.sort()+ "]";
+        document.getElementById("a36").innerHTML = "planetas = [" +planetas.sort()+ "]";
+
+        //Concatenando cadenas
+        var frutas1 = ["Mango","Kiwi","Toronja"];
+        var colores = ["Negro", "Violeta", "Verde"];
+        var animales1 = ["Leopardo", "Vaca", "Cerdo"];
+        var equipos = ["River Plate", "America De Cali", "Gremio"];
+        var planetas2 = ["Jupiter","Urano","Saturno"];
+        var flores2 = ["Hortensia", "Margarita", "Azucena"];
+
+        document.getElementById("a37").innerHTML = "frutas1 = [" +frutas1+ "]";
+        document.getElementById("a38").innerHTML = "colores = [" +colores+ "]";
+        document.getElementById("a39").innerHTML = "animales1 = [" +animales1+ "]";
+        document.getElementById("a40").innerHTML = "equipos = [" +equipos+ "]";
+        document.getElementById("a41").innerHTML = "planetas2 = [" +planetas2+ "]";
+        document.getElementById("a42").innerHTML = "flores2 = [" +flores2+ "]";
+
+        document.getElementById("a43").innerHTML = "frutas1 y colores juntos = [" +frutas1.concat(colores)+ "]";
+        document.getElementById("a44").innerHTML = "animales1 y equipos juntos = [" +animales1.concat(equipos)+ "]";
+        document.getElementById("a45").innerHTML = "planetas2 y flores2 juntos = [" +planetas2.concat(flores2)+ "]";
+
+        //DATES
+        var date1 = new Date();
+        var date2 = new Date(2014,3,25);
+        var date3 = new Date(2015,0,16);
+        var date4 = new Date(1990,10,29);
+        var date5 = new Date(1998,4,22);
+        var date6 = new Date(2002,6,12);
+
+        document.getElementById("a46").innerHTML = date1;
+        document.getElementById("a47").innerHTML = date2;
+        document.getElementById("a48").innerHTML = date3;
+        document.getElementById("a49").innerHTML = date4;
+        document.getElementById("a50").innerHTML = date5;
+        document.getElementById("a51").innerHTML = date6;
+        
+        //Fechas para extraer el anio
+        var date7 = new Date();
+        var date8 = new Date(2016,5,27);
+        var date9 = new Date(2005,2,9);
+        var date10 = new Date(2000,11,12);
+        var date11 = new Date(1998,7,15);
+        var date12 = new Date(1996,4,30);
+
+        document.getElementById("a52").innerHTML = date7+ " El a&ntilde;o es: "+date7.getFullYear();
+        document.getElementById("a53").innerHTML = date8+ " El a&ntilde;o es: "+date8.getFullYear();
+        document.getElementById("a54").innerHTML = date9+ " El a&ntilde;o es: "+date9.getFullYear();
+        document.getElementById("a55").innerHTML = date10+ " El a&ntilde;o es: "+date10.getFullYear();
+        document.getElementById("a56").innerHTML = date11+ " El a&ntilde;o es: "+date11.getFullYear();
+        document.getElementById("a57").innerHTML = date12+ " El a&ntilde;o es: "+date12.getFullYear();
+
+        //Fechas para extraer el mes
+        var date13 = new Date();
+        var date14 = new Date(2018,9,13);
+        var date15 = new Date(2008,5,23);
+        var date16 = new Date(2003,12,25);
+        var date17 = new Date(1998,8,18);
+        var date18 = new Date(1991,6,16);
+
+        document.getElementById("a58").innerHTML = date13+ " El mes es: "+date13.getMonth();
+        document.getElementById("a59").innerHTML = date14+ " El mes es: "+date14.getMonth();
+        document.getElementById("a60").innerHTML = date15+ " El mes es: "+date15.getMonth();
+        document.getElementById("a61").innerHTML = date16+ " El mes es: "+date16.getMonth();
+        document.getElementById("a62").innerHTML = date17+ " El mes es: "+date17.getMonth();
+        document.getElementById("a63").innerHTML = date18+ " El mes es: "+date18.getMonth();
+
+
+    </script>
+</html>

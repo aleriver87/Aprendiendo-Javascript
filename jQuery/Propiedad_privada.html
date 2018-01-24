@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="jquery-3.3.1.js"></script>
+    </head>
+    <body>
+        <script>
+            var objeto = (function(){
+                var propiedadPrivada = "Valor Privado";
+                var propiedadPublica = "Valor Publico";
+
+                var cambiarPrivada = function(){
+                    propiedadPrivada = "Valor muy Privado";
+                };
+
+                var mostrarPrivada = function(){
+                    console.log(propiedadPrivada);
+                    cambiarPrivada();
+                    console.log(propiedadPrivada);
+                };
+
+                return {
+                    propiedadPublica: propiedadPublica,
+                    mostrarPrivada: mostrarPrivada
+                };
+            })();
+
+            console.log(objeto.propiedadPublica);
+            objeto.mostrarPrivada();
+        </script>
+    </body>
+</html>

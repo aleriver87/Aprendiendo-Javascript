@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Solo funciona en el navegador Safari -->
+        <script>
+            function cookies(){
+                var miDiv=document.getElementById("miDiv");
+                document.cookie="clave=1234";//Se crea una cookie
+                miDiv.innerHTML="Cookies:"+document.cookie;//se muestar la cookie en el div
+            }
+        </script>
+    </head>
+    <body>
+        <div id="miDiv"></div>
+        <button onclick="cookies()">cookies</button>
+    </body>
+</html>

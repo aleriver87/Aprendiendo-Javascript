@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio de Objeto Literal</title>
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+    <label for="cjtxt1">ID: </label>
+    <input type="text" id="cjtxt1"/>
+    <br><br>
+    <label for="cjtxt2">Nombre: </label>
+    <input type="text" id="cjtxt2"/>
+    <br><br>
+    <label for="cjtxt3">Edad:</label>
+    <input type="text" id="cjtxt3"/>
+    <br><br>
+    <input type="button" value="Registrar Estudiante" onclick="registrar()"/>
+    <input type="button" value="Mostar ID del Estudiante" onclick="mostrarld()"/>
+    <br><br>
+    <input type="button" value="Mostrar Nombre del Estudiante" onclick="mostrarNombre()"/>
+    <input type="button" value="Mostrar Edad del Estudiante" onclick="mostrarEdad()"/>
+</body>
+    <script>
+        var estudiante = {
+            id:null,
+            nombre:null,
+            edad:null,
+
+            init:function(propiedades){
+                estudiante.propiedades = propiedades;
+            },
+
+            leerPropiedades:function(){
+                return estudiante.propiedades;
+            }
+        };
+
+        function registrar(){
+            var id =  document.getElementById("cjtxt1").value;
+            var nombre = document.getElementById("cjtxt2").value;
+            var edad = document.getElementById("cjtxt3").value;
+
+            var propiedades = {
+                id:id,
+                nombre:nombre,
+                edad:edad
+            }
+
+            estudiante.init(propiedades); //Enviando data del estudiante a guardar
+            limpiarForm(); //funcion para limpiar formulario
+            alert("El alumno ha sido guardado"); //informando al usuario que el estudiante ha sido guardado
+        }
+
+        function limpiarForm(){
+            document.getElementById("cjtxt1").value = "";
+            document.getElementById("cjtxt2").value = "";
+            document.getElementById("cjtxt3").value = "";
+        }
+
+        function mostrarld(){
+            var propiedades = estudiante.leerPropiedades();
+
+            console.log("El ID del alumno es: "+propiedades.id);
+        }
+
+        function mostrarNombre(){
+            var propiedades = estudiante.leerPropiedades();
+
+            console.log("El nombre del alumno es: "+propiedades.nombre);
+        }
+
+        function mostrarEdad(){
+            var propiedades = estudiante.leerPropiedades();
+
+            console.log("La edad del alumno es: "+propiedades.edad);
+        }
+    </script>
+</html>

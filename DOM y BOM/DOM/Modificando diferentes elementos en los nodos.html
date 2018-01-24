@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>
+                Mi primer elemento h1
+        </h1>
+        <h1>
+                Mi segundo elemento h1
+        </h1>
+        <input type="text" name="txt1" value="Mi primer input">
+        <input type="text" name="txt2" value="Mi segundo input">
+
+        <div>Mi primer elemento div</div>
+        <div>Mi segundo elemento div</div>
+
+        <button onclick="numeroDeEncabezados()">Numero de encabezados</button>
+        <button onclick="numeroDeInputs()">Numero de inputs</button>
+        <button onclick="numeroDeDivs()">Numero de Divs</button>
+        <br>
+        <button onclick="cambiarEncabezados()">Cambiar Encabezados</button>
+        <button onclick="cambiarInputs()">Cambiar Inputs</button>
+        <button onclick="cambiarDivs()">Cambiar Divs</button>
+
+        <script>
+            function numeroDeEncabezados(){
+                var listaEncabezados = document.getElementsByTagName("h1");
+                var numeroEncabezados = listaEncabezados.length;
+                alert(numeroEncabezados);
+            }
+
+            function numeroDeInputs(){
+                var listaInputs = document.getElementsByTagName("input");
+                var numeroinputs = listaInputs.length;
+                alert(numeroinputs);
+            }
+
+            function numeroDeDivs(){
+                var listaDivs = document.getElementsByTagName("div");
+                var numerodiv = listaDivs.length;
+                alert(numerodiv);
+            }
+
+            function cambiarEncabezados(){
+                document.getElementsByTagName("h1")[0].style.backgroundColor="pink";
+                document.getElementsByTagName("h1")[0].style.fontSize="x-large";
+                
+                document.getElementsByTagName("h1")[1].style.backgroundColor="red";
+                document.getElementsByTagName("h1")[1].style.fontSize="xx-large";
+            }
+
+            function cambiarInputs(){
+                document.getElementsByTagName("input")[0].style.color = "green";
+                document.getElementsByTagName("input")[0].style.fontFamily = "Verdana";
+
+                document.getElementsByTagName("input")[1].style.color = "cyan";
+                document.getElementsByTagName("input")[1].style.fontFamily = "Georgia";
+            }
+
+            function cambiarDivs(){
+                document.getElementsByTagName("div")[0].style.backgroundColor="yellow";
+                document.getElementsByTagName("div")[0].style.width = "300px";
+                document.getElementsByTagName("div")[0].style.height = "300px";
+                
+                document.getElementsByTagName("div")[1].style.backgroundColor="purple";
+                document.getElementsByTagName("div")[1].style.width = "700px";
+                document.getElementsByTagName("div")[1].style.height = "700px";
+                
+            }
+        </script>
+    </body>
+</html>

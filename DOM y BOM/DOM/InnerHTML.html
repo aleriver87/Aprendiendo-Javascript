@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>InnerHTML</title>
+        <script>
+            function cambiarContenido(){
+                var p=document.getElementById("p1");
+                p.innerHTML="Parrafo cambiado!!!";
+            }
+        </script>
+    </head>
+    <body>
+        <p id="p1">Mi Parrafo!!!</p>
+
+        <button onclick="cambiarContenido()">Cambiar Parrafo</button>
+    </body>
+</html>

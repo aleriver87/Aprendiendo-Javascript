@@ -1,0 +1,56 @@
+<!DOCTYPE>
+<html>
+    <meta charset="UTF8">
+    <head>POO</head>
+    <body>
+        <h1>Clase Producto</h1>
+        <p id="a0"></p>
+        <button onclick="miFuncion()">Mostrar Propiedades</button>
+
+        <h1>Clase Estudiante</h1>
+        <p id="a1"></p>
+        <button onclick="miFuncion1()">Mostrar Promedio</button>
+    </body>
+    <script>
+        function Producto(codigo,nombre,cantidad,precio){
+          //seteando atributos de la clase producto
+            this.codigo = codigo;
+            this.nombre = nombre;
+            this.cantidad = cantidad;
+            this.precio = precio;
+
+          //metodo mostrar
+          this.mostrar = function(){
+             document.getElementById("a0").innerHTML = "codigo :" + this.codigo + "<br>" + "nombre :" + this.nombre + "<br>" +"cantidad :" + this.cantidad + "<br>" +"precio :" + this.precio + "<br>" ;
+          }
+        }
+
+        var producto = new Producto("A0001","Lap&iacute;z",4,0.50);
+
+        function miFuncion(){
+            producto.mostrar();
+        }
+
+        /*******************************************************************************************************/
+
+        function Estudiante(codigo1,nombre1,nota1,nota2){
+            this.codigo1 = codigo1;
+            this.nombre1 = nombre1;
+            this.nota1 = nota1;
+            this.nota2 = nota2;
+
+            //metodo promedio
+            this.promedio = function(){
+                var prom = (this.nota1 + this.nota2)/2;
+                document.getElementById("a1").innerHTML = "El alumno con el c&oacute;digo: "+this.codigo1 +" registrado con el nombre: "+this.nombre1 +" ha obtenido el promedio de: "+prom;
+            }
+        }
+
+        var estudiante = new Estudiante("RT06004","Alejandra Ivonne Rivera Tamayo",10,9);
+
+        function miFuncion1(){
+            estudiante.promedio();
+        }
+
+    </script>
+</html>

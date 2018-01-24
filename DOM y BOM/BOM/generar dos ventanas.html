@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <button onclick="abrirVentana1()">Abrir Ventana 1</button>
+        <button onclick="abrirVentana2()">Abrir Ventana 2</button>
+
+        <script>
+            var ventana1;
+            var ventana2;
+
+            function abrirVentana1(){
+                ventana1 = window.open("","_blank","width=500,height=400");
+                ventana1.focus();
+            }
+
+            function abrirVentana2(){
+                ventana2 = window.open("","_blank","width=500,heigth=400");
+                var html="";
+                html +="<h1>Mi ventana 2!!!<h1>";
+                html +="<p>Contenido HTML reemplazado en la ventana 2!!! </p>";
+                ventana2.document.write(html);
+            }
+        </script>
+    </body>
+</html>

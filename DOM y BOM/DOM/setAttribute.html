@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function cambiarAtributo(){
+                var cajatxt = document.getElementById("nombre");
+                cajatxt.setAttribute("size","60");
+            }
+        </script>
+    </head>
+    <body>
+        Nombre:
+        <input type="text" id="nombre" size="20">
+        <button onclick="cambiarAtributo()">Cambiar Tamano</button>
+    </body>
+</html>

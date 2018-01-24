@@ -1,0 +1,75 @@
+body{
+    background: #000000;
+}
+
+#contenedor{
+    background: #989898;
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    width: 30%;
+    height: 40%;
+    padding: 10px 0px 0px 20px;
+    border-bottom-left-radius: 20px; /*Redondean las puntas del cuadro bottom para las de abajo y top para las puntas de arriba */
+    border-bottom-right-radius: 20px;
+}
+
+#resultado{
+    color: aqua;
+    font-weight: bold; /* hace negrita las letras */
+    text-shadow: 0.1em 0.1em #333; /* le pone sombra a las letras - las medidas 0.1 es para la distancia de la sombra con respecto
+                                        a las letras y el #333 es el color de la sombra */
+    border-radius: 5px;
+    width: 50%;
+    height: 25px;
+    font-size: 15px;
+}
+
+#numero1 {
+    border-radius: 5px;
+    width: 50%;
+    height: 25px;
+    font-size: 15px;
+}
+
+#cabecera{
+    background: #95A5A6;
+    padding: 20px 10px 10px 10px;
+    position: absolute;
+    top: 8%;
+    left: 35%;
+    width: 30%;
+    height: 8%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    text-align: center;
+}
+
+select{
+    background: #333;
+    background-position: 280px center;
+    background-repeat: no-repeat;
+    padding: 10px;
+    font-size: 15px;
+    border: 0px;
+    border-radius: 3px;
+    width: 50%;
+    height: 40px;
+    color: aliceblue;
+}
+
+select:hover{
+    background-color: #438520;
+}
+
+b{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#convertir{
+    border-radius: 5px;
+    width: 80px;
+    border: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}

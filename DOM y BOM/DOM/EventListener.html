@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <button id="boton1">Mostrar Alert</button>
+        <button id="boton2">Mostrar Alert 2</button>
+        <button id="boton3">Mostrar Alert 3</button>
+        <button id="boton4">Mostrar</button>
+
+        <p>En este ejemplo se asocia un evento tipo resize al objeto windows.</p>
+    </body>
+    <script>
+        document.getElementById("boton1").addEventListener("click", function(){
+            alert("EventListener");
+        });
+
+        document.getElementById("boton2").addEventListener("click",mostrarMensaje);
+
+        function mostrarMensaje(argument){
+            alert("EventListener!!!!");
+        }
+
+        var elemento = document.getElementById("boton3");
+        elemento.addEventListener("click",mostrarMensaje1);
+        elemento.addEventListener("click",mostrarMensaje2);
+        elemento.addEventListener("mouseover",mostrarMensaje3);
+
+        function mostrarMensaje1(){
+            alert("EventListener1!!!");
+        }
+
+        function mostrarMensaje2(){
+            alert("EventListener2!!!!");
+        }
+
+        function mostrarMensaje3(){
+            alert("Paso el mouse sobre el boton 3")
+        }
+
+        window.addEventListener("resize",function(){
+            alert("Cambio de dimension la pantalla");
+        });
+
+        var nombre = "Alejandra Rivera";
+        var estatura = "1.59";
+
+        document.getElementById("boton4").addEventListener("click",function(){
+            saludar(nombre,estatura);
+        });
+
+        function saludar(nombre,estatura){
+            alert("Hola "+nombre+" mides "+estatura+" Mts");
+        }
+
+    </script>
+</html>

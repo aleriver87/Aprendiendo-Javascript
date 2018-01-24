@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="Confirmar()">
+        <h1>Respuesta</h1>
+        <p id="respuesta"></p>
+    </body>
+    <script>
+        function Confirmar(){
+            var opcion = "";
+            if(confirm("Acepta el procedimiento?")==true){
+                opcion = "Usted acept&oacute; el procedimiento. Gracias";
+            } else {
+                opcion = "Usted cancel&oacute; el procedimiento, no ser&aacute; tenido en cuenta en el proceso";
+            }
+            
+            document.getElementById("respuesta").innerHTML = opcion;
+        }
+    </script>
+</html>

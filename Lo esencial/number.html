@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>Number practice</head>
+
+    <body>
+        <h1>Number</h1>
+
+        <p id="n1"></p>
+        <p id="n2"></p>
+
+        <h1>Number Propiedades</h1>
+
+        <p id="n3"></p>
+        <p id="n4"></p>
+        <p id="n5"></p>
+        <p id="n6"></p>
+        <p id="n7"></p>
+        <p id="n8"></p>
+        <p id="n9"></p>
+
+        <h1>Number Metodos</h1>
+
+        <p id="n10"></p>
+        <p id="n11"></p>
+        <p id="n12"></p>
+        <p id="n13"></p>
+        <p id="n14"></p>
+
+    </body>
+
+    <script>
+        //Definicion de numbers
+
+        var numero1 = 2500; //numero sin decimales
+        var numero2 = 34.290; //numero con decimales
+
+        document.getElementById("n1").innerHTML = numero1;
+        document.getElementById("n2").innerHTML = numero2;
+
+        //Propiedades de number
+
+        var numero3 = 23434;
+        document.getElementById("n3").innerHTML = numero3.constructor; //La propiedad constructor retorna la funcion nativa que crea un numero
+
+        document.getElementById("n4").innerHTML = Number.MAX_VALUE; //La propiedad MAX_VALUE retorna el numero maximo que se puede usar en JavaScript
+
+        document.getElementById("n5").innerHTML = Number.MIN_VALUE; //La propiedad MIN_VALUE retorna el valor minimo que se puede usar en JavaScript
+
+        document.getElementById("n6").innerHTML = Number.NEGATIVE_INFINITY; //La propiedad NEGATIVE_INFINITY retorna un negativo infinito
+
+        document.getElementById("n7").innerHTML = Number.NaN; //La propiedad NaN retorna un numero ilegal
+
+        document.getElementById("n8").innerHTML = Number.POSITIVE_INFINITY; //La propiedad POSITIVE_INFINITY retorna un positivo
+
+        Number.prototype.metodoNumerico = function(){
+            //La propiedad prototype permite crear un nuevo metodo para manipular numeros
+
+            return this*4/2;
+        }
+
+        var numero4 = 25;
+        document.getElementById("n9").innerHTML = numero4.metodoNumerico();
+
+        //Metodos de number
+
+        var numero5 = 26.57;
+        document.getElementById("n10").innerHTML = numero5.toExponential(); //Convierte un numero a expresion exponencial
+
+        var numero6 = 14.7854243;
+        document.getElementById("n11").innerHTML = numero6.toFixed(3); //Recorta el numero de digitos de un numero y lo convierte en string
+
+        var numero7 = 23.5567;
+        document.getElementById("n12").innerHTML = numero7.toPrecision(2); //Da formato a un numero para una longitud de numeros
+
+        var numero8 = 3.1416;
+        document.getElementById("n13").innerHTML = numero8.toString(); //Convierte un numero en una cadena
+
+        var numero10 = 5000;
+        document.getElementById("n14").innerHTML = numero10.valueOf(); //Devuelve el valor simple de un numero
+
+    </script>
+</html>

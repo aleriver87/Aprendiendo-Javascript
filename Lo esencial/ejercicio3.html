@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        Ejercicio con funciones y objetos
+    </head>
+    <body>
+        <h1>Practicando los objetos</h1>
+
+        <h1>Computador 1</h1>
+
+        <p id="codigo1"></p>
+        <p id="ram1"></p>
+        <p id="disco1"></p>
+
+        <h1>Computador 2</h1>
+
+        <p id="codigo2"></p>
+        <p id="ram2"></p>
+        <p id="disco2"></p>
+
+        <h1>Computador 3</h1>
+
+        <p id="codigo3"></p>
+        <p id="ram3"></p>
+        <p id="disco3"></p>
+    </body>
+
+    <script>
+        //Primera forma de crear un objeto
+        var Computador1 = {
+            codigo: "AA001",
+            ram:"2MB",
+            disco:"1TB"
+        }
+
+        //Segunda forma de crear un objeto
+        var Computador2 = new Object();
+        Computador2.codigo = "AA002";
+        Computador2.ram = "8MB";
+        Computador2.disco = "2TB";
+
+        //Tercera forma de crear un objeto
+        function Computador3 (codigo,ram,disco){
+            this.codigo = codigo;
+            this.ram = ram;
+            this.disco = disco;
+        }
+
+        var Computador3 = new Computador3("AA003","16MB","3TB");
+
+        document.getElementById("codigo1").innerHTML = Computador1.codigo;
+        document.getElementById("ram1").innerHTML = Computador1.ram;
+        document.getElementById("disco1").innerHTML = Computador1.disco;
+
+        document.getElementById("codigo2").innerHTML = Computador2.codigo;
+        document.getElementById("ram2").innerHTML = Computador2.ram;
+        document.getElementById("disco2").innerHTML = Computador2.disco;
+
+        document.getElementById("codigo3").innerHTML = Computador3.codigo;
+        document.getElementById("ram3").innerHTML = Computador3.ram;
+        document.getElementById("disco3").innerHTML = Computador3.disco;
+
+        function suma(numero1, numero2){
+            return numero1 + numero2;
+        }
+
+        alert(suma(10,2));
+    </script>
+</html>

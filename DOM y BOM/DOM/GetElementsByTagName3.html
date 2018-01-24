@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function cambiarDivs(){
+                var divs = document.getElementsByTagName("div");
+
+                for(var i=0; i<divs.length; i++){
+                    divs[i].style.color="orange";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div> Mi div 1</div>
+        <div> Mi div 2</div>
+        <div> Mi div 3</div>
+
+        <button onclick="cambiarDivs()">Cambiar Divs!!!</button>
+    </body>
+</html>

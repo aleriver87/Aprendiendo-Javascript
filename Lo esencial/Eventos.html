@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF=8">
+        <title>Pasando texto a may&uacute;sculas</title>
+        <script type="text/javascript">
+            function letras(){
+                var x=document.getElementById("mayusculas");
+                x.value = x.value.toUpperCase();
+            }
+
+            function restablecer(){
+                alert("Se ha restablecido el texto");
+            }
+
+            function entrada(obj){
+                obj.innerHTML = "NextUniversity";
+            }
+
+            function seleccion(){
+                alert("Usted ha seleccionado el Texto");
+            }
+
+            function MouseDown(){
+                document.getElementById("texto").style.color= "green";
+            }
+
+            function MouseUp(){
+                document.getElementById("texto").style.color = "pink";
+            }
+        </script>    
+    </head>
+    <body>
+        <h1>onchange</h1>
+        Escriba su direcci&oacute;n:
+        <input type="text" id="mayusculas" onchange="letras()">
+        <p> Las letras se cambian a may&uacute;sculas cuando termine de escribir en la caja de Texto</p>
+        
+        <h1>onreset</h1>
+        <p>Restablecer Texto</p>
+        <form onreset="restablecer()">Universidad: 
+            <input type="text">
+            <br>
+            <input type="reset">
+        </form>
+        <h1>OnMouseOver</h1>
+        <div onmouseover="entrada(this)" style="background-color:#F0F313; width:170px; height:20px; padding:40px">
+            <p>Pasar el Mouse por aqu&iacute;</p>
+        </div>
+        <h1>OnSelect</h1>
+        <p>Seleccione el texto: </p>
+        <textarea onselect="seleccion()">NextUniversity</textarea>
+    
+        <h1>OnMouseDown - OnMouseUp</h1>
+        <p id="texto" onmousedown="MouseDown()" onmouseup="MouseUp()">NextUniversity</p>        
+    </body>
+</html>

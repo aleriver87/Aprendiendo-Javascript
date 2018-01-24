@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practicando Formularios</title>
+        <link href="css/style2.css" rel="stylesheet" type="text/css">        
+        <script>
+            function enviar(){
+                alert("El formulario fue enviado correctamente");
+            }
+            function cambiaColor(elemento){
+                elemento.style.background = "#CCCCCC";
+            }
+            function restableceColor(elemento){
+                elemento.style.background = "#FFFFFF";
+            }
+            function saludo(){
+                alert("Bienvenido a nuestro formulario");
+            }
+        </script>
+    </head>
+    <body onload="saludo()">
+        <div id="div">
+            <table>
+                <form onreset>
+                    <tr>
+                        <th>C&oacute;digo: </th>
+                        <th><input type="text" id="codigo" onfocus="cambiaColor(this)" onblur="restableceColor(this)"></th>
+                    </tr>
+                    <tr>
+                        <th>Nombres:</th>
+                        <th><input type="text" id="nombres" onfocus="cambiaColor(this)" onblur="restableceColor(this)"></th>
+                    </tr>
+                    <tr>
+                        <th>Apellidos:</th>
+                        <th><input type="text" id="apellidos" onfocus="cambiaColor(this)" onblur="restableceColor(this)"></th>
+                    </tr>
+                    <tr>
+                        <th>Identificaci&oacute;n:</th>
+                        <th><input type="text" id="identificacion" onfocus="cambiaColor(this)" onblur="restableceColor(this)"></th>
+                    </tr>
+                    <tr>
+                        <th>G&eacute;nero:</th>
+                        <th>
+                            <select id="genero" name="genero">
+                                <option name="" value="">Seleccione una opci&oacute;n</option>
+                                <option value="0">Masculino</option>
+                                <option value="1">Femenino</option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Fecha de nacimiento:</th>
+                        <th><input type="date" id="nacimiento" onfocus="cambiaColor(this)" onblur="restableceColor(this)"></th>
+                    </tr>
+                    <tr>
+                        <th>E-mail:</th>
+                        <th><input type="text" id="email" onfocus="cambiaColor(this)" onblur="restableceColor(this)"></th>
+                    </tr>
+                    <tr>
+                        <th>Tel&eacute;fono:</th>
+                        <th><input type="text" id="telefono" onfocus="cambiaColor(this)" onblur="restableceColor(this)"></th>
+                    </tr>                    
+                    <tr>
+                        <th>Direcci&oacute;n:</th>
+                        <th><input type="text" id="direccion" onfocus="cambiaColor(this)" onblur="restableceColor(this)"></th>
+                    </tr>
+                    <tr>
+                        <th>Observaciones:</th>
+                        <th><textarea id="observaciones" onfocus="cambiaColor(this)" onblur="restableceColor(this)">Observaciones</textarea></th>
+                    </tr>
+                    <tr>
+                        <th><input type="reset"></th>
+                        <th><input type="submit" onclick="enviar()"></th>
+                    </tr>
+                </form>
+            </table>
+        </div>
+    </body>
+</html>

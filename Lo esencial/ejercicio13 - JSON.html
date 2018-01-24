@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Mi 3er Ejercicio de JSON</title>
+    </head>
+    <body>
+        <h1>Practicando con un nuevo JSON de ventas</h1>
+
+        <button onclick="MostrarVentas()">Mostrar Ventas</button>
+        <button onclick="MostrarTotal()">Mostrar Total de Ventas</button>
+
+        <p id="ventas"></p>
+        <p id="total"></p>
+    </body>
+    <script>
+        var miJson = '{"ventas": ['+
+        '{"producto":"lapiz","precio":"0.50"},'+
+        '{"producto":"camisa","precio":"10"},'+
+        '{"producto":"pantalon","precio":"25.50"},'+
+        '{"producto":"audifonos","precio":"3.50"}' +']}';
+
+        var mi3erJSON = JSON.parse(miJson);
+
+        function leerJSON(json){
+            var out = "/******************** LISTADO DE VENTAS *************************/";
+            var i = 0;
+
+            for(i=0;i<json.ventas.length;i++){
+                out += "<br>Producto: "+json.ventas[i].producto+"     $"+json.ventas[i].precio;
+            }
+            document.getElementById("ventas").innerHTML = out;
+        }
+
+        function totalJson(json){
+            var out = "/******************** LISTADO DE VENTAS *************************/";
+            var i = 0;
+            var total = 0;
+
+            for(i=0;i<json.ventas.length;i++){
+                out += "<br>Producto: "+json.ventas[i].producto+"     $"+json.ventas[i].precio;
+                total += parseFloat(json.ventas[i].precio);
+            }
+            document.getElementById("ventas").innerHTML = out;
+            document.getElementById("total").innerHTML = "-------------------------------------------------------<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$"+total;
+        }
+
+        function MostrarVentas(){
+            leerJSON(mi3erJSON);
+        }
+
+        function MostrarTotal(){
+            totalJson(mi3erJSON);
+        }
+    </script>
+</html>

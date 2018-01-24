@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Protocol-Pathname-Assign</title>
+        <script>
+            function protocol(){
+                var propiedad=location.protocol;
+                alert("El protocolo de la URL es: "+propiedad);
+            } 
+
+            function pathname(){
+                var propiedad=location.pathname;
+                alert("La ruta del sitio actual es: "+propiedad);
+            }
+
+            function assign(){
+                var propiedad=location.assign("http://www.google.com");
+                alert("Se redireccionara a la URL de Google");
+            }
+
+            function href(){
+                var propiedad=location.href;
+                alert("La URL actual es: "+propiedad);
+            }
+
+            function hostname(){
+                var propiedad=location.hostname;
+                alert("El nombre del servidor actual es: "+propiedad);
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value="Propiedad protocol" onclick="protocol()">
+        <input type="button" value="Propiedad pathname" onclick="pathname()">
+        <input type="button" value="Propiedad assing" onclick="assign()">
+        <input type="button" value="Propiedad href" onclick="href()">
+        <input type="button" value="Propiedad hostname" onclick="hostname()">
+        
+    </body>
+</html>

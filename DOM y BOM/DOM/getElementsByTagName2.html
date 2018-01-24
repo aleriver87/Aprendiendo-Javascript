@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>getElementsByTagName</title>
+    </head>
+    <body>
+        <table>
+            <form onreset>
+                <tr>
+                    <th><label>Nombres:</label></th>
+                    <th><input type="text"/></th>
+                </tr>
+                <tr>
+                    <th><label>Apellidos:</label></th>
+                    <th><input type="text"/></th>
+                </tr>
+                <tr>
+                    <th><label>E-mail:</label></th>
+                    <th><input type="text"/></th>
+                </tr>
+                <tr>
+                    <th><label>Comentario:</label></th>
+                    <th><textarea>Comentarios</textarea></th>
+                </tr>
+                <tr>
+                    <th><input type="reset"></th>
+                    <th><input type="submit"></th>
+                </tr>
+            </form>
+        </table>
+    </body>
+    <script>
+        var cantidad_label = document.getElementsByTagName("label");
+        var cantidad_input = document.getElementsByTagName("input");
+
+        alert("La cantidad de label es:"+ cantidad_label.length);
+        alert("La cantidad de input es: "+cantidad_input.length);
+    </script>
+</html>

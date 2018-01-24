@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <button onclick="abrirVentana1()">Abrir Ventana1</button>
+        <button onclick="abrirVentana2()">Abrir Ventana2</button>
+        <button onclick="abrirVentana3()">Abrir Ventana3</button>
+        <button onclick="abrirVentana4()">Abrir Ventana4</button>
+        <br>
+        <button onclick="cerrarVentana1()">Cerrar Ventana1</button>
+        <button onclick="cerrarVentana2()">Cerrar Ventana2</button>
+        <button onclick="cerrarVentana3()">Cerrar Ventana3</button>
+        <button onclick="cerrarVentana4()">Cerrar Ventana4</button>
+    </body>
+    <script>
+        var ventana1;
+        var ventana2;
+        var ventana3;
+        var ventana4;
+
+        function abrirVentana1(){
+            ventana1 = window.open("http://www.openenglish.com/","ventana1","location=1");
+            ventana1.focus();
+        }
+
+        
+        function abrirVentana2(){
+            ventana2 = window.open("http://www.nextuniversity.com/es/","ventana2","location=1");
+            ventana2.focus();
+        }
+
+        
+        function abrirVentana3(){
+            ventana3 = window.open("http://www.google.com/","ventana3","location=1");
+            ventana3.focus();
+        }
+
+        
+        function abrirVentana4(){
+            ventana4 = window.open("http://www.youtube.com/","ventana4","location=1");
+            ventana4.focus();
+        }
+
+        function cerrarVentana1(){
+            ventana1.close();
+        }
+
+        function cerrarVentana2(){
+            ventana2.close();
+        }
+
+        function cerrarVentana3(){
+            ventana3.close();
+        }
+
+        function cerrarVentana4(){
+            ventana4.close();
+        }
+    </script>
+</html>

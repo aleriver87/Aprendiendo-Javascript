@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body onload="preguntando()">
+        <form>
+        <H1>Suma de N&uacute;meros</H1>
+        <table>
+            <tr>
+                <td>
+                    <input type="text" id="num1">
+                </td>
+                <td>
+                        <input type="button" onclick="suma()" value="Sumar">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="num2">
+                </td>
+                <td>
+                    <input type="reset">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="resultado"></p>
+                </td>
+            </tr>
+        </table>
+        </form>
+    </body>
+    <script>
+        function suma(){
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            var suma = num1 + num2;
+
+            alert("El resultado de la suma es: "+suma);
+        }
+
+        function preguntando(){
+            if(confirm("Desea sumar n&uacute;meros?")==true){
+                var num1 = prompt("Ingrese el primer n&uacute;mero a sumar:");
+                var num11 = parseFloat(num1);
+                var num2 = prompt("Ingrese el segundo  n&uacute;mero a sumar:");
+                var num22 = parseFloat(num2);
+
+                var suma = num11 + num22;
+
+                document.getElementById("resultado").innerHTML = suma;
+
+            } else {
+                document.getElementById("resultado").innerHTML = "Usted ha cancelado el proceso de suma";
+            }
+        }
+    </script>
+</html>

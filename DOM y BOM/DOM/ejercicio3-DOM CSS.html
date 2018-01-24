@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function CambiarInput(){
+                document.getElementById("miInput").style.backgroundColor = "blue";
+                document.getElementById("miInput").style.color="yellow";
+                document.getElementById("miInput").style.width="200px";
+                document.getElementById("miInput").style.height="80px";
+
+            }
+
+            function CambiarDiv(){
+                document.getElementById("miDiv").style.backgroundColor = "orange";
+                document.getElementById("miDiv").style.color="white";
+                document.getElementById("miDiv").style.width="800px";
+                document.getElementById("miDiv").style.height="800px";
+                document.getElementById("miDiv").style.fontSize="x-large";
+            }
+
+            function CambiarParrafo(){
+                document.getElementById("miParrafo").style.backgroundColor="green";
+                document.getElementById("miParrafo").style.color="red";
+                document.getElementById("miParrafo").style.fontSize="x-large";
+            }
+        </script>
+    </head>
+    <body>
+        <input id="miInput"/>
+        <div id="miDiv">
+            Mi div!!!!
+        </div>
+        <p id="miParrafo">Pienso , luego existo...</p>
+        <button onclick="CambiarInput()">Cambiar Input</button>
+        <button onclick="CambiarDiv()">Cambiar Div</button>
+        <button onclick="CambiarParrafo()">Cambiar Parrafo</button>
+    </body>
+</html>

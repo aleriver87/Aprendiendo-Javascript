@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>Practicando las funciones</head>
+    <body>
+        <h1>Funciones</h1>
+
+        <p id="resultado1"></p>
+        <p id="resultado2"></p>
+        <p id="resultado3"></p>
+
+    </body>
+    <script>
+        function division(p,q){
+            return p/q;
+        }
+
+        var resultado1 = division(10,2);
+
+        document.getElementById("resultado1").innerHTML = resultado1;
+
+        //Llamado de una funcion asi misma
+
+        (function(){
+            alert("Esta funcion se invoca a si mima");
+            document.getElementById("resultado2").innerHTML = "Esta funcion se llama a ella solita"
+        }) ();
+
+        //Asignacion de una funcion a una variable
+        var z = function(x,y) {
+            return x-y
+        };
+
+        var w = z(15,6);
+
+        document.getElementById("resultado3").innerHTML = w;
+    </script>
+</html>

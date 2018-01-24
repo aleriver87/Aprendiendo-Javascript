@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            var parrafo1 = document.createElement('p');
+            var texto1 = document.createTextNode("Este es el parrafo 1");
+            parrafo1.appendChild(texto1);
+            document.body.appendChild(parrafo1);
+
+            var parrafo2 = document.createElement('p');
+            var enlace2 = document.createElement('a');
+            var texto2 = document.createTextNode("Este es el parrafo 2");
+            var texto22 = document.createTextNode("esto va en a");
+            enlace2.appendChild(texto22);
+            parrafo2.appendChild(texto2);
+            parrafo2.appendChild(enlace2);
+            document.body.prepend(parrafo2);
+
+            var parrafo3 = document.createElement('p');
+            var texto3 = document.createTextNode("Este es el tercer parrafo");
+            parrafo3.appendChild(texto3);
+            document.body.appendChild(parrafo3);
+
+            document.body.removeChild(parrafo2);
+        </script>
+    </body>
+</html>
