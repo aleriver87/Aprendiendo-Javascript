@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 3</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            //Creando vector
+            var animales = ["Oso","Tigre","Aguila"];
+
+            //Creando objeto1
+            var vehiculo1 = {
+                placa: "WER-454",
+                marca: "Toyoa",
+                modelo: "2006"
+            };
+
+            //Creando objeto 2
+            var vehiculo2 = {
+                placa:"HSJ-098",
+                marca: "Mazda",
+                modelo:"2009"
+            };
+
+            $("#boton1").click(function(){
+                var elementos = "Elementos del arreglo Animales: <br>";
+                var parrafo1 = $("#p1");
+
+                $.each(animales, function(indice, valor){
+                    elementos += valor + "<br>";
+                });
+
+                $(parrafo1).html(elementos);
+            });
+            
+            $("#boton2").click(function(){
+                var elementos = "Elementos del objeto Vehiculo1:<br>";
+                var parrafo2 = $("#p2");
+
+                $.each(vehiculo1, function(indice, valor){
+                    elementos += indice + " : " + valor + "<br>";
+                });
+
+                parrafo2.html(elementos);
+            });
+
+            $("#boton3").click(function(){
+                var elementos = "";
+                var parrafo3 =  $("#p3");
+
+                if($.inArray('Tigre', animales) !== -1){
+                    elementos = "El tigre existe en el arreglo";
+                } else {
+                    elementos = "El tigre no forma parte del arreglo";
+                }
+
+                parrafo3.html(elementos);
+            });
+
+            $("#boton4").click(function(){
+                var elementos = "Propiedades cambiadas entre objetos: <br>";
+                var parrafo4 = $("#p4");
+
+                var objeto_nuevo = $.extend(vehiculo1,vehiculo2);
+
+                $.each(objeto_nuevo, function(indice, valor){
+                    elementos += indice + " : " + valor + "<br>";
+                });
+
+                parrafo4.html(elementos);
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="p1">Arreglo Animales</p>
+    <p id="p2">Objeto vehiculo 1</p>
+    <p id="p3">Esta el tigre?</p>
+    <p id="p4">Nuevo objeto vehiculo</p>
+    <button id="boton1">Mostrar Arreglo Animales</button>
+    <button id="boton2">Mostrar Objeto Vehiculo</button>
+    <br><br>
+    <button id="boton3">Existe tigre?</button>
+    <button id="boton4">Cambiar propiedades</button>
+</body>
+</html>
