@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>Codigo:</td>
+                <td><input type="text" id="codigo"/></td>
+            </tr>
+            <tr>
+                <td>Nombre:</td>
+                <td><input type="text" id="nombre"/></td>
+            </tr>
+            <tr>
+                <td>Direccion:</td>
+                <td><input type="text" id="direccion"/></td>
+            </tr>
+            <tr>
+                <td>Telefono:</td>
+                <td><input type="text" id="telefono"/></td>
+            </tr>
+            <tr>
+                <td>E-mail:</td>
+                <td><input type="text" id="email"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Registrar Empleado" id="registrar"/></td>
+                <td><input type="button" value="Mostrar Empleado" id="mostrar"/></td>
+            </tr>
+        </table>
+        <br><br>
+        <h3 id="info"></h3>
+        <table id="tabla_empleado" border="1"></table>
+    </body>
+    <script>
+        document.getElementById("registrar").addEventListener("click",registrarEmpleado);
+        document.getElementById("mostrar").addEventListener("click",mostrarEmpleado);
+
+        var empleado = {
+            codigo:null,
+            nombre:null,
+            direccion:null,
+            telefono:null,
+            email:null,
+
+            init: function(propiedades){
+                empleado.propiedades = propiedades;
+            },
+
+            leerEmpleado: function(){
+                return empleado.propiedades;
+            }
+        };
+
+        function registrarEmpleado(){
+            var codigo = document.getElementById("codigo").value;
+            var nombre = document.getElementById("nombre").value;
+            var direccion = document.getElementById("direccion").value;
+            var telefono = document.getElementById("telefono").value;
+            var email = document.getElementById("email").value;
+
+            if(codigo.trim() != ""){
+                if(nombre.trim() != ""){
+                    if(direccion.trim() != ""){
+                        if(telefono.trim() != ""){
+                            if(email.trim() != ""){
+                                var propiedades = {
+                                    codigo:codigo,
+                                    nombre:nombre,
+                                    direccion: direccion,
+                                    telefono: telefono,
+                                    email: email
+                                }
+
+                                empleado.init(propiedades); //enviando la data del empleado a registrar a la funcion init
+                                limpiarForm(); //llamando a la funcion que limpia los campos del formulario
+                                alert("El empleado ha sido registrado sin problemas");
+                            } else {
+                                alert("Falta ingresar el E-mail del empleado");
+                                document.getElementById("email").focus();
+                            }
+                        } else {
+                            alert("Falta ingresar el telefono del empleado");
+                            document.getElementById("telefono").focus();
+                        }
+                    } else {
+                        alert("Falta ingresar la direccion del empleado");
+                        document.getElementById("direccion").focus();
+                    }
+                } else {
+                    alert("Falta ingresar el nombre del empleado");
+                    document.getElementById("nombre").focus();
+                }
+            } else {
+                alert("Falta ingresar el codigo del empleado");
+                document.getElementById("codigo").focus();
+            }
+        }
+
+        function limpiarForm(){
+            document.getElementById("codigo").value = "";
+            document.getElementById("nombre").value = "";
+            document.getElementById("direccion").value = "";
+            document.getElementById("telefono").value = "";
+            document.getElementById("email").value = "";
+        }
+
+        function mostrarEmpleado(){
+            var propiedades = empleado.leerEmpleado();
+            document.getElementById("info").innerHTML = "Informacion del empleado";
+            console.log(propiedades.codigo);
+            console.log(propiedades.nombre);
+            console.log(propiedades.direccion);
+            console.log(propiedades.telefono);
+            console.log(propiedades.email);
+
+            var titulos = ["Codigo: ","Nombre: ", "Direccion: ", "Telefono: ", "E-mail: "];
+            var variables = [propiedades.codigo, propiedades.nombre, propiedades.direccion, propiedades.telefono, propiedades.email];
+            
+            for(var i=0; i <=4; i++){
+                var fila = document.getElementById("tabla_empleado").insertRow(i);
+                fila.insertCell(0).innerHTML = titulos[i];
+                fila.insertCell(1).innerHTML = variables[i];
+            }            
+        }
+    </script>
+</html>
