@@ -1,0 +1,18 @@
+body{
+    background: #ffFbf1;
+}
+
+ul{
+    margin-left: 20px;
+    color: #A1CCA5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li.active{
+    background: #F9B966;
+    color: white;
+    width: 10%;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
