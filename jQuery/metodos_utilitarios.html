@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Metodos Utilitarios de JQuery</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                var parrafo1 = $("p").get(0);
+                $(parrafo1).html("<b>Mi primer parrafo modificado!!!!!</b>");
+
+                var parrafo2 = $("p").get(1);
+                $(parrafo2).html("<b>Mi segundo parrafo modificado!!!!</b>");
+            });
+
+            $("#boton2").click(function(){
+                $("p").css("backgroundColor","green");
+                $("#miDiv").css("backgroundColor","red");
+            });
+
+            $("#boton3").click(function(){
+                $("#miDiv").width("200px");
+                $("#miDiv").height("200px");
+            });
+
+            $("#boton4").click(function(){
+                var p1 = $("p");
+                p1.addClass("parra");
+            });
+
+            $("#boton5").click(function(){
+                var p1 = $("p");
+                p1.removeClass("parra");
+            });
+        });
+    </script>
+    <style>
+        .parra{
+            font-size: large;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="miDiv">
+        <p id="p1">Mi primer parrafo</p>
+        <p id="p2">Mi segundo parrafo</p>
+    </div>
+
+    <button id="boton1">Modificar textos</button>
+    <button id="boton2">Modificar css</button>
+    <button id="boton3">Modificar dimenion</button>
+    <button id="boton4">Agregar mi estilo</button>
+    <button id="boton5">Remover mi estilo</button>
+</body>
+</html>
