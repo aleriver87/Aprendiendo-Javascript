@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 1</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#dbclick").dblclick(function(){
+                alert("Dio doble click sobre el párrafo.");
+            });
+
+            $("#p_mouseleave").mouseleave(function(){
+                alert("Porque te alejas de mi :( Todos me abandonan");
+            });
+
+            $("#cuadro").focus(function(){
+                $(this).css("background-color","black");
+                $(this).css("color","white");
+            });
+
+            $("#cuadro").blur(function(){
+                $(this).css("background-color","white");
+                $(this).css("color","black");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>Dar doble click sobre el párrafo:</h3>
+    <p id="dbclick">Soy el párrafo</p>
+
+    <h3>Acerca y aleja el mouse del párrafo:</h3>
+    <p id="p_mouseleave">Acercate y aléjate</p>
+
+    <h3>Agrega data en el cuadro de texto siguiente:</h3>
+    <input type="text" id="cuadro"/>
+</body>
+</html>
