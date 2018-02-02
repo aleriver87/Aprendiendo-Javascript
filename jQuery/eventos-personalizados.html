@@ -12,10 +12,10 @@
         $(document).ready(function(){
             $(document).on("Frutas", {
                     fruta: "Fresas"
-                }, function(event,arg1,arg2){
-                    $("#mensaje").html(event.data.fruta + "<br>" + arg1 + "<br>" + arg2);
+                }, function(event,arg1,arg2,arg3){
+                    $("#mensaje").html(event.data.fruta + "<br>" + arg1 + "<br>" + arg2 + "<br>" + arg3);
                 });
-            $(document).trigger("Frutas",["Manzana","Pera"]);  
+            $(document).trigger("Frutas",["Manzana","Pera","Piña"]);  
         });
     </script>
 </body>

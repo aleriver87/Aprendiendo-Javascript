@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ejemplo</title>
+<script src="jquery-1.11.1.js"></script>
+
+ <script>
+$(document).ready(function(){
+
+       var clientes =[];
+       
+
+        $("#boton1").click(function() {
+
+         registarCliente();
+         $(document).trigger( "descuento");
+        
+
+
+        });
+
+
+         $( document ).on( "descuento", function( event, param1, param2 ) {
+
+         	var totalCompra = parseFloat($("#cjtxt3").val());
+            var nombre = $("#cjtxt2").val();
+         
+
+         	if (totalCompra>50000) {
+              alert("El cliente "+nombre+" ganó bono de 10000 pesos!!")
+         	}
+
+         	limpiarCampos()
+
+         	 listarClientes();
+
+       
+         });
+
+
+
+        function registarCliente() {
+
+
+        	var id = $("#cjtxt1").val();
+            var nombre = $("#cjtxt2").val();
+            var totalCompra = parseFloat($("#cjtxt3").val());
+         
+            var cliente = {
+   				id: id,
+                nombre: nombre,
+                totalCompra: totalCompra
+            }
+
+
+           clientes.push(cliente)
+
+         
+
+            alert("Cliente Registrado!!");
+       
+        }
+
+
+
+
+        function listarClientes() {
+
+            var lista="<h1>Clientes</h1><br>";
+        	var id = $("#cjtxt1").val();
+            var nombre = $("#cjtxt2").val();
+            var totalCompra = parseFloat($("#cjtxt3").val());
+         
+            for (var i = 0; i < clientes.length; i++) {
+
+            	console.log(clientes[i].nombre);
+            	lista+="<b>Id:</b>"+clientes[i].id+"-"+"<b>Nombre:</b>"+clientes[i].nombre+"-"+"<b>Total Compra:</b>"+clientes[i].totalCompra+"<br>";
+            }
+
+            $("#clientes").html(lista);
+
+       
+        }
+
+
+          function limpiarCampos() {
+
+            $("#cjtxt1").val("");
+            $("#cjtxt2").val("");
+            $("#cjtxt3").val("");
+          
+
+        }
+
+
+  });
+    </script>
+
+
+</head>
+<body>
+     <h1>Datos De Cliente</h1>
+
+
+    <label for="cjtxt1">Id</label>
+    <input type="text" id="cjtxt1"/>
+    <br>
+    <br>
+
+
+    <label for="cjtxt2">Nombre</label>
+    <input type="text" id="cjtxt2"/>
+    <br>
+    <br>
+
+
+    <label for="cjtxt3">Total Compra</label>
+    <input type="text" id="cjtxt3"/>
+    <br>
+    <br>
+
+
+
+    <input id="boton1" type="button" value="Registrar Cliente">
+
+
+    <p id="clientes"></p>
+
+ 
+    
+   
+</body>
+</html>

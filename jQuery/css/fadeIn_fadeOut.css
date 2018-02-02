@@ -1,0 +1,21 @@
+div{
+    background: #DA34DA;
+    position: absolute;
+    width: 500px;
+    height: 70px;
+    padding-top: 25px;
+    margin: 100px 0px 0px 40%;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+label{
+    display: none;
+}
+
+button{
+    background: #C5C6;
+    position: absolute;
+    margin: 200px 0px 0px 50%;
+}

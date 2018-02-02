@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Eventos personalizados</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(document).on("marcas",{
+            marcas: "Ford"
+        },function(event, marca2, marca3, marca4){
+            $("#mensaje").html(event.data.marcas + "<br>" + marca2 + "<br>" + marca3 + "<br>" + marca4);
+        });
+        $(document).trigger("marcas",["Toyota","Chevrolet","Honda"]);
+    });
+    </script>
+</head>
+<body>
+    <h3>Marcas de auto</h3>
+    <p id="mensaje"></p>
+</body>
+</html>
