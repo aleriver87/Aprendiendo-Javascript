@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Cola de efectos</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                colaEfectos();
+            });
+
+            function colaEfectos(){
+                var miDiv = $("#miDiv");
+
+                miDiv.queue(function(){
+                    $(this).css({
+                        "background-color":"blue",
+                    });
+
+                    $("#mensajeFinal").html("Se cambio el color de fono a azul");
+                    $(this).dequeue();
+                });
+
+                miDiv.hide(1000);
+                miDiv.show(1000);
+                miDiv.fadeIn(3000);
+                miDiv.fadeOut(3000);
+                miDiv.show(1000);
+            }
+        });
+    </script>
+    <style type="text/css">
+        #miDiv{
+            margin: 0 auto 0 auto;
+            width: 300px;
+            height: 100px;
+            background-color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="miDiv">
+        Mi Div con efectos!!!
+    </div>
+
+    <p id="mensajeFinal"></p>
+    <button id="boton1">Iniciar secuencia de efectos</button>
+</body>
+</html>

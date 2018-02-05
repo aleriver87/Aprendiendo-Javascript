@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Plugins Validation</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script>
+        $.validator.setDefaults({
+            submitHandler: function(){
+                alert("Inicio de sesión exitoso");
+                $("#usuario").val("");
+                $("#password").val("");
+            }
+        });
+
+        $(document).ready(function(){
+            var validator = $("#miForm").validate({
+                errorPlacement: function(error, element){
+                    $(element).closest("form")
+                    .find("label[for='"+element.attr("id")+"']")
+                    .append(error);
+                },
+                errorElement: "span",
+                messages: {
+                    usuario: {
+                        required: "(Por favor ingrese su nombre de usuario)",
+                        minlength: "(Debe tener mínimo 3 caracteres)"
+                    },
+                    password:{
+                        required: "(Por favor ingrese su contraseña)",
+                        minlength: "(Debe tener entre 5 y 12 caracteres)",
+                        maxlength: "(Debe tener entre 5 y 12 caracteres)"
+                    }
+                }
+            });
+        });
+    </script>
+    <style>
+        .miForm fieldset p label span.error{
+            color: red;
+        }
+
+        form.miForm{
+            width: 30em;
+            background-color: #40FF;
+        }
+
+        form.miForm legend,
+        form.miForm label{
+            color:white;
+        }
+
+        form.miForm fieldset{
+            border: 1px solid #999;
+            border-radius: 8px;
+            border-color: white;
+            box-shadow: 0 0 10px #999;
+        }
+
+        form.miForm label{
+            width: auto;
+            display: block;
+            float: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Plugin de Validacion con jQuery</h1>
+
+    <div id="miDiv">
+        <form method="get" class="miForm" id="miForm" action="">
+            <fieldset>
+                <legend>Iniciar Sesión</legend>
+                <p>
+                    <label for="usuario">Nombre de Usuario:</label>
+                    <input id="usuario" name="usuario" required minlength="3">
+                </p>
+                <p>
+                    <label for="password">Contraseña:</label>
+                    <input id="password" type="password" maxlength="12" name="password" required minlength="5">
+                </p>
+                <p>
+                    <input type="submit" class="submit" value="Iniciar">
+                </p>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
