@@ -1,0 +1,21 @@
+.miForm fieldset span.error{
+    color: red;
+}
+
+form.miForm{
+    width: 25em;
+    background-color: aqua;
+    margin: 10% 30% 10% 25%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+fieldset{
+    color: darkblue;
+}
+
+form.miForm fieldset{
+    border: 1px solid #999;
+    border-radius: 8px;
+    border-color: white;
+    box-shadow: 0 0 10px #999;
+}
