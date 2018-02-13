@@ -13,26 +13,33 @@
     <form method="get" id="formulario" class="formulario" action="">
         <fieldset>
             <legend>Registro Estudiante</legend>
-            <p>
-                <label for="codigo">Código:</label>
-                <input type="text" id="codigo" name="codigo" required >
-            </p>
-            <p>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required minlength="3">
-            </p>
-            <p>
-                <label for="nota">Nota:</label>
-                <input type="text" id="nota" name="nota" required maxlength="2">
-            </p>
-            <p>
-                <input type="submit" class="submit" id="registro" value="Iniciar">
-                <button id="mostrar" type="button" >Mostrar Promedio</button>
-            </p>
-            <p>
-                <button id="notaMayor"  type="button">Mostrar Nota Mayor</button>
-                <button id="notaMenor"  type="button" >Mostrar Nota Menor</button>
-            </p>
+            <table>
+                    <tr>
+                        <td><label>Código:</label></td>
+                        <td><input type="text" id="codigo" name="codigo" required ></td>
+                        <td><label for="codigo"></label></td>
+                    </tr>
+                    <tr>
+                        <td><label>Nombre:</label></td>
+                        <td><input type="text" id="nombre" name="nombre" required minlength="3"></td>
+                        <td><label for="nombre"></label></td>
+                    </tr>
+                    <tr>
+                        <td><label>Nota:</label></td>
+                        <td><input type="text" id="nota" name="nota" required maxlength="3"></td>
+                        <td><label for="nota"></label></td>
+                    </tr>
+                    <tr>
+                        <td><button id="registro">Registrar Estudiante</button></td>
+                        <td><button id="mostrar" type="button">Mostrar Promedio</button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><button id="notaMayor" type="button">Mostrar Nota Mayor</button></td>
+                        <td><button id="notaMenor" type="button">Mostrar Nota Menor</button></td>
+                        <td></td>
+                    </tr>
+            </table>
     </fieldset>
     </form>
     <p id="p1"></p>
