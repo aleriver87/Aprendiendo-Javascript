@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Formularios</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#agregarcarro').click(function(){
+                event.preventDefault();
+                var nombrecarro = $("#nombre").val();
+                var valorcarro = $("#valor").val();
+
+                $('<option/>').attr('value',valorcarro).text(nombrecarro).appendTo('#carros');
+            });
+
+            $("#quitarcarro").click(function(event){
+                event.preventDefault();
+                var $select = $('#carros');
+                $('option:selected',$select).remove();
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <h3 for="carros">Carros</h3>
+        <select id="carros" multiple="multiple">
+        </select> <br><br>
+        <button id="quitarcarro">Borrar Carro Seleccionado</button>
+        <p for="nuevoNombre">Nombre del Carro</p>
+        <input type="text" id="nombre"/>
+        <p for="newColorValue">Valor del Carro</p>
+        <input type="text" id="valor"/><br><br>
+        <button id="agregarcarro">Añadir Carro</button>
+    </form>
+</body>
+</html>

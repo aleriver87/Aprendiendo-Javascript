@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Problema</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style5.css" />
+    <script src="jquery-3.3.1.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script>
+        jQuery(document).ready(function($){
+            $("#formulario").validate();
+        });
+    </script>
+</head>
+<body>
+    <form id="formulario" method="post">
+        <h4>Ingrese sus datos</h4>
+        <hr>
+            <label class="nombre">Nombres:</label>
+            <input id="nombre" name="nombre" class="required">
+        <br>
+            <label class="apellidos">Apellidos:</label>
+            <input id="apellidos" name="apellidos" class="required">
+        <br>
+            <label class="telefono">Telefono:</label>
+            <input id="telefono" name="telefono">
+        <br>
+            <label class="email">Email:</label>
+            <input id="email" name="email" class="required email">
+        <br><br>
+            <input id="enviar" type="submit" value="Enviar">
+        <hr>
+    </form>
+</body>
+</html>

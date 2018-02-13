@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Local Storage</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                var nombre = $("#nombre").val();
+                var apellido = $("#apellido").val();
+                var id = $("#id").val();
+
+                var persona = {
+                    id:id,
+                    nombre:nombre,
+                    apellido:apellido
+                };
+
+                localStorage.setItem(id, JSON.stringify(persona));
+
+                listarPersonas();
+                $("#nombre").val("");
+                $("#apellido").val("");
+                $("#id").val();
+            });
+
+            function listarPersonas(){
+                var elementos = "Lista Personas:<br>";
+                console.log("entro");
+                var parrafo1 = $("#p1");
+
+                for(var i=0; i<localStorage.length; i++){
+                    var clave = localStorage.key(i);
+                    var persona = $.parseJSON(localStorage.getItem(clave));
+
+                    elementos += persona.id + " - " + persona.nombre + " - " + persona.apellido + "<br>";
+                }
+
+                $("#parrafo1").html(elementos);
+            }
+
+        });
+    </script>
+</head>
+<body>
+    <h1>Registro Personas</h1>
+
+    <form>
+        ID:
+        <br>
+        <input type="text" id="id">
+        <br>
+        Nombre:
+        <br>
+        <input type="text" id="nombre">
+        <br>
+        Apellidos:
+        <br>
+        <input type="text" id="apellido">
+    </form>
+    <button id="boton1">Registrar</button>
+    <p id="parrafo1"></p>
+</body>
+</html> 

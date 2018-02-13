@@ -8,7 +8,7 @@
     <script>
         $.validator.setDefaults({
             submitHandler: function(){
-                alert("Inicio de sesión exitoso");
+               // alert("Inicio de sesión exitoso");
                 $("#usuario").val("");
                 $("#password").val("");
             }
@@ -17,6 +17,7 @@
         $(document).ready(function(){
             var validator = $("#miForm").validate({
                 errorPlacement: function(error, element){
+				    console.log(element.attr("id"));
                     $(element).closest("form")
                     .find("label[for='"+element.attr("id")+"']")
                     .append(error);

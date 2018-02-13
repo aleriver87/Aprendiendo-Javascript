@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Registro de Estudiantes</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="js/main.js"></script>
+</head>
+<body>
+    
+    <form method="get" id="formulario" class="formulario" action="">
+        <fieldset>
+            <legend>Registro Estudiante</legend>
+            <p>
+                <label for="codigo">Código:</label>
+                <input type="text" id="codigo" name="codigo" required ><span>Ingrese el código del estudiante</span>
+            </p>
+            <p>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required minlength="3"><span>Ingrese el nombre del estudiante</span>
+            </p>
+            <p>
+                <label for="nota">Nota:</label>
+                <input type="text" id="nota" name="nota" required maxlength="2"><span>Ingrese la nota del estudiante</span>
+            </p>
+            <p>
+                <input type="submit" class="submit" id="registro" value="Iniciar">
+                <button id="mostrar" type="button" >Mostrar Promedio</button>
+            </p>
+            <p>
+                <button id="notaMayor"  type="button">Mostrar Nota Mayor</button>
+                <button id="notaMenor"  type="button" >Mostrar Nota Menor</button>
+            </p>
+    </fieldset>
+    </form>
+    <p id="p1"></p>
+</body>
+</html>

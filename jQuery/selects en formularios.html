@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SELECTS</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+    .fts{
+        color:blue;
+        font-size: 25px;
+    }
+
+    .pcs{
+        color: green;
+        font-size: 25px;
+    }
+
+    select{
+        height: 115px;
+    }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#fru").change(function(){
+                var fru = "Seleccionados: ";
+                $("#fru option:selected").each(function(){
+                    fru += $(this).text() + " - ";
+                });
+                $(".fts").text(fru);
+            }).change();
+
+            $("#pcs").change(function(){
+                var pc = "Seleccionados: ";
+                $("#pcs option:selected").each(function(){
+                    pc += $(this).text() + " - ";
+                });
+                $(".pcs").text(pc);
+            }).change();
+        });    
+    </script>
+</head>
+<body>
+    <h1>Frutas</h1>
+    <select name="frutas" id="fru" multiple="multiple">
+        <option>Kiwi</option>
+        <option>Mango</option>
+        <option>Fresa</option>
+        <option>Papaya</option>
+        <option>Piña</option>
+        <option>Melon</option>
+        <option>Pistacho</option>
+        <option>Ciruelas</option>
+        <option>Manzana</option>
+    </select>
+
+    <div class="fts"></div>
+
+    <h1>Computadoras</h1>
+    <select name="pc" id="pcs" multiple="multiple">
+        <option>Mac</option>
+        <option>Samsung</option>
+        <option>HP</option>
+        <option>Toshiba</option>
+        <option>Acer</option>
+        <option>Sony</option>
+        <option>Dell</option>
+        <option>Lenovo</option>
+    </select>
+
+    <div class="pcs"></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>XML</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            var estudiantes = "<xml version='1.0'><estudiante><codigo>001</codigo><nombres>Carlos</nombres><apellidos>Vergara</apellidos><estudiante></xml>";
+            var $xml = $(estudiantes);
+
+            var $codigo = $xml.find('codigo');
+            var $nombres = $xml.find('nombres');
+            var $apellidos = $xml.find('apellidos');
+
+            $("#codigo").html($codigo);
+            $("#nombres").html($nombres);
+            $("#apellidos").html($apellidos);
+        });
+    </script>
+</head>
+<body>
+    <h3>XML - Estudiantes</h3>
+    <span id="codigo"></span><br>
+    <span id="nombres"></span><br>
+    <span id="apellidos"></span><br>
+</body>
+</html>
