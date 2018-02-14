@@ -1,0 +1,53 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Draggable</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <style>
+        #miDiv{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            margin-left: -200px;
+            margin-top: -150px;
+            border: 1px solid #808080;
+            padding: 5px;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            var mensaje = "";
+
+            $("#miDiv").draggable({
+                create: function(evento, ui){
+                    $("#mensaje").html(mensaje += "Evento create!<br>");
+                }
+            });
+
+            $("#miDiv").on("dragstart",function(evento, ui){
+                $("#mensaje").html(mensaje += "Evento start!<br>");
+            })
+
+            $("#miDiv").on("drag", function(evento, ui){
+                $("#mensaje").html(mensaje += "Evento drag!<br>")
+            })
+
+            $("#miDiv").on("dragstop", function(evento, ui){
+                $("#mensaje").html(mensaje += "Evento stop!<br>");
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>Ejemplo Funcionalidad arrastrar JQuery UI</h1>
+
+    <div id="miDiv">Arrastrame!!!!</div>
+
+    <div id="mensaje"></div>
+</body>
+</html>

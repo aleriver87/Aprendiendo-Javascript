@@ -1,0 +1,45 @@
+<DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Draggable</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <style>
+        #miDiv{
+            position: absolute;
+            top: 60%;
+            left: 60%;
+            width: 300px;
+            height: 300px;
+            margin-left: -400px;
+            margin-top: -100px;
+            border: 1px solid #808080;
+            padding: 10px;
+            background-color: red;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#miDiv").draggable();
+
+            $("#miDiv").on("dragstart",function(evento, ui){
+                $(this).css('cursor','default');
+            });
+
+            $("#miDiv").on("drag", function(evento, ui){
+                $(this).css('cursor','progress');
+            });
+
+            $("#miDiv").on("dragstop", function(evento, ui){
+                $(this).css('cursor','hand');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Ejemplo Funcionalidad Arrastrar Opcion Cursor jQuery UI</h1>
+    <div id="miDiv">Mi Div!!!!</div>
+</body>
+</html>
