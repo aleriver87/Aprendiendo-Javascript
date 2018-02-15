@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Capturando las selecciones</title>
+    <style>
+        .miProducto{
+            background-color: #E920B3;
+        }
+
+        #productos .ui-selected{
+            color: red;
+            background-color: #FFF415;
+            font-weight: bold;
+        }
+
+        #productos{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            width: 300px;
+        }
+
+        #productos li{
+            margin:5px;
+            padding: 5px;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            var eventos = "";
+            
+            $("#productos").selectable({
+                selected:function(event, ui){
+                    var seleccionados = $("li[class$='ui-selected']").length;
+                    $("#itemSelects").html("Has seleccionado "+ seleccionados + " productos!!!");
+                    $("#mensaje").html(eventos += "Evento selected!!!<br>");
+                },
+                unselected:function(e, ui){
+                    $("#eventos").html(eventos += "Evento unselected!!! <br>");
+                },
+                start:function(e){
+                    $("#eventos").html(eventos += "Evento start!!!!<br>");
+                },
+                stop:function(){
+                    $("#eventos").html(eventos += "Evento stop!!!<br>");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul id="productos">
+        <li class="miProducto">Producto 1</li>
+        <li class="miProducto">Producto 2</li>
+        <li class="miProducto">Producto 3</li>
+        <li class="miProducto">Producto 4</li>
+        <li class="miProducto">Producto 5</li>
+        <li class="miProducto">Producto 6</li>
+        <li class="miProducto">Producto 7</li>
+        <li class="miProducto">Producto 8</li>
+        <li class="miProducto">Producto 9</li>
+    </ul>
+    <p id="itemSelects"></p>
+    <p id="eventos"></p>
+</body>
+</html>

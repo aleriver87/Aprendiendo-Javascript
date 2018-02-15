@@ -1,0 +1,9 @@
+#seleccionar .ui-selecting{
+    background: #AFEEEE;
+    width: 100px;
+}
+
+#seleccionar .ui-selected{
+    background: #40E0D0;
+    width: 100px;
+}
