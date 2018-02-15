@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Dialog-Menu-Buttons</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $("#dialog").dialog({
+                autoOpen:false
+            })
+
+            $("#boton").button().click(function(event){
+                $("#dialog").dialog("open");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="dialog" title="Dialog">
+        <p>Es una ventana que se posiciona en una parte de nuestra página. 
+            Cuenta con una barra de título y un espacio de contenido. 
+            Podemos moverla, cambiar su tamaño y cerrarla mediante el ícono por defecto "X" que posee
+        </p>
+    </div>
+    <button id="boton">Dialog</button>
+</body>
+</html>

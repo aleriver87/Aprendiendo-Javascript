@@ -1,0 +1,58 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ejemplo de botones cuadros de diálogo y menú</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $("button,p,h1")
+            .button()
+            .click(function(event){
+                event.preventDefault();
+            });
+            $("#carros").menu();
+            $("#cuadro").dialog();
+        });
+    </script>
+    <style>
+        .ui-menu{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Botones</h2>
+    <button>Etiqueta Button</button>
+    <h1>Etiqueta H1</h1>
+    <p>Etiqueta P</p>
+
+    <h2>Menu</h2>
+    <ul id="carros">
+        <li>Nissan</li>
+        <li>Ford</li>
+        <li>Chevrolet</li>
+        <li>Hyunday
+            <li>Toyota
+                <ul>
+                    <li>Fortuner</li>
+                    <li>TXL</li>
+                </ul>
+            </li>
+            <li>Renault
+                <ul>
+                    <li>Sandero</li>
+                    <li>Koleos</li>
+                </ul>
+            </li>
+        </li>
+        <li class="ui-state-disabled">Kia</li>
+    </ul>
+
+    <div id="cuadro" title="Cuadro de Dialogo">
+        <p>Aqui se muestra el mensaje del cuadro de diálogo.</p>
+    </div>
+</body>
+</html>
