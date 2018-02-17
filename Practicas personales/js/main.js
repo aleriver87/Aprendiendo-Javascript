@@ -1,44 +1,8 @@
-//Validando formulario
-/*$.validator.setDefaults({
-    
-    submitHandler: function(form ){
-
-        var username = $("#user").val();
-        var password = $("#password").val();
-
-        var user = {
-            username:username,
-            password:password
-        };
-
-        localStorage.setItem(username,JSON.stringify(user));
-
-        $("#user").val("");
-        $("#password").val("");
-    }
-});*/
-
-$(document).ready(function(){   
-   /* var validator = $("#login").validate({
-        errorPlacement: function(error, element){
-            $(element).closest("form")
-            .find("label[for='"+element.attr("id")+"']")
-            .prepend(error);
-        },
-        errorElement: "span",
-        messages: {
-            user:{
-                required: "Please enter your username"
-            },
-            password: {
-                required: "Please enter your password",
-                minlength: "Your answer should be {8} characters."
-            }
-        }
-    });*/
+$(document).ready(function(){
 
     $("#user").focus(function(){
         $("#user").removeAttr('placeholder');
+        $("#user").css('background-image','');
         $("#user_label").show();
         $("#user").css('opacity',0.7);
       }).blur(function(){
@@ -57,17 +21,27 @@ $(document).ready(function(){
         $("#password").css('opacity',0.5);
       });
 
-    /* Validando 
-    $("#user_error").hide();
+    /* Validando */
+    
     var user = $("#user").val();
     var password = $("#password").val();
+    var user_error = $("#user_error");
+    var password_error = $("#password_error");
 
     $("#login_btn").click(function(){
-        if (user.trim() == "") {
-            $("#user_error").slideUp(10000);
-            $("#user_error").slideDown(10000);
-        } else{
-            
+        if(user.trim() == ""){
+            user_error.html("Please enter your email");
+            user_error.slideDown(1000);
+        } else {
+            user_error.hide();
+            user_error.html("");
         }
-    });*/
+
+        if(password.trim() == ""){
+            password_error.html("Please enter your password");
+            password_error.slideDown(1000);
+        } else {
+            password_error.slideUp(1000);
+        }
+    });
 });

@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/jquery-ui.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
     <!-- Adjuntando mis js y css -->
     <link rel="stylesheet" type="text/css" media="screen" href="css\main.css" />
@@ -17,22 +18,25 @@
     <div class="form_login">
         <form method="post" id="login">
             <fieldset>
-            <legend>SIGN IN</legend>
+            <legend><img src="images/logo.jpg" align="right"/></legend>
                 <table>
+                       <!-- <tr>
+                            <td style="font-weight: bold; font-size:1em">SING IN</td>
+                        </tr> -->
                         <tr>
                             <td>
                                 <label id="user_label">Username</label>
                                 <br>
-                                <input size="50" width="100" type="text" id="user" name="user" minlength="5" placeholder="Username">
-                                <span class="error" aria-live="polite" id="user_error"></span>
+                                <input size="50" width="100" type="email" id="user" name="user" minlength="5" placeholder="Username" required email></input>
+                                <span class="error" id="user_error"></span>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <label id="pass_label">Password</label>
                                 <br>
-                                <input size="50" type="password" id="password" name="password" minlength="8" placeholder="Password">
-                                <span class="error" aria-live="polite" if="password_error"></span>
+                                <input size="50" type="password" id="password" name="password" minlength="8" placeholder="Password" required>
+                                <span class="error" id="password_error"></span>
                             </td>
                         </tr>
                         <tr>
