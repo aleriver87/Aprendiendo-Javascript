@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Login page</title>
+<<<<<<< HEAD
+=======
+    <!-- Adjuntando js y css de jQuery -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/Reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+>>>>>>> 3858325ec008decc19aaf068aeae085790392f1c
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -15,6 +24,7 @@
     <!-- Include JS -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js\main.js"></script>
+<<<<<<< HEAD
 
   </head>
 
@@ -47,3 +57,43 @@
     </form>
   </body>
 </html>
+=======
+</head>
+<body>
+    <div class="form_login">
+        <form method="post" id="login">
+            <fieldset>
+            <legend><img src="images/logo.jpg" align="right"/></legend>
+                <table>
+                       <!-- <tr>
+                            <td style="font-weight: bold; font-size:1em">SING IN</td>
+                        </tr> -->
+                        <tr>
+                            <td>
+                                <label id="user_label">Username</label>
+                                <br>
+                                <input size="50" width="100" type="email" id="user" name="user" minlength="5" placeholder="Username" required email></input>
+                                <span class="error" id="user_error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label id="pass_label">Password</label>
+                                <br>
+                                <input size="50" type="password" id="password" name="password" minlength="8" placeholder="Password" required>
+                                <span class="error" id="password_error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input id="login_btn" type="submit" class="submit" value="Login"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><label><a href="#" target="_blank">Forgot your password?</a></label></td>
+                        </tr>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
+>>>>>>> 3858325ec008decc19aaf068aeae085790392f1c

@@ -4,8 +4,11 @@ body {
 }
 
 body {
+    background-image: url(../images/fondo.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    /*background: linear-gradient(10deg, rgb(94, 93, 93),#333);*/
     margin: 0;
-	background: linear-gradient(10deg, rgb(94, 93, 93),#333);
 	font-family: Verdana;
 	font-weight: 100;
 }
@@ -14,11 +17,11 @@ input[type="submit"]{
     width:100%;
     padding:15px;
     border-radius:5px;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#28D2DE), to(#1A878F));
-    background-image: -webkit-linear-gradient(#28D2DE 0%, #1A878F 100%);
-    background-image: -moz-linear-gradient(#28D2DE 0%, #1A878F 100%);
-    background-image: -o-linear-gradient(#28D2DE 0%, #1A878F 100%);
-    background-image: linear-gradient(#28D2DE 0%, #1A878F 100%);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#21CE30), to(#29991E));
+    background-image: -webkit-linear-gradient(#21CE30 0%, #29991E 100%);
+    background-image: -moz-linear-gradient(#21CE30 0%, #29991E 100%);
+    background-image: -o-linear-gradient(#21CE30 0%, #29991E 100%);
+    background-image: linear-gradient(#21CE30 0%, #29991E 100%);
     font:14px Verdana;
     color:#FFF;
     text-transform:uppercase;
@@ -47,7 +50,7 @@ label{
 
 table {
     text-align: center;
-	width: 370px;
+    width: 370px;
 	border-collapse: collapse;
 	overflow: hidden;
     /*box-shadow: 0 0 20px rgba(0,0,0,0.1);*/
@@ -110,7 +113,23 @@ a{
 input::placeholder {
     color: #2b2a2b;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
+}
+
+input[id='user'] {
+    background-image: url(../images/user.png);
+    background-position: 7px 7px;
+    background-repeat: no-repeat;
+    opacity:0.7;
+    text-align: center;
+}
+
+input[id='password'] {
+    background-image: url(../images/candado.png);
+    background-position: 7px 7px;
+    background-repeat: no-repeat;
+    opacity:0.7;
+    text-align: center;
 }
 
 #user_label, #pass_label{
@@ -126,6 +145,7 @@ input::placeholder {
 }
 
 .error {
+    display:none;
     width  : 100%;
     padding: 0;
    

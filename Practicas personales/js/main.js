@@ -23,4 +23,31 @@ $(document).ready(function(){
         $("#password").css('opacity',0.5);
       });
 
+<<<<<<< HEAD
 });
+=======
+    /* Validando */
+    
+    var user = $("#user").val();
+    var password = $("#password").val();
+    var user_error = $("#user_error");
+    var password_error = $("#password_error");
+
+    $("#login_btn").click(function(){
+        if(user.trim() == ""){
+            user_error.html("Please enter your email");
+            user_error.slideDown(1000);
+        } else {
+            user_error.hide();
+            user_error.html("");
+        }
+
+        if(password.trim() == ""){
+            password_error.html("Please enter your password");
+            password_error.slideDown(1000);
+        } else {
+            password_error.slideUp(1000);
+        }
+    });
+});
+>>>>>>> 3858325ec008decc19aaf068aeae085790392f1c
