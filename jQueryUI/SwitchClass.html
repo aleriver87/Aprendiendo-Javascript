@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SwitchClass</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <style>
+        .miEstilo1{
+            background-color: #C52FD9;
+            border-top:groove;
+            width: 200px;
+            height: 200px;
+        }
+
+        .miEstilo2{
+            background-color: #3CE55B;
+            color: #FFF;
+            font-size: xx-large;
+            border-top: groove;
+            width: 400x;
+            height: 400px; 
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                $("#miDiv1").switchClass("miEstilo1","miEstilo2",2000,"easeInOutBounce");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="miDiv1" class="miEstilo1">
+        mi DIV!!!
+    </div>
+    <button id="boton1">switchClass</button>
+</body>
+</html>

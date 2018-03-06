@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Shake y Explode</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <style>
+        .miEstilo1{
+            background-color: red;
+            border-top: groove;
+            width: 200px;
+            height: 200px;
+        }
+
+        .miEstilo2{
+            background-color: blue;
+            border-top: groove;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        $(document).click(function(){
+            $("#boton1").click(function(){
+                $("#miDiv1").effect("explode", 4000, function(){
+                    $(this).show();
+                });
+            });
+
+            $("#boton2").click(function(){
+                $("#miDiv2").effect("shake",4000)
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="miDiv1" class="miEstilo1">
+        mi Div1!!!
+    </div>
+    <div id="miDiv2" class="miEstilo2">
+        mi Div 2!!!!
+    </div>
+
+    <button id="boton1">Efecto explode!</button>
+    <button id="boton2">Efecto shake!</button>
+</body>
+</html>

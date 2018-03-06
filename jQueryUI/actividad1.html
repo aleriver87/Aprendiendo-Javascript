@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="us">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI Example Page</title>
+    <link href="css/jquery-ui.css" rel="stylesheet">
+
+    <style>
+  .miEstilo1{
+        background-color: blue;
+        width: 100px;
+        height: 100px;
+    }
+
+
+       .miEstilo2 {
+        background-color: orange;
+        width: 300px;
+        height: 300px;
+    }
+    </style>
+
+
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        var efecto = "";
+
+        $("#opciones").change(function() {
+
+            var opcion = $(this).val();
+
+            
+
+            switch (opcion) {
+                case "easeInCubic":
+                    efecto = "easeInCubic";
+                    break;
+                case "easeInQuint":
+                    efecto = "easeInQuint";
+                    break;
+                case "easeInCirc":
+                    efecto = "easeInCirc";
+                    break;
+                case "easeInElastic":
+                    efecto = "easeInElastic";
+                    break;
+                
+
+            }
+
+     
+
+    })
+
+                  $("#boton1").click(function() {
+
+           $("#miDiv").addClass( "miEstilo2", 2000, efecto );
+
+        });
+
+
+           $("#boton2").click(function() {
+
+           $("#miDiv").removeClass( "miEstilo2", 2000, efecto );
+
+        });
+
+              });
+    </script>
+
+</head>
+
+<body>
+<h1>Efectos Easing</h1>
+    <select id="opciones">
+        <option value="">Seleccione una opción..</option>
+        <option value="easeInCubic">easeInCubic</option>
+        <option value="easeInQuint">easeInQuint</option>
+        <option value="easeInCirc">easeInCirc</option>
+        <option value="easeInElastic">easeInElastic</option>
+    </select>
+
+    <br>
+    <br>
+
+
+
+    <div id="miDiv" class="miEstilo1">
+        MI DIV !!!!!!!!!!
+    </div>
+<br>
+    <button id="boton1">Agregar clase!</button>
+
+     <button id="boton2">Remover clase!</button>
+
+
+</body>
+
+</html>

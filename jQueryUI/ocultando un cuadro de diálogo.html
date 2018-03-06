@@ -1,0 +1,50 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ocultando un cuadro de diálogo</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <style>
+        #contenedor{
+            width: 400px;
+            height: 150px;
+        }
+
+        #caja{
+            margin: 0;
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#boton").click(function(){
+               // $("#caja").hide("shake",3000);
+               // $("#caja").hide("scale",3000);
+               // $("#caja").hide("slide",3000);
+               // $("#caja").hide("size",3000); -- igual que scale
+               // $("#caja").hide("drop",3000); -- igual al slide
+               $("#caja").hide("highlight",3000);
+            });
+
+            $("#boton1").click(function(){
+               $("#caja").show("scale",3000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="caja" class="ui-widget-content ui-corner-all">
+            <h3 class="ui-widget-header ui-corner-all">HTML</h3>
+            <p>
+                Es un lenguaje utlizado para el desarrollo de páginas Web.<br>
+                Podemos utilizar cualquier editor de texto para modificar o manipular el contenido de un documento HTML.
+            </p>
+        </div>
+    </div>
+    <button id="boton" class="ui-state-default ui-corner-all">Ocultar</button>
+    <button id="boton1" class="ui-state-default ui-corner-all">Mostrar</button>
+</body>
+</html>
