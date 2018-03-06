@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ejemplo Spinner</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $("#numeros").spinner();
+
+            $("#rango").slider({
+                range: true,
+                min: 0,
+                max: 50,
+                slide: function(event, ui){
+                    $("#valores").val(ui.values[ 0 ]+ " - " + ui.values[1]);
+                }
+            });
+
+            $("#valores").val($("#rango").slider("values",1));
+
+            $("#carros").selectmenu();
+        });
+    </script>
+    <style>
+        select, #rango{
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Spinner</h2>
+    <input id="numeros" value="50"><br>
+
+    <h2>Slider</h2>
+    <div id="rango"></div>
+    Rango de Valores: <input type="text" id="valores"/>
+
+    <h2>Select Menu</h2>
+    <p>Seleccione una Marca de Carro:</p>
+    <select name="carros" id="carros">
+        <option value="Toyota">Toyota</option>
+        <option value="Chevrolet">Chevrolet</option>
+        <option value="Hyunday">Hyunday</option>
+        <option value="Renault">Renault</option>
+        <option value="Mazda">Mazda</option>
+    </select>
+    <br>
+</body>
+</html>

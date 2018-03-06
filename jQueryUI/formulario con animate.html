@@ -1,0 +1,58 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Formulario con Animate</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#nombre").blur(function(){
+                if($("#nombre").val().trim().length==0){
+                    $("#nombre").animate({
+                        outlineColor: "black",
+                        backgroundColor: "red"
+                    });
+                } else {
+                    $("#nombre").animate({
+                        outlineColor: "black",
+                        backgroundColor:"white"
+                    });
+                }
+            });
+
+            $("#apellido").blur(function(){
+                if($("#apellido").val().trim().length==0){
+                    $("#apellido").animate({
+                        outlineColor: "black",
+                        backgroundColor: "red"
+                    });
+                } else {
+                    $("#apellido").animate({
+                        outlineColor: "black",
+                        backgroundColor:"white"
+                    });
+                }
+            });
+
+            $("#boton1").click(function(){
+                alert("Datos enviados exitosamente");
+                $("#nombre").val("");
+                $("#apellido").val("");
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        Nombre:
+        <input class="requerido" type="text" id="nombre">
+        <br><br>
+        Apellido:
+        <input class="requerido" type="text" id="apellido">
+        <br><br>
+    </form>
+    <button id="boton1">Enviar</button>
+</body>
+</html>

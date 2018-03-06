@@ -1,0 +1,32 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ADD-REMOVE CLASS</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <style>
+        .miEstilo1{
+            font-style: oblique;
+            font-size: 50px;
+            color: #10d3c0;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                $("#parrafo1").addClass("miEstilo1",3000,"easeInCirc");
+            });
+            $("#boton2").click(function(){
+                $("#parrafo1").removeClass("miEstilo1",3000,"easeInCubic");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="parrafo1" class="miEstilo2">El Sabio puede sentarse en un hormiguero, pero solo el necio se queda sentado en él.</p>
+    <button id="boton1">Agregar Clase!</button>
+    <button id="boton2">Remover Clase!</button>
+</body>
+</html>

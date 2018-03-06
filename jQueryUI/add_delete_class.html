@@ -1,0 +1,42 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ADD-REMOVE CLASS</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <style>
+        .miEstilo1{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+
+        .miEstilo2{
+            background-color: yellow;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                $("#miDiv").addClass("miEstilo2", 1000, "easeOutExpo");
+            });
+
+            $("#boton2").click(function(){
+                $("#miDiv").removeClass("miEstilo2", 1000, "easeInOutQuint");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="miDiv" class="miEstilo1">
+        Mi div!!!
+    </div>
+
+    <button id="boton1">Agregar Clase!</button>
+    <button id="boton2">Remover Clase!</button>
+</body>
+</html>
