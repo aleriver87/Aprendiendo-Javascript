@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ejemplo SwitchClass</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            var efectoInicial = "";
+            var efectoFinal = "";
+            var mensaje = "";
+
+            $("#efectoInicial").change(function(){ //cuando cambie el valor de la lista desplegable dispara la función
+                var opcion = $(this).val();
+                switch(opcion){
+                    case "easeInElastic":
+                        efectoInicial = "easeInElastic";
+                        break;
+                    case "easeInOutQuint":
+                        efectoInicial = "easeInOutQuint";
+                        break;
+                    case "easeInCirc":
+                        efectoInicial = "easeInCirc";
+                        break;
+                    case "easeInOutBounce":
+                        efectoInicial = "easeInOutBounce";
+                        break;
+                    case "easeInBack":
+                        efectoInicial = "easeInBack";
+                        break;
+                    case "easeInBounce":
+                        efectoInicial = "easeInBounce";
+                        break;
+                }
+            });
+
+            $("#efectoFinal").change(function(){ //cuando cambie el valor de la lista desplegable dispara la función
+                var opcion = $(this).val();
+                switch(opcion){
+                    case "easeInElastic":
+                        efectoFinal = "easeInElastic";
+                        break;
+                    case "easeInOutQuint":
+                        efectoFinal = "easeInOutQuint";
+                        break;
+                    case "easeInCirc":
+                        efectoFinal = "easeInCirc";
+                        break;
+                    case "easeInOutBounce":
+                        efectoFinal = "easeInOutBounce";
+                        break;
+                    case "easeInBack":
+                        efectoFinal = "easeInBack";
+                        break;
+                    case "easeInBounce":
+                        efectoFinal = "easeInBounce";
+                        break;
+                }
+            });
+
+            $("#miDiv").mouseenter(function(){
+                $("#miDiv").switchClass("miEstilo1","miEstilo2",2000,efectoInicial,efectoF);
+            });
+
+            $("#miDiv").mouseout(function(){
+                $("#miDiv").switchClass("miEstilo2","miEstilo1",2000,efectoFinal,efectoF);
+            });
+
+            $("#miInput").blur(function(){
+                $("#miInput").switchClass("miEstilo4","miEstilo3",3000,efectoFinal,efectoF);
+            });
+
+            $("#miInput").focus(function(){
+                $("#miInput").switchClass("miEstilo3","miEstilo4",3000,efectoInicial,efectoF);
+            });
+
+            function efectoF(){
+                mensaje += "Termino un Efecto!!<br>";
+                $("#efectosActuales").html(mensaje);
+            }
+        });
+    </script>
+    <style>
+        .miEstilo1{
+            background-color: #4702F6;
+            width: 300px;
+            height: 300px;
+        }
+
+        .miEstilo2{
+            background-color: #F6D102;
+            color: #FFF;
+            font-size: x-large;
+            width: 400px;
+            height: 400px;
+        }
+
+        .miEstilo3{
+            background-color: #EE83A8;
+            width: 100px;
+            height: 50px;
+        }
+
+        .miEstilo4{
+            background-color: #FF790A;
+            color: #FFF;
+            font-size: 50px;
+            width: 400px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de SwitchClass</h1>
+    <b>Efecto Inicial</b>
+    <select id="efectoInicial">
+        <option value="">Seleccione una opcion...</option>
+        <option value="easeInElastic">easeInElastic</option>
+        <option value="easeInOutQuint">easeInOutQuint</option>
+        <option value="easeInCirc">easeInCirc</option>
+        <option value="easeInOutBounce">easeInOutBounce</option>
+        <option value="easeInBack">easeInBack</option>
+        <option value="easeInBounce">easeInBounce</option>
+    </select>
+
+    <b>Efecto Final</b>
+    <select id="efectoFinal">
+        <option value="">Seleccione una opcion...</option>
+        <option value="easeInElastic">easeInElastic</option>
+        <option value="easeInOutQuint">easeInOutQuint</option>
+        <option value="easeInCirc">easeInCirc</option>
+        <option value="easeInOutBounce">easeInOutBounce</option>
+        <option value="easeInBack">easeInBack</option>
+        <option value="easeInBounce">easeInBounce</option>
+    </select>
+    <br><br>
+    <p id="efectosActuales"></p>
+    <br><br><br><br>
+    <input id="miInput" class="miEstilo3" type="text" value="Este es mi Texto!!!">
+    <br><br><br><br>
+    <div id="miDiv" class="miEstilo1">Mi Div!!!</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Position y botones</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <style>
+        #miDiv1{
+            position: initial;
+            width: 70px;
+            height: 70px;
+            background: #F60206;
+        }
+
+        #miDiv2{
+            position: initial;
+            width: 70px;
+            height: 70px;
+            background: #55F768;
+        }
+
+        #miDiv3{
+            position: initial;
+            width: 70px;
+            height: 70px;
+            background: #55F;
+        }
+
+        #miDiv4{
+            position: initial;
+            width: 70px;
+            height: 70px;
+            background: #768;
+        }
+        
+        #miDiv5{
+            position: initial;
+            width: 70px;
+            height: 70px;
+            background: #F61;
+        }
+
+        #elementoObjetivo{
+            background-color: #050505;
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            left: 400px;
+            top: 100px;
+            color:#fff;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                $("#miDiv1").position({
+                    my: "right top",
+                    at: "left bottom",
+                    of: "#elementoObjetivo",
+                });
+            });
+
+            $("#boton2").click(function(){
+                $("#miDiv2").position({
+                    my: "left bottom",
+                    at: "right top",
+                    of: "#elementoObjetivo",
+                });
+            });
+
+            $("#boton3").click(function(){
+                $("#miDiv3").position({
+                    my: "bottom",
+                    at: "top",
+                    of: "#elementoObjetivo",
+                });
+            });
+
+            $("#boton4").click(function(){
+                $("#miDiv4").position({
+                    my: "top",
+                    at: "bottom",
+                    of: "#elementoObjetivo",
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="boton1">Ubicar Div 1</button>
+    <button id="boton2">Ubicar Div 2</button>
+    <button id="boton3">Ubicar Div 3</button>
+    <button id="boton4">Ubicar Div 4</button>
+    <br><br>
+    <div id="elementoObjetivo">
+        <h1>Elemento Objetivo</h1>
+    </div>
+    <div id="miDiv1">
+        Div 1!!!
+    </div>
+    <div id="miDiv2">
+        Div 2!!!
+    </div>
+    <div id="miDiv3">
+        Div 3!!!
+    </div>
+    <div id="miDiv4">
+        Div 4!!!
+    </div>
+</body>
+</html>

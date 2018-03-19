@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery UI Example Page</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <style>
+        .miEstilo1{
+            background-color: #C52FD9;
+            border-top: groove;
+            width: 100px;
+            height: 100px;
+        }
+
+        .miEstilo2{
+            background-color: #3CE55B;
+            color: #fff;
+            border-top: groove;
+            width: 100px;
+            height: 100px;
+        }
+
+        .miEstilo3{
+            background-color: #EAFF1F;
+            font-size: xx-large;
+            border-top: groove;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                $("#miDiv1").toggle('pulsate',3000);
+            });
+
+            $("#boton2").click(function(){
+                $("#miDiv2").toggleClass("miEstilo3",3000,"easeInBounce");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="miDiv1" class="miEstilo1">
+        mi Div!!!
+    </div>
+    <button id="boton1">toggle</button>
+
+    <div id="miDiv2" class="miEstilo2">
+        MI DIV 2!!!
+    </div>
+    <button id="boton2">toogleClass</button>
+</body>
+</html>
