@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Widget</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <style>
+        .miEstilo1 {
+            background-color: #ffffff;
+            color: #000000;
+            width: 700px;
+            height: 100px;
+        }
+
+        .miEstilo2{
+            background-color: #F70B0B;
+            color: #FFF;
+            width: 700px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $.widget("com.miWidget",{
+                _create: function(){
+                    this._inputNumero1 = $("<input>");
+                    this._inputNumero1.attr("placeholder","Digite el primer numero");
+                    this._inputNumero1.css("width","200px");
+                    this._inputNumero1.css("border-style","solid");
+                    this._inputNumero1.css("text-align","left");
+                    this._inputNumero1.css("margin","0 auto");
+                    $(this.element).append(this._inputNumero1);
+
+                    this._inputNumero2 = $("<input>");
+                    this._inputNumero2.attr("placeholder", "Digite el segundo numero");
+                    this._inputNumero2.css("width","200px");
+                    this._inputNumero2.css("border-style","solid");
+                    this._inputNumero2.css("text-align","left");
+                    this._inputNumero2.css("margin","0 auto");
+                    $(this.element).append(this._inputNumero2);
+
+                    this._operaciones = $("<select>");
+                    this._operaciones.css=("width","200px");
+
+                    var operacion1 = document.createElement("option");
+
+                    operacion1.text = "Elija una operacion ...";
+                    operacion1.value = "";
+
+                    var operacion2 = document.createElement("option");
+                    operacion2.text = "Suma";
+                    operacion2.value = "1";
+                    
+                    var operacion3 = document.createElement("option");
+                    operacion3.text = "Resta";
+                    operacion3.value = "2";
+                    
+                    var operacion4 = document.createElement("option");
+                    operacion4.text = "Multiplicación";
+                    operacion4.value = "3";
+
+                    var operacion5 = document.createElement("option");
+                    operacion5.text = "División";
+                    operacion5.value = "4";
+
+                    this._operaciones.append(operacion1);
+                    this._operaciones.append(operacion2);
+                    this._operaciones.append(operacion3);
+                    this._operaciones.append(operacion4);
+                    this._operaciones.append(operacion5);
+
+                    $(this.element).append(this._operaciones);
+                },
+
+                calcular: function(){
+
+                    if(this.validar()){
+                        var opcion = parseInt(this._operaciones.val());
+
+                        var resultado;
+                        var numero1;
+                        var numero2;
+
+                        switch (opcion) {
+                            case 1:
+                                numero1 = parseInt(this._inputNumero1.val());
+                                numero2 = parseInt(this._inputNumero2.val());
+
+                                resultado = numero1 + numero2;
+                                alert("El resultado de la suma es: "+ resultado);
+                                break;
+                                                   
+                            case 2:
+                                numero1 = parseInt(this._inputNumero1.val());
+                                numero2 = parseInt(this._inputNumero2.val());
+
+                                resultado = numero1 - numero2;
+                                alert("El resultado de la resta es: "+ resultado);
+                                break;
+                            
+                            case 3:
+                                numero1 = parseInt(this._inputNumero1.val());
+                                numero2 = parseInt(this._inputNumero2.val());
+
+                                resultado = numero1 * numero2;
+                                alert("El resultado de la multiplicación es: "+ resultado);
+                                break;
+                            
+                            case 4:
+                                numero1 = parseInt(this._inputNumero1.val());
+                                numero2 = parseInt(this._inputNumero2.val());
+
+                                resultado = numero1 / numero2;
+                                alert("El resultado de la división es: "+ resultado);
+                                break;
+                        }
+                    }
+                },
+
+                validar: function(){
+                    var input1 = this._inputNumero1.val().trim().length;
+                    var input2 = this._inputNumero2.val().trim().length;
+
+                    if(input1 == 0 || input2 == 0){
+                        alert("Por favor rellene los campos!!!");
+
+                        $("#miDiv").addClass("miEstilo2",1000,"easeOutExpo");
+                        return false;
+                    } else {
+                        $("#miDiv").removeClass("miEstilo2",1000,"easeInBounce");
+                        return true;
+                    }
+                }
+            });
+
+            $("#boton1").click(function(){
+                $("#miDiv").miWidget();
+            });
+
+            $("#boton2").click(function(){
+                $("#miDiv").miWidget("calcular");
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="boton1">Crear Widget</button>
+    <button id="boton2">Ejecutar Widget</button>
+    <br><br>
+    <div id="miDiv" class="miEstilo1">aqui estoy</div>
+</body>
+</html>
