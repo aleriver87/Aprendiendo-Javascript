@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/jquery.mobile-1.4.5_mod.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                var codigo = $("#codigo").val();
+                var nombre = $("#nombre").val();
+                var precio = $("#precio").val();
+
+                var datos = "Producto:<br>";
+                datos += "Codigo: "+ codigo + "<br>";
+                datos += "Nombre: "+ nombre + "<br>";
+                datos += "Precio: "+ precio + "<br>";
+
+                $("#datos").html(datos);
+
+                alert("Producto Registrado!!!");
+
+                $("#codigo").val("");
+                $("#nombre").val("");
+                $("#precio").val("");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page" id="pagina1">
+        <div data-role="header">
+            <h1>Registro Productos</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="codigo">Código:</label>
+                    <input type="text" name="codigo" id="codigo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre">
+                    <label for="precio">Precio:</label>
+                    <input type="text" name="precio" id="precio">
+                </div>
+                <a id="boton1" class="ui-btn">Registrar</a>
+                <a href="#pagina2" id="boton2" class="ui-btn">Mostrar Producto</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">Registro Producto</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="pagina2" data-dialog="true">
+        <div data-role="header">
+            <h1>Datos Productos</h1>
+        </div>
+        <div data-role="content">
+            <h1 id="datos"></h1>
+            <a href="#pagina1" id="boton3" class="ui-btn">Regresar</a>
+        </div>
+    </div>
+</body>
+</html>

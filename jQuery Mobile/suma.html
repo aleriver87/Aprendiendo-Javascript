@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/jquery.mobile-1.4.5_mod.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                var precio1 = parseFloat($("#precio1").val());
+                var precio2 = parseFloat($("#precio2").val());
+                var precio3 = parseFloat($("#precio3").val());
+
+                var totalCompra = precio1 + precio2 + precio3;
+
+                var datos = "Total Compra: "+ totalCompra;
+                $("#totalCompra").html(datos);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page" id="pagina1">
+        <div data-role="header">
+            <h1>Carrito de Compra</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="precio1">Precio Producto 1:</label>
+                    <input type="text" name="precio1" id="precio1">
+                </div>
+                <a href="#pagina2" class="ui-btn">Siguiente</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">Carrito de Compra</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="pagina2">
+        <div data-role="header">
+            <h1>Carrito de Compra</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="precio2">Precio Producto 2:</label>
+                    <input type="text" name="precio2" id="precio2">
+                </div>
+                <a href="#pagina3" class="ui-btn">Siguiente</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">Carrito de Compra</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="pagina3">
+        <div data-role="header">
+            <h1>Carrito de Compra</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="precio3">Precio Producto 3:</label>
+                    <input type="text" name="precio3" id="precio3">
+                </div>
+                <a href="#pagina4" class="ui-btn">Siguiente</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">Carrito de Compra</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="pagina4">
+        <div data-role="header">
+            <h1>Carrito de Compra</h1>
+        </div>
+        <div data-role="content">
+            <h1>Total Compra</h1>
+            <form>
+                <div class="ui-field-contain">
+                    <h2 id="totalCompra"></h2>
+                </div>
+                <a id="boton1" class="ui-btn">Total</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">Carrito de Compra</p>
+        </div>
+    </div>
+</body>
+</html>

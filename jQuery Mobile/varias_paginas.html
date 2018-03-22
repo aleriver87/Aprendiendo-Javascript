@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/jquery.mobile-1.4.5_mod.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                var nombre = $("#nombre").val();
+                var apellido = $("#apellido").val();
+                var direccion = $("#direccion").val();
+                var telefono = $("#telefono").val();
+                var email = $("#email").val();
+                var ciudad = $("#ciudad").val();
+
+                var datos = "Datos Cliente:<br>";
+                datos += "Nombre: "+nombre+ "<br>";
+                datos += "Apellido: "+apellido+ "<br>";
+                datos += "Dirección: "+direccion+ "<br>";
+                datos += "Teléfono: "+telefono+ "<br>";
+                datos += "E-mail: "+email+ "<br>";
+                datos += "Ciudad: "+ciudad+ "<br>";
+
+                $("#datos").html(datos);
+
+                $.mobile.changePage("#pagina4");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page" id="pagina1">
+        <div data-role="header">
+            <h1>Registro Cliente</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre">
+                    <br><br>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" name="apellido" id="apellido">
+                </div>
+                <a href="#pagina2" class="ui-btn">Siguiente Paso</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">Paso 1</p>
+        </div>
+    </div>
+    <div data-role="page" id="pagina2">
+        <div data-role="header">
+            <h1>Registro Cliente</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" name="direccion" id="direccion">
+                    <br><br>
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" name="telefono" id="telefono">
+                </div>
+                <a href="#pagina3" class="ui-btn">Siguiente Paso</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">Paso 2</p>
+        </div>
+    </div>
+    <div data-role="page" id="pagina3">
+        <div data-role="header">
+            <h1>Registro Cliente</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="email">E-mail:</label>
+                    <input type="text" name="email" id="email">
+                    <br><br>
+                    <label for="ciudad">Ciudad:</label>
+                    <input type="text" name="ciudad" id="ciudad">
+                </div>
+                <input type="button" id="boton1" class="ui-btn" value="Enviar">
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">Paso 3</p>
+        </div>
+    </div>
+    <div data-role="page" id="pagina4">
+        <div data-role="header">
+            <h1>Registro Cliente</h1>
+        </div>
+        <div data-role="content">
+            <h1>Registro Exitoso!!!</h1>
+            <h2 id="datos"></h2>
+        </div>
+        <div data-role="footer">
+            <p align="center">Paso 4</p>
+        </div>
+    </div>    
+</body>
+</html>

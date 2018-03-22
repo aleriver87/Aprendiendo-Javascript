@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/jquery.mobile-1.4.5_mod.js"></script>
+    <script>
+        function cambiarPagina(page){
+            $.mobile.changePage("#"+page);
+        }
+
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                var numero1S = parseFloat($("#numero1S").val());
+                var numero2S = parseFloat($("#numero2S").val());
+                var resultado = numero1S + numero2S;
+
+                alert("La suma es: "+resultado);
+
+                $("#numero1S").val("");
+                $("#numero2S").val("");
+            });
+
+            $("#boton2").click(function(){
+                var numero1R = parseFloat($("#numero1R").val());
+                var numero2R = parseFloat($("#numero2R").val());
+                var resultado = numero1R - numero2R;
+
+                alert("La resta es: "+resultado);
+
+                $("#numero1R").val("");
+                $("#numero2R").val("");
+            });
+
+            $("#boton3").click(function(){
+                var numero1M = parseFloat($("#numero1M").val());
+                var numero2M = parseFloat($("#numero2M").val());
+                var resultado = numero1M * numero2M;
+
+                alert("La multiplicación es: "+resultado);
+
+                $("#numero1M").val("");
+                $("#numero2M").val("");
+            });
+
+            $("#boton4").click(function(){
+                var numero1D = parseFloat($("#numero1D").val());
+                var numero2D = parseFloat($("#numero2D").val());
+                var resultado = numero1D / numero2D;
+
+                alert("La división es: "+resultado);
+
+                $("#numero1D").val("");
+                $("#numero2D").val("");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page" id="pagina1">
+        <div data-role="header">
+            <h1>OPERACIONES MATEMÁTICAS</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <a onclick="cambiarPagina('paginaSuma')" class="ui-btn">SUMA</a>
+                <a onclick="cambiarPagina ('paginaResta')" class="ui-btn">RESTA</a>
+                <a onclick="cambiarPagina ('paginaMultiplicacion')" class="ui-btn">MULTIPLICACIÓN</a>
+                <a onclick="cambiarPagina ('paginaDivision')" class="ui-btn">DIVISIÓN</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">OPERACIONES MATEMÁTICAS</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="paginaSuma">
+        <div data-role="header">
+            <h1>SUMA</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="numero1S">Número 1:</label>
+                    <input type="text" name="numero1S" id="numero1S">
+                    <label for="numero2S">Número 2:</label>
+                    <input type="text" name="numero2S" id="numero2S">
+                </div>
+                <a id="boton1" class="ui-btn">Sumar</a>
+                <a onclick="cambiarPagina('pagina1')" class="ui-btn">Volver</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">SUMA</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="paginaResta">
+        <div data-role="header">
+            <h1>RESTA</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="numero1R">Número 1:</label>
+                    <input type="text" name="numero1R" id="numero1R">
+                    <label for="numero2R">Número 2:</label>
+                    <input type="text" name="numero2R" id="numero2R">
+                </div>
+                <a id="boton2" class="ui-btn">Restar</a>
+                <a onclick="cambiarPagina('pagina1')" class="ui-btn">Volver</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">RESTA</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="paginaMultiplicacion">
+        <div data-role="header">
+            <h1>MULTIPLICACIÓN</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="numero1M">Número 1:</label>
+                    <input type="text" name="numero1M" id="numero1M">
+                    <label for="numero2M">Número 2:</label>
+                    <input type="text" name="numero2M" id="numero2M">
+                </div>
+                <a id="boton3" class="ui-btn">Multiplicar</a>
+                <a onclick="cambiarPagina('pagina1')" class="ui-btn">Volver</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">MULTIPLICACIÓN</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="paginaDivision">
+        <div data-role="header">
+            <h1>DIVISIÓN</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="numero1D">Número 1:</label>
+                    <input type="text" name="numero1D" id="numero1D">
+                    <label for="numero2D">Número 2:</label>
+                    <input type="text" name="numero2D" id="numero2D">
+                </div>
+                <a id="boton4" class="ui-btn">Dividir</a>
+                <a onclick="cambiarPagina('pagina1')" class="ui-btn">Volver</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">DIVISIÓN</p>
+        </div>
+    </div>   
+</body>
+</html>
