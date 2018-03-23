@@ -1,0 +1,168 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/jquery.mobile-1.4.5_mod.js"></script>
+    <script>
+        function cambiarPagina(page){
+            $.mobile.changePage("#"+page);
+        }
+
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                $.mobile.loading("show",{
+                    text: "Calculando área del triángulo ...",
+                    textVisible: true,
+                    theme: "a",
+                    textonly: false,
+                    html:""
+                });
+
+                setTimeout(function(){
+                    var baseT = parseFloat($("#baseT").val());
+                    var alturaT = parseFloat($("#alturaT").val());
+                    var resultado = (baseT * alturaT)/2;
+
+                    $.mobile.loading("hide");
+
+                    alert("El área del triángulo es: "+resultado);
+
+                    $("#baseT").val("");
+                    $("#alturaT").val("");
+                }, 4000);
+            });
+
+            $("#boton2").click(function(){
+                $.mobile.loading("show",{
+                    text: "Calculando área del cuadrado ...",
+                    textVisible: true,
+                    theme: "a",
+                    textonly: false,
+                    html:""
+                });
+
+                setTimeout(function(){
+                    var lado = parseFloat($("#lado").val());
+                    var resultado = Math.pow(lado,2);
+
+                    $.mobile.loading("hide");
+
+                    alert("El área del cuadrado es: "+resultado);
+
+                    $("#lado").val("");
+                }, 4000);
+            });
+
+            $("#boton3").click(function(){
+                $.mobile.loading("show",{
+                    text: "Calculando área del rectángulo ...",
+                    textVisible: true,
+                    theme: "a",
+                    textonly: false,
+                    html:""
+                });
+
+                setTimeout(function(){
+                    var baseR = parseFloat($("#baseR").val());
+                    var alturaR = parseFloat($("#alturaR").val());
+                    var resultado = baseR * alturaR;
+
+                    $.mobile.loading("hide");
+
+                    alert("El área del rectángulo es: "+resultado);
+
+                    $("#baseR").val("");
+                    $("#alturaR").val("");
+                }, 4000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page" id="pagina1">
+        <div data-role="header">
+            <h1>FORMULA DE ÁREA</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <a onclick="cambiarPagina ('paginaTriangulo')" class="ui-btn">TRIÁNGULO</a>
+                <a onclick="cambiarPagina('paginaCuadrado')" class="ui-btn">CUADRADO</a>
+                <a onclick="cambiarPagina('paginaRectangulo')" class="ui-btn">RECTÁNGULO</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">FORMULA DE ÁREA</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="paginaTriangulo">
+        <div data-role="header">
+            <h1>TRIÁNGULO</h1>
+        </div>
+        <div data-role="content">
+            <div class="ui-field-contain">
+                <form>
+                    <div class="ui-field-contain">
+                        <label for="baseT">Base:</label>
+                        <input type="text" name="baseT" id="baseT">
+                        <label for="alturaT">Altura:</label>
+                        <input type="text" name="alturaT" id="alturaT">
+                    </div>
+                    <a id="boton1" class="ui-btn">Calcular</a>
+                    <a onclick="cambiarPagina('pagina1')" class="ui-btn">Volver</a>
+                </form>
+            </div>
+        </div>
+        <div data-role="footer">
+            <p align="center">FORMULA DEL ÁREA DEL TRIÁNGULO</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="paginaCuadrado">
+        <div data-role="header">
+            <h1>CUADRADO</h1>
+        </div>
+        <div data-role="content">
+            <div class="ui-field-contain">
+                <form>
+                    <div class="ui-field-contain">
+                        <label for="lado">Lado:</label>
+                        <input type="text" name="lado" id="lado">
+                    </div>
+                    <a id="boton2" class="ui-btn">Calcular</a>
+                    <a onclick="cambiarPagina('pagina1')" class="ui-btn">Volver</a>
+                </form>
+            </div>
+        </div>
+        <div data-role="footer">
+            <p align="center">FORMULA DEL ÁREA DEL CUADRADO</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="paginaRectangulo">
+        <div data-role="header">
+            <h1>RECTÁNGULO</h1>
+        </div>
+        <div data-role="content">
+            <div class="ui-field-contain">
+                <form>
+                    <div class="ui-field-contain">
+                        <label for="baseR">Base:</label>
+                        <input type="text" name="baseR" id="baseR">
+                        <label for="alturaR">Altura:</label>
+                        <input type="text" name="alturaR" id="alturaR">
+                    </div>
+                    <a id="boton3" class="ui-btn">Calcular</a>
+                    <a onclick="cambiarPagina('pagina1')" class="ui-btn">Volver</a>
+                </form>
+            </div>
+        </div>
+        <div data-role="footer">
+            <p align="center">FORMULA DEL ÁREA DEL RECTÁNGULO</p>
+        </div>
+    </div>
+</body>
+</html>
