@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/jquery.mobile-1.4.5_mod.js"></script>
+    <script>
+        $(document).on("mobileinit", function(){
+            $.mobile.defaultPageTransition = 'fade';
+        });
+
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                var placa = $("#placa").val();
+                var marca = $("#marca").val();
+                var modelo = $("#modelo").val();
+
+                var mensaje = "Datos del Vehículo:<br>";
+                mensaje += "Placa:"+placa+"<br>";
+                mensaje += "Marca:"+marca+"<br>";
+                mensaje += "Modelo:"+modelo+"<br>";
+
+                $("#mensaje").html(mensaje);
+
+                $.mobile.changePage("#paginaExito");
+
+                $("#boton2").click(function(){
+                    $("#placa").val("");
+                    $("#marca").val("");
+                    $("#modelo").val("");
+
+                    $.mobile.changePage("#paginaRegistro");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page" id="paginaRegistro">
+        <div data-role="header">
+            <h1>Registro Vehículo</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="placa">Placa:</label>
+                    <input type="text" name="placa" id="placa">
+                    <label for="marca">Marca:</label>
+                    <input type="text" name="marca" id="marca">
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" name="modelo" id="modelo">
+                </div>
+                <a id="boton1" class="ui-btn">Registrar</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">Registro Vehículo</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="paginaExito">
+        <div data-role="header">
+            <h1>Operación Exitosa</h1>
+        </div>
+        <div data-role="content">
+            <h2 id="mensaje"></h2>
+                <a id="boton2" class="ui-btn">Nuevo Registro</a>
+        </div>
+        <div data-role="footer">
+            <p align="center">Operación Exitosa</p>
+        </div>
+    </div>
+</body>
+</html>
