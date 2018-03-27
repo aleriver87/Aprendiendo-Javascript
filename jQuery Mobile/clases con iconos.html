@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/jquery.mobile-1.4.5_mod.js"></script>
+    <script>
+        function cambiarPagina(page){
+            $.mobile.changePage("#"+page,{
+                transition: "flip"
+            });
+        }
+
+        $(document).ready(function(){
+            var clientes = [];
+
+            $("#boton1").click(function(){
+                var id = $("#id").val();
+                var nombre = $("#nombre").val();
+                var direccion = $("#direccion").val();
+                var telefono = $("#telefono").val();
+                var email = $("#email").val();
+
+                var cliente = {
+                    id:id,
+                    nombre:nombre,
+                    direccion:direccion,
+                    telefono:telefono,
+                    email:email,
+                }
+
+                clientes.push(cliente);
+                alert("Cliente Registrado!!!");
+                limpiarCampos();
+            });
+
+            $("#btnListarCliente").click(function(){
+                var tablaClientes = $("#tablaClientes");
+                $(".cliente").remove();
+
+                for(var i=0; i<clientes.length; i++){
+                    var tablaClientes = $("#tablaClientes");
+
+                    $(".cliente").remove();
+
+                    for(var i=0; i<clientes.length; i++){
+                        var tr = $("<tr></tr>");
+                        tr.attr("class","cliente");
+
+                        var td1 = $("<td></td>").text(clientes[i].id);
+                        var td2 = $("<td></td>").text(clientes[i].nombre);
+                        var td3 = $("<td></td>").text(clientes[i].direccion);
+                        var td4 = $("<td></td>").text(clientes[i].telefono);
+                        var td5 = $("<td></td>").text(clientes[i].email);
+
+                        tr.append(td1);
+                        tr.append(td2);
+                        tr.append(td3);
+                        tr.append(td4);
+                        tr.append(td5);
+
+                        tablaClientes.append(tr);
+                    }
+
+                    cambiarPagina("paginaListar");
+                }
+            });
+
+            function limpiarCampos(){
+                $("#id").val("");
+                $("#nombre").val("");
+                $("#direccion").val("");
+                $("#telefono").val("");
+                $("#email").val("");
+            }
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page" id="paginaInicio">
+        <div data-role="header">
+            <h1>Gestión Cliente</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <a onclick="cambiarPagina('paginaRegistro')" class="ui-btn ui-icon-plus ui-btn-icon-left ui-shadow-icon">Registrar</a>
+                <a id="btnListarCliente" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow-icon">Listar</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">Gestión Cliente</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="paginaRegistro">
+        <div data-role="header">
+            <h1>Registro Cliente</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="id">ID:</label>
+                    <input type="text" name="id" id="id">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" name="direccion" id="direccion">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" name="telefono" id="telefono">
+                    <label for="email">E-mail:</label>
+                    <input type="text" name="email" id="email">
+                </div>
+                <a id="boton1" class="ui-btn ui-icon-check ui-btn-icon-right ui-shadow-icon">Guardar</a>
+                <a onclick="cambiarPagina('paginaInicio')" class="ui-btn ui-icon-home ui-btn-icon-right ui-shadow-icon">Volver</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">Registro Cliente</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="paginaListar">
+        <div data-role="header">
+            <h1>Listado Cliente</h1>
+        </div>
+        <div data-role="content">
+            <table id="tablaClientes" style="width:100%" border="1">
+                <tr>    
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>E-mail</th>
+                </tr>
+            </table>
+            <a onclick="cambiarPagina('paginaInicio')" class="ui-btn ui-icon-home ui-btn-icon-right ui-shadow-icon">Volver</a>
+        </div>
+        <div data-role="footer">
+            <p align="center">Listado Cliente</p>
+        </div>
+    </div>
+</body>
+</html>
