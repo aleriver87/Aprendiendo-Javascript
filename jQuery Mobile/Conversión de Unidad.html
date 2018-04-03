@@ -1,0 +1,76 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Conversión de Unidad</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/jquery.mobile-1.4.5_mod.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#boton1").click(function(){
+                var cm = parseFloat($("#unidad").val());
+                var pulgadas = cm * 0.39370;
+
+                $("#resultado").val(pulgadas);
+            });
+
+            $("#boton2").click(function(){
+                var yardas = parseFloat($("#unidad").val());
+                var metros = yardas * 0.914491829;
+
+                $("#resultado").val(metros);
+            });
+
+            $("#boton3").click(function(){
+                var KM = parseFloat($("#unidad").val());
+                var millas = KM * 0.621;
+
+                $("#resultado").val(millas);
+            });
+
+            $("#boton4").click(function(){
+                var pies = parseFloat($("#unidad").val());
+                var cm = pies * 0.032808;
+
+                $("#resultado").val(cm);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page" id="paginaRegistroEmpresa">
+        <div data-role="header">
+            <h1>Conversión de Unidad</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="unidad">Unidad:</label>
+                    <input type="text" name="unidad" id="unidad">
+                    <label for="resultado">Resultado:</label>
+                    <input type="text" name="resultado" id="resultado" disabled>
+                </div>
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a id="boton1" class="ui-btn">Centimetros a Pulgadas</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a id="boton2" class="ui-btn">Yardas a Metros</a>
+                    </div>
+                    <div class="ui-block-a">
+                        <a id="boton3" class="ui-btn">Kilometros a Millas</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a id="boton4" class="ui-btn">Pies a Centímetros</a>
+                    </div>
+                </div>
+            </form>
+        </div>  
+        <div data-role="footer">
+            <p align="center">Conversión de Unidad</p>
+        </div>
+    </div>
+</body>
+</html>>
