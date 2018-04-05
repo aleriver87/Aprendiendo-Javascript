@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width = device-width, initial-scale=1" charset="utf-8">
+
+    <link rel="stylesheet" href="jquery.mobile-1.4.4.css">
+
+    <script src="jquery-1.11.1.js"></script>
+    <script src="jquery.mobile-1.4.4.js"></script>
+
+    <script type="text/javascript">
+    function cambiarPagina(page) {
+
+        $.mobile.changePage("#" + page, {
+            transition: "flip"
+        });
+
+    }
+
+
+
+
+    $(document).ready(function() {
+
+        var encuestas = [];
+
+
+
+        $(".volver").click(function() {
+
+            cambiarPagina("paginaInicio");
+
+        });
+
+
+
+        $("#btnNuevaEncuesta").click(function() {
+
+            cambiarPagina("paginaNuevaEncuesta");
+
+        });
+
+
+
+        $("#btnListaEncuestados").click(function() {
+
+            cambiarPagina("paginaListarEncuestados");
+
+        });
+
+
+        $("#btnResultadoEncuesta").click(function() {
+
+            cambiarPagina("paginaResultadoEncuesta");
+
+        });
+
+
+
+
+        $("#btnGuardarEncuesta").click(function() {
+
+
+            var nombreEncuestado = $("#nombreEncuestado").val();
+
+
+
+            var pregunta1 = $('#checkbox-p1').prop('checked');
+            var pregunta2 = $('#checkbox-p2').prop('checked');
+            var pregunta3 = $('#checkbox-p3').prop('checked');
+
+
+
+
+            var encuesta = {
+                nombreEncuestado: nombreEncuestado,
+                pregunta1: pregunta1,
+                pregunta2: pregunta2,
+                pregunta3: pregunta3
+            }
+
+            encuestas.push(encuesta);
+
+            alert("Encuesta Registrada!!")
+
+
+            limpiarCampos();
+
+        });
+
+
+
+
+        $("#btnListaEncuestados").click(function() {
+
+            var tablaEncuestados = $("#tablaEncuestados");
+            $(".encuestado").remove();
+
+            for (var i = 0; i < encuestas.length; i++) {
+
+                var tr = $("<tr></tr>");
+                tr.attr("class", "encuestado");
+
+                var td1 = $("<td></td>").text(encuestas[i].nombreEncuestado);
+
+                tr.append(td1);
+
+                tablaEncuestados.append(tr);
+
+
+            }
+
+            cambiarPagina("paginaListarEncuestados");
+
+
+        });
+
+        $("#btnResultadoEncuesta").click(function() {
+
+                var contador1 = 0;
+                var contador2 = 0;
+                var contador3 = 0;
+
+
+            for (var i = 0; i < encuestas.length; i++) {
+
+             
+                var pregunta1 = encuestas[i].pregunta1;
+                var pregunta2 = encuestas[i].pregunta2;
+                var pregunta3 = encuestas[i].pregunta3;
+
+                if (pregunta1 == true && pregunta2 == false && pregunta3 == false) {
+
+                    contador1++;
+
+                }
+
+                if (pregunta1 == true && pregunta2 == true && pregunta3 == false) {
+
+                    contador2++;
+
+                }
+
+
+                if (pregunta1 == true && pregunta2 == true && pregunta3 == true) {
+
+                    contador3++;
+
+                }
+
+
+
+            }
+
+            $("#resultado1").html(contador1 + " personas solo tiene el titulo de bachiller.");
+            $("#resultado2").html(contador2 + " personas  tiene el titulo de bachiller y pregrado universitario.");
+            $("#resultado3").html(contador3 + " personas  tiene el titulo de bachiller ,pregrado y posgrado universitario");
+
+
+
+
+            cambiarPagina("paginaResultadoEncuesta");
+
+
+        });
+
+
+
+        function limpiarCampos() {
+
+            $("#nombreEncuestado").val("");
+
+
+            $("#checkbox-p1").prop("checked", false).checkboxradio("refresh");
+            $("#checkbox-p2").prop("checked", false).checkboxradio("refresh");
+            $("#checkbox-p3").prop("checked", false).checkboxradio("refresh");
+
+
+        }
+
+
+    })
+    </script>
+
+    <body>
+        <div data-role="page" id="paginaInicio">
+            <div data-role="header">
+                <h1>Gestion Encuesta</h1>
+            </div>
+            <div data-role="content">
+
+                <a id="btnNuevaEncuesta" class="ui-btn">Nueva Encuesta</a>
+                <a id="btnListaEncuestados" class="ui-btn">Lista Encuestados</a>
+                <a id="btnResultadoEncuesta" class="ui-btn">Resultado Encuestas</a>
+
+            </div>
+            <div data-role="footer">
+                <p align="center">Gestion Encuesta</p>
+            </div>
+        </div>
+
+
+        <div data-role="page" id="paginaNuevaEncuesta">
+            <div data-role="header">
+                <h1>Nueva Encuesta</h1>
+            </div>
+            <div data-role="content">
+
+                <form>
+                    <div class="ui-field-contain">
+                        <label for="nombreEncuestado">Nombre Encuestado:</label>
+                        <input type="text" name="nombreEncuestado" id="nombreEncuestado">
+
+                        <fieldset data-role="controlgroup">
+                            <legend>Preguntas:</legend>
+                            <input type="checkbox" name="checkbox-p1" id="checkbox-p1" class="custom">
+                            <label for="checkbox-p1">Tiene titulo de bachiller?</label>
+
+                            <input type="checkbox" name="checkbox-p2" id="checkbox-p2" class="custom">
+                            <label for="checkbox-p2">Tiene titulo de pregrado universitario?</label>
+
+                            <input type="checkbox" name="checkbox-p3" id="checkbox-p3" class="custom">
+                            <label for="checkbox-p3">Tiene titulo de posgrado universitario?</label>
+
+                        </fieldset>
+
+
+                    </div>
+                    <a id="btnGuardarEncuesta" class="ui-btn">Guardar </a>
+                    <a class="ui-btn volver">Volver</a>
+                </form>
+
+
+            </div>
+
+        </div>
+
+        <div data-role="page" id="paginaListarEncuestados">
+            <div data-role="header">
+                <h1>Listado Encuestados</h1>
+            </div>
+            <div data-role="content">
+
+
+                <table id="tablaEncuestados" style="width:100%" border="1">
+                    <tr>
+
+                        <th>Nombre</th>
+
+                    </tr>
+
+                </table>
+
+                <a class="ui-btn volver">Volver</a>
+
+            </div>
+
+        </div>
+
+
+        <div data-role="page" id="paginaResultadoEncuesta">
+            <div data-role="header">
+                <h1>Resultados Encuestas</h1>
+            </div>
+            <div data-role="content">
+
+
+                <div data-role="collapsible-set">
+
+                    <div data-role="collapsible">
+                        <h3>Resultado 1</h3>
+                        <span id="resultado1"></span>
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h3>Resultado 2</h3>
+                        <span id="resultado2"></span>
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h3>Resultado 3</h3>
+                        <span id="resultado3"></span>
+                    </div>
+
+                </div>
+
+                <a class="ui-btn volver">Volver</a>
+
+            </div>
+
+        </div>
+
+
+    </body>
+
+</html>
