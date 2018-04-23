@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/jquery.mobile-1.4.5_mod.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#paginaCalculoDensidad").on("swipe", function(){
+                var masa = parseFloat($("#masa").val());
+                var volumen = parseFloat($("#volumen").val());
+                var resultado = masa/volumen;
+
+                $("#resultado").val(resultado);
+            });
+
+            $("#btnLimpiar").click(function(){
+                $("#masa").val("");
+                $("#volumen").val("");
+                $("#resultado").val("");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page" id="paginaCalculoDensidad">
+        <div data-role="header">
+            <h1>Densidad</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <div class="ui-field-contain">
+                    <label for="masa">Masa (KG):</label>
+                    <input type="text" name="name" id="masa">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="volumen">Volumen (M3):</label>
+                    <input type="text" name="volumen" id="volumen">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="densidad">Densidad (KG/M3):</label>
+                    <input type="text" name="resultado" id="resultado" readonly>
+                </div>
+                <a id="btnLimpiar" data-role="button">Limpiar</a>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p align="center">Densidad</p>
+        </div>
+    </div>
+</body>
+</html>

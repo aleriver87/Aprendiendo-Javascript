@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width = device-width, initial-scale=1" charset="utf-8">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/jquery.mobile-1.4.5_mod.js"></script>
+
+    <script type="text/javascript">
+    function cambiarPagina(page) {
+
+        $.mobile.changePage("#" + page, {
+            transition: "flip"
+        });
+
+    }
+
+    $(document).ready(function() {
+
+
+        $("#paginaRegistroSmartphone1").on("swipeleft", function() {
+            cambiarPagina("paginaRegistroSmartphone2");
+        });
+
+        $("#paginaRegistroSmartphone2").on("swipeleft", function() {
+            cambiarPagina("paginaRegistroSmartphone3");
+        });
+
+        $("#paginaRegistroSmartphone2").on("swiperight", function() {
+            cambiarPagina("paginaRegistroSmartphone1");
+        });
+
+
+        $("#paginaRegistroSmartphone3").on("swipeleft", function() {
+
+               var tablaSmartPhones = $("#tablaSmartPhones");
+            var tbody = $("<tbody></tbody>");
+
+        
+
+                var tr = $("<tr></tr>");
+
+                var th1 = $("<th></th>").text($("#codigo").val());
+                var td2 = $("<td></td>").text($("#marca").val());
+                var td3 = $("<td></td>").text($("#modelo").val());
+                var td4 = $("<td></td>").text($("#so").val());
+                var td5 = $("<td></td>").text($("#color").val());
+                var td6 = $("<td></td>").text($("#precio").val());
+
+                tr.append(th1);
+                tr.append(td2);
+                tr.append(td3);
+                tr.append(td4);
+                tr.append(td5);
+                tr.append(td6);
+
+                tbody.append(tr);
+
+
+
+            tablaSmartPhones.append(tbody);
+
+
+            cambiarPagina("paginaRegistroExisto");
+        });
+
+        $("#paginaRegistroSmartphone3").on("swiperight", function() {
+            cambiarPagina("paginaRegistroSmartphone2");
+        });
+
+
+
+
+    })
+    </script>
+
+    <body>
+
+
+
+
+        <div data-role="page" id="paginaRegistroSmartphone1">
+            <div data-role="header">
+                <h1>Registro</h1>
+            </div>
+            <div data-role="content">
+
+                <form>
+                    <div class="ui-field-contain">
+                        <label for="codigo">Codigo:</label>
+                        <input type="text" name="codigo" id="codigo">
+
+                    </div>
+
+                    <div class="ui-field-contain">
+                        <label for="marca">Marca:</label>
+
+                        <select name="marca" id="marca">
+
+                            <option value="">Elija una marca</option>
+
+                            <option value="Huawei">Huawei</option>
+
+                            <option value="Samsung">Samsung</option>
+
+                            <option value="Apple">Apple</option>
+
+                            <option value="Sony">Sony</option>
+
+                            <option value="Nokia">Nokia</option>
+
+                            <option value="Motorola">Motorola</option>
+
+                        </select>
+
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+
+        <div data-role="page" id="paginaRegistroSmartphone2">
+            <div data-role="header">
+                <h1>Smartphone</h1>
+            </div>
+            <div data-role="content">
+
+                <form>
+
+                    <div class="ui-field-contain">
+                        <label for="modelo">Modelo:</label>
+
+                        <input type="text" name="modelo" id="modelo">
+
+                    </div>
+
+                    <div class="ui-field-contain">
+                        <label for="so">Sistema Operativo:</label>
+
+                        <select name="so" id="so">
+
+                            <option value="">Elija un sistema opertivo</option>
+
+                            <option value="Huawei">Android</option>
+
+                            <option value="Samsung">IOS</option>
+
+                            <option value="Apple">Windows Phone</option>
+
+                            <option value="Sony">FireFox IOS</option>
+
+                        </select>
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+
+
+        <div data-role="page" id="paginaRegistroSmartphone3">
+            <div data-role="header">
+                <h1>Smartphone</h1>
+            </div>
+            <div data-role="content">
+
+                <form>
+
+
+
+                    <div class="ui-field-contain">
+                        <label for="color">Color:</label>
+                        <input type="text" name="color" id="color">
+
+                    </div>
+
+                    <div class="ui-field-contain">
+                        <label for="precio">Precio:</label>
+                        <input type="text" name="precio" id="precio">
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+
+        <div data-role="page" id="paginaRegistroExisto">
+            <div data-role="header">
+                <h1>Registro Éxito</h1>
+            </div>
+
+            <h3>SmarthPhone Registrado Exitosamente!!</h3>
+
+            <table data-role="table" id="tablaSmartPhones" data-mode="reflow" class="ui-responsive table-stroke">
+                <thead>
+                    <tr>
+                        <th data-priority="1">Codigo</th>
+                        <th data-priority="2">Marca</th>
+                        <th data-priority="3">Modelo</th>
+                        <th data-priority="4">S.O</th>
+                        <th data-priority="5">Color</th>
+                        <th data-priority="6">Precio</th>
+                    </tr>
+                </thead>
+
+        
+
+            </table>
+
+
+        </div>
+
+    </body>
+
+</html>
