@@ -1,0 +1,89 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.4.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/jquery.mobile-1.4.4.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <style type="text/css">
+        #paginaMapa,
+        #divMapa {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+        }
+    </style>
+    <script>
+        function cambiarPagina(page){
+            $.mobile.changePage("#"+page,{
+                transition: "none"
+            });
+        }
+
+        $(document).ready(function(){
+            var latlng1 = new google.maps.LatLng(39.54016, -89.348943);
+            var latlng2 = new google.maps.LatLng(5.143855, -74.583318);
+            var latlng3 = new google.maps.LatLng(5.621961, -11.549494);
+            var marcador1;
+            var marcador2;
+            var marcador3;
+
+            function mostrarMapa(){
+                var opciones = {
+                    zoom: 2,
+                    center: latlng1,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+            
+                var mapa = new google.maps.Map(document.getElementById("divMapa"),opciones);
+
+                marcador1 = new google.maps.Marker({
+                    position: latlng1,
+                    map: mapa,
+                    draggable: true,
+                    title: "Punto 1"
+                });
+
+                marcador2 = new google.maps.Marker({
+                    position: latlng2,
+                    map: mapa,
+                    draggable: true,
+                    title: "Punto 2"
+                });
+
+                marcador3 = new google.maps.Marker({
+                    position: latlng3,
+                    map: mapa,
+                    draggable: true,
+                    title: "Punto 3"
+                });
+
+                google.maps.event.addListener(marcador1, 'dragend', function(event){
+                    alert("Latitud: "+ event.latLng.lat() + " - Longitud: "+ event.latLng.lng());
+                });
+                google.maps.event.addListener(marcador2, 'dragend', function(event){
+                    alert("Latitud: "+ event.latLng.lat() + " - Longitud: "+ event.latLng.lng());
+                });
+                google.maps.event.addListener(marcador3, 'dragend', function(event){
+                    alert("Latitud: "+ event.latLng.lat() + " - Longitud: "+ event.latLng.lng());
+                });
+            
+            }
+
+            mostrarMapa();
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page" id="paginaMapa">
+        <div data-role="header">
+            <h1>Mapa</h1>
+        </div>
+        <div data-role="content" id="divMapa">
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width = device-width, initial-scale=1" charset="utf-8">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.4.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/jquery.mobile-1.4.4.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <style type="text/css">
+    #paginaMapa,
+    #divMapaRegistro,
+    #paginaRegistrarPunto,
+    #divMapa {
+        width: 100%;
+        height: 400px;
+        padding: 0;
+    }
+    #divMapaRegistro {
+        width: 100%;
+        height: 300px;
+        padding: 0;
+    }
+    </style>
+    <script type="text/javascript">
+    function cambiarPagina(page) {
+
+        $.mobile.changePage("#" + page, {
+            transition: "none"
+        });
+
+    }
+
+    $(document).ready(function() {
+        var marcadores = [];
+        var marcadorRegistro;
+        var puntos = [];
+        var mapaRegistro;
+         var latlngInicial = new google.maps.LatLng(25.760527, -80.192800); 
+        var latitudPunto;
+        var longitudPunto;
+
+          $(".btnVolver").click(function() {
+            cambiarPagina("paginaInicio");
+        });
+
+        $("#btnVerMapa").click(function() {
+            cambiarPagina("paginaMapa");
+            mostrarMapa();
+        });
+
+        $("#btnRegistroPunto").click(function() {
+            cambiarPagina("paginaRegistrarPunto");
+            mostrarMapaRegistro();
+        });
+
+
+        $("#btnGuardarPunto").click(function() {         
+            var punto = {            
+                nombre: $("#nombre").val(),
+                latitud: latitudPunto,
+                longitud: longitudPunto        
+            };
+
+            puntos.push(punto);
+
+            alert("Punto Registrado");
+
+            $("#nombre").val("")
+            marcadorRegistro.setPosition(latlngInicial);
+            mapaRegistro.setCenter(latlngInicial);
+
+        });
+      
+        function mostrarMapa() {
+
+            var opciones = {            
+                zoom: 3,
+                center: latlngInicial,
+                mapTypeId: google.maps.MapTypeId.ROADMAP        
+            };
+                   
+            var mapa = new google.maps.Map(document.getElementById("divMapa"), opciones);    
+
+                for (var i = 0; i < puntos.length; i++) {
+                    var latlngnN = new google.maps.LatLng(puntos[i].latitud, puntos[i].longitud);
+                    var marcador = new google.maps.Marker({            
+                        position: latlngnN,
+                        map: mapa,
+                        title: puntos[i].nombre        
+                    }); 
+
+                }                    
+        }
+
+        function mostrarMapaRegistro() {
+                   
+            var opciones = {            
+                zoom: 10,
+                center: latlngInicial,
+                mapTypeId: google.maps.MapTypeId.ROADMAP        
+            };
+                  
+             mapaRegistro = new google.maps.Map(document.getElementById("divMapaRegistro"), opciones);   
+
+             marcadorRegistro = new google.maps.Marker({            
+                position: latlngInicial,
+                map: mapaRegistro,
+                draggable: true,
+                title: "Mi punto!!"        
+            });
+
+            google.maps.event.addListener(marcadorRegistro, 'dragend', function(event) {
+                latitudPunto = event.latLng.lat();
+                longitudPunto = event.latLng.lng();
+            });
+
+                           
+        }
+    })
+    </script>
+
+    <body>
+        <div data-role="page" id="paginaInicio">
+            <div data-role="header">
+                <h1>Inicio</h1>
+            </div>
+            <div data-role="content">
+                <form>
+                    <a id="btnRegistroPunto" data-role="button">Registrar Puntos</a>
+                    <a id="btnVerMapa" data-role="button">Ver Mapa</a>
+                </form>
+            </div>
+            <div data-role="footer">
+                <p align="center">Inicio</p>
+            </div>
+        </div>
+
+        <div data-role="page" id="paginaRegistrarPunto">
+            <div data-role="header">
+                <h1>Registro Punto</h1>
+            </div>
+            <div data-role="content">
+                <form>
+                    <div class="ui-field-contain">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="nombre">
+                    </div>
+
+                    <div class="ui-field-contain">
+                        <label for="nombre">Ubicacion:</label>
+                    </div>
+
+                    <div data-role="content" id="divMapaRegistro">
+                    </div>
+
+                    <a id="btnGuardarPunto" data-role="button">Registrar Punto</a>
+                    <a class="btnVolver" data-role="button">Volver</a>
+                </form>
+            </div>
+            <div data-role="footer">
+                <p align="center">Inicio</p>
+            </div>
+        </div>
+
+        <div data-role="page" id="paginaMapa">
+            <div data-role="header">
+                <h1>Mapa</h1>
+            </div>
+            <div data-role="content" id="divMapa">
+            </div>
+             <div data-role="content">
+             <a class="btnVolver" data-role="button">Volver</a>
+            </div>
+        </div>
+    </body>
+</html>
