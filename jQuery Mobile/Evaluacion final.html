@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/jquery.mobile-1.4.5_mod.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+</head>
+    <body>
+        <div data-role="page" id="paginaInicio">
+            <div data-role="header">
+                <h1>Gestión Hotel</h1>
+            </div>
+            <div data-role="content">
+                <form>
+                    <a id="btnRegistrarHotel_1" data-role="button">Registrar Hotel</a>
+                    <a id="btnListarHoteles" data-role="button">Listar Hoteles</a>
+                </form>
+            </div>
+            <div data-role="footer">
+                <p align="center">Gestión Hotel</p>
+            </div>
+        </div>
+        <div data-role="page" id="paginaMapa">
+            <div data-role="header">
+                <h1>Registro de hotel</h1>
+            </div>
+            <div data-role="content" >
+                <form>
+                    <div class="ui-field-contain">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="nombre">
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="ubicacion">Ubicación:</label>
+                        <div id="divMapa"></div>
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="ciudad">Ciudad:</label>
+                        <input type="text" name="ciudad" id="ciudad">
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="text" name="telefono" id="telefono">
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="estrellas">Estrellas:</label>
+                        <input type="text" name="estrellas" id="estrellas">
+                    </div>
+                    <a id="btnRegistrarHotel_2" data-role="button">Registrar Hotel</a>
+                    <a class="btnVolver" data-role="button">Volver</a>        
+                </form>
+            </div>
+            <div data-role="footer">
+                <p align="center">Registro de hotel</p>
+            </div>
+        </div>
+        <div data-role="page" id="hotelesRegistrados">
+            <div data-role="header">
+                <h1>Lista de Hoteles</h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" id="hoteles"  data-inset="true"></ul>
+                <a class="btnVolver" data-role="button">Volver</a> 
+            </div>
+            <div data-role="footer">
+                <p align="center">Lista de Hoteles</p>
+            </div>
+        </div>
+        <div data-role="page" id="hotel">
+            <div data-role="header">
+                <h1>Hotel</h1>
+            </div>
+            <div data-role="content">
+                <h3 id="datos"></h3>
+                <div id="mostrarMapa"></div>
+                <a class="btnVolver" data-role="button">Volver</a>  
+            </div>
+            <div data-role="footer">
+                <p align="center">Hotel</p>
+            </div>
+        </div>
+    </body>
+</html>
