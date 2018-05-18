@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="oneTimeApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content=""/>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body>
+    <div ng-controller="SingleBindController">
+        <h1>Uso de la expresión única {{::val}}</h1>
+        <form>
+            <label>Hacer click para obtener número ramdom</label>
+            <button ng-click="nextName($event)">Siguiente</button>
+        </form>
+        <br>
+        <label>Esta referencia no cambiará, no importa si $scope.name cambia el valor</label>
+        <p>Referencia única: <h2>{{::name}}</h2></p>
+        <hr>
+        <label>Esta segunda referencia se comportará de manera normal</label>
+        <p>Referencia normal: <h2>{{name}}</h2></p>
+    </div>
+</body>
+</html>
