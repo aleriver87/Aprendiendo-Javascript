@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="carListApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body>
+    <div ng-controller="ListController">
+        <h1>{{appTitle}}</h1>
+        <form>
+            <label>{{formHeader}}</label>
+            <br>
+            {{formTextBrand}}: <input type="text" ng-model="brand">
+            <br>
+            {{formTextYear}}: <input type="text" ng-model="year">
+            <button ng-click="addCar()">{{addText}}</button>
+        </form>
+        <hr>
+        <ul>
+            <li ng-repeat="car in cars">
+                {{car.brand}} {{car.year}}
+                <button ng-click="deleteCar($index)">{{deleteText}}</button>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

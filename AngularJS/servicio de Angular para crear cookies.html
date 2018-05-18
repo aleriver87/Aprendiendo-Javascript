@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="cookieApp"> <!-- Inicializamos el App -->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    <div ng-controller="MainController">
+        <label>Dime algo y lo recordaré :D</label>
+        <input ng-model="value">
+        <button ng-click="saveCookie(value);">Recordar</button>
+        <h2>Lo último que dijiste fue: {{getCookie()}}</h2>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        //El modulo ANGULAR de esta demo
+        angular.module('cookieApp', [])
+        .controller('MainController', ['$scope', 'cookie', function
+        ($scope, cookie){
+            $scope.value=""; //inicializa en blanco
+            
+            //Estamos listos para usar nuestro nuevo super servicio.
+            $scope.saveCookie = function(value){
+                cookie.write('cap_value', value);
+            }
+
+            $scope.getCookie = function(){
+                return cookie.read('cap_value');
+            }
+        }]).
+        factory('cookie', [function(){// Definimos el servicio que nos permite Crear y leer las cokies
+            return{
+                read: function(name){
+                    var i, c, nameEQ = name + "=";
+                    var ca = document.cookie.split(';');
+
+                    for(i=0; i<ca.length; i++){
+                        c = ca[i];
+                        while(c.charAt(0) == ' '){
+                            c = c.substring(1, c.length);
+                        }
+                        if(c.indexOf(nameEQ) == 0){
+                            return c.substring(nameEQ.length, c.length);
+                        }
+                    }
+                    return "";
+                },
+                write: function(name, value){
+                    date = new Date();
+
+                    date.setTime(date.getTime() + (72*60*60*1000));
+                    expires = "; expires="+ date.toGMTString();
+                    document.cookie = name + "=" + value + expires + "; path=/";
+                }
+            }
+        }]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="myMetricApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="MainController">
+        <label>Digite distancia en metros:</label>
+        <input ng-model="distance">
+            <ul>
+                <li>Nanometros = {{metersToNanometers(distance)}}</li>
+                <li>Micrometros = {{metersToMicrometers(distance)}}</li>
+                <li>Milimetros = {{metersToMilimeters(distance)}}</li>
+                <li>Centimetros = {{metersToCentimeters(distance)}}</li>
+                <li>Decimetros = {{metersToDecimeters(distance)}}</li>
+                <li>Metros = {{meterToMeters(distance)}}</li>
+                <li>Decametros = {{metersToDecameters(distance)}}</li>
+                <li>Hectometro = {{metersToHectometers(distance)}}</li>
+                <li>Kilometros = {{metersToKilometers(distance)}}</li>
+            </ul>
+    </div>
+</body>
+<script>
+    //angular.module('MyMetricApp' --> Se pone el nombre del html principal
+    //controller('MainController' --> parametro que recibe es el MainController que es el que creamos en el Div: ng-controller="MainController"
+    // ,['$scope', function($scope){ --> estamos definiendo el alcance de la aplicación 
+    angular.module('myMetricApp', []).controller('MainController',['$scope', function($scope){
+        $scope.distance = 0.0; // con esto se inicializa el ng-model="distance"
+        
+        $scope.metersToNanometers = function(meters){
+            return meters * 1000000000000;
+        };
+
+        $scope.metersToMicrometers = function(meters){
+            return meters * 1000000;
+        };
+
+        $scope.metersToMilimeters = function(meters){
+            return meters * 1000;
+        };
+
+        $scope.metersToCentimeters = function(meters){
+            return meters * 100;
+        };
+
+        $scope.metersToDecimeters = function(meters){
+            return meters * 10;
+        };
+
+        $scope.meterToMeters = function(meters){
+            return meters * 1;
+        };
+
+        $scope.metersToDecameters = function(meters){
+            return meters/10;
+        };
+
+        $scope.metersToHectometers = function(meters){
+            return meters/100;
+        };
+
+        $scope.metersToKilometers = function(meters){
+            return meters/1000;
+        };
+    }]);
+</script>
+</html>
