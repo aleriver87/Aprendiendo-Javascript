@@ -1,0 +1,66 @@
+<DOCTYPE html>
+<html ng-app="cronoApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cronometro App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" /> -->
+    <script src="js/angular.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <style>
+        body{
+            padding-top: 0px;
+            padding-bottom: 20px;
+        }
+
+        .container{
+            position: relative;
+            padding: 20px;
+        }
+
+        .title{
+            margin: 0 auto;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .center-block{
+            display: block;
+            margin-right: 300px;
+            margin-left: 300px;
+            float: none;
+            padding: 15px;
+            border: #603 dotted;
+        }
+
+        .clock-font{
+            font-size: 95px;
+            font-weight: bold;
+            font-family: fantasy;
+        }
+
+        .fronzen-font{
+            font-size: 95px;
+            font-weight: bold;
+            font-family: fantasy;
+            color: #603;
+        }
+    </style>
+</head>
+<body>
+    <div ng-controller="clockController">
+        <div class="container">
+            <h1 class="title">Cronometro App</h1>
+            <div class="center-block" ng-clock get-time="time"></div>
+            <button class="center-block" ng-click="getTimeEnlapse()">GET TIME</button>
+            
+            <div class="center-block">
+                <div class="fronzen-font title">{{frozenTime}}</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
