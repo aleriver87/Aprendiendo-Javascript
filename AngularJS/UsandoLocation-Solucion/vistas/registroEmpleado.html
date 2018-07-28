@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Registro Empleado</h2>
+  <form role="form">
+   <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" class="form-control" id="nombre" placeholder="Nombre" ng-model="nuevoEmpleado.nombre">
+    </div>
+
+     <div class="form-group">
+      <label for="apellido">Apellido:</label>
+      <input type="text" class="form-control" id="apellido" placeholder="Apellido" ng-model="nuevoEmpleado.apellido">
+    </div>
+
+     <div class="form-group">
+      <label for="salario">Salario:</label>
+      <input type="text" class="form-control" id="salario" placeholder="Salario" ng-model="nuevoEmpleado.salario">
+    </div>
+
+      <div class="form-group">
+      <label for="telefono">Telefono:</label>
+      <input type="text" class="form-control" id="telefono" placeholder="Telefono" ng-model="nuevoEmpleado.telefono">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Email" ng-model="nuevoEmpleado.email">
+    </div>
+  
+ 
+    <button type="submit" class="btn btn-success" ng-click="guardarEmpleado()">Registrar</button>
+    <button class="btn btn-primary" ng-click="irIncio()">Inicio</button>
+  </form>
+</div>

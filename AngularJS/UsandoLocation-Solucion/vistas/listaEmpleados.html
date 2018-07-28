@@ -1,0 +1,25 @@
+
+<div class="container" >
+
+<p ng-show="empleados.length == 0">No hay Empleados para mostrar</p>
+
+<div class="list-group">
+    <a href="#" class="list-group-item active">
+    Lista Empleados
+  </a>
+    <a href="#" data-ng-repeat="empleado in empleados" class="list-group-item">
+      <b>Nombre:</b> {{ empleado.nombre}} <br>
+      <b>Apellido:</b> {{ empleado.apellido }}<br>
+      <b>Salario:</b> {{ empleado.salario }}<br>
+      <b>Telefono:</b> {{ empleado.telefono }}<br>
+      <b>E-mail:</b> {{ empleado.email }}<br>
+      </a>
+
+</div>
+
+ <button class="btn btn-success" ng-click="irIncio()">Inicio</button>
+
+
+
+</div>
+
