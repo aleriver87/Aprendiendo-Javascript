@@ -1,0 +1,24 @@
+[
+
+    {
+        "model": 2012, 
+        "id": "kawasaki", 
+        "imageUrl": "img/motorcycle/kawasaki.jpg", 
+        "name": "Kawasaki", 
+        "snippet": "Kawasaki Ex250j Ninja 250r"
+    },
+    {
+        "model": 2018, 
+        "id": "vitacci", 
+        "imageUrl": "img/motorcycle/vitacci.jpg", 
+        "name": "Vitacci", 
+        "snippet": "Vitacci 50 Motorcycle Type Bullet."
+    },
+    {
+        "model": 2015, 
+        "id": "cobra", 
+        "imageUrl": "img/motorcycle/cobra.jpg", 
+        "name": "Cobra", 
+        "snippet": "Cobra Motorcycle Type Bullet."
+    }
+]

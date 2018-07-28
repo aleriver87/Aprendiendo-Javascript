@@ -1,0 +1,29 @@
+{
+    "manufacter": {
+        "name": "Hyundai", 
+        "country": "South Korea"
+    }, 
+    "engine": {
+        "type": "4 stroke,air-forced cool", 
+        "gears": "4",
+        "cylinder":"Single cylinder",
+        "transmission": "Manual", 
+        "start": "Electric / Kick"
+    }, 
+    "description": "Vitacci 50 Motorcycle Type Bullet.",  
+    "id": "vitacci", 
+    "images": [
+        "img/motorcycle/vitacci.jpg",
+        "img/motorcycle/vitacci2.jpg",
+        "img/motorcycle/vitacci3.jpg",
+        "img/motorcycle/vitacci4.jpg",
+        "img/motorcycle/vitacci5.jpg"
+    ], 
+    "name": "Vitacci", 
+    "sizeAndWeight": {
+        "dimensions": [
+            "3.50-12 / 3.50-12"
+        ], 
+        "weight": "200 Ibs"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "manufacter": {
+        "name": "Kawasaki Ninja", 
+        "country": "Japan"
+    }, 
+    "engine": {
+        "type": "Four-stroke Inline-twin, DOHC, Liquid cooled, Eight-valve, with counterbalancer", 
+        "gears": "4",
+        "cylinder":"249 cc",
+        "transmission": "Manual", 
+        "start": "Electric"
+    }, 
+    "description": "Kawasaki Ex250j Ninja 250r.",  
+    "id": "kawasaki", 
+    "images": [
+        "img/motorcycle/kawasaki.jpg",
+        "img/motorcycle/kawasaki2.jpg",
+        "img/motorcycle/kawasaki3.jpg"
+    ], 
+    "name": "", 
+    "sizeAndWeight": {
+        "dimensions": [
+            "2,090 mm (82.1 in) (l)",
+            "10 mm (28.1 in) (w)",
+            "1,110 mm (43.7 in) (h)"
+        ], 
+        "weight": "375 lbs"
+    }
+}

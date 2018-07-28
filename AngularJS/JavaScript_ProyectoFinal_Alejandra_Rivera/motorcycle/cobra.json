@@ -1,0 +1,29 @@
+{
+    "manufacter": {
+        "name": "Honda", 
+        "country": "Japan"
+    }, 
+    "engine": {
+        "type": "4 stroke,air-forced cool", 
+        "gears": "6",
+        "cylinder":"300 cc",
+        "transmission": "Manual", 
+        "start": "Mecanic"
+    }, 
+    "description": "Cobra Motorcycle Type Bullet.",  
+    "id": "cobra", 
+    "images": [
+        "img/motorcycle/cobra.jpg",
+        "img/motorcycle/cobra2.jpg",
+        "img/motorcycle/cobra3.jpg",
+        "img/motorcycle/cobra4.jpg",
+        "img/motorcycle/cobra5.jpg"
+    ], 
+    "name": "Cobra", 
+    "sizeAndWeight": {
+        "dimensions": [
+            "3.50-12 / 3.50-12"
+        ], 
+        "weight": "300 Ibs"
+    }
+}

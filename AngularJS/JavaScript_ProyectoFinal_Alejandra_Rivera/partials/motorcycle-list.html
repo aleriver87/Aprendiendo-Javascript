@@ -1,0 +1,40 @@
+
+  <div class="blog-header">
+        <h1 class="blog-title">Motorcycle Catalog 2018</h1>
+        <p class="lead blog-description">Official blog of motorcycle catalog.</p>
+  </div>
+  <div class="row">
+    
+    <div class="col-sm-7 blog-main">
+      <!--Body -->
+      <ul class="motos">
+        <li ng-repeat="moto in motos | filter:query | orderBy:orderProp"
+            class="thumbnail moto-listing">
+          <a href="#/motorcycle/{{ moto.id}}" class="thumb"><img ng-src="{{moto.imageUrl}}"></a>
+          <a href="#/motorcycle/{{moto.id}}">{{moto.name}}</a>
+          <p>{{moto.snippet}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-5 blog-sidebar">
+      <!--Sidebar -->
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label for="name" class="col-sm-2 control-label">Filtro</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" ng-model="query">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">Ordenar por:</label>
+          <div class="col-sm-10">
+            <select class="form-control" ng-model="orderProp">
+              <option value="name">&#8593 Alphabetical</option>
+              <option value="model">Model</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
