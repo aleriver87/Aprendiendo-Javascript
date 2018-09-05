@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<table style="border: 1px solid;">
+		<tr>
+			<th>Nombre</th>
+			<th>Edad</th>
+			<th>Sexo</th>
+			<th>Email</th>
+			<th>Teléfono</th>
+		</tr>
+		{% for user in usuarios %}
+			<tr>
+				<td>{{ user.name | capitalize}}</td>
+				<td>{{ user.age | capitalize}}</td>
+				<td>{{ user.gender | capitalize}}</td>
+				<td>{{ user.email | capitalize}}</td>
+				<td>{{ user.phone | capitalize}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>
