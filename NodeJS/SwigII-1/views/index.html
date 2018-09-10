@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block edades %}
+	<h1>Lista de usuarios y filtros</h1>
+	<h3>Filter Capitalize</h3>
+	<ul>
+		{% for user in usuarios %}
+			<li>{{ user.name | capitalize}}</li>
+		{% endfor %}
+	</ul>
+	<h3>Filter Lower</h3>
+	<ul>
+		{% for user in usuarios %}
+			<li>{{ user.name | lower}}</li>
+		{% endfor %}
+	</ul>
+	<h3>Filter Upper</h3>
+	<ul>
+		{% for user in usuarios %}
+			<li>{{ user.name | upper}}</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
