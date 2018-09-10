@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block edades %}
+	<h1>Usuarios ordenados alfabéticamente</h1>
+	<ul>
+		{% for user in usuarios | sortBy('name') %}
+			<li>{{ user.name }}</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

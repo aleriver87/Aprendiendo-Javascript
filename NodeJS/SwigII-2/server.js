@@ -1,0 +1,54 @@
+var express = require('express'),
+	app = express(),
+	server = require('http').createServer(app);
+
+//Logger de peticiones http
+var logger = require('morgan');
+//Parsea las cookies y pobla el objeto req.cookies con un objeto de llaves, que tiene el nombre de la cookie
+var cookieParser = require('cookie-parser');
+//Parsea el cuerpo de las peticiones y respuestas http
+var bodyParser = require('body-parser');
+
+var path = require('path');
+var fs = require('fs');
+var _ = require('lodash');
+
+//Leccion 4
+var _ = require('lodash');
+
+
+//Requerimos Swig
+var swig = require('swig');
+
+//Con esto le decimos a express, que motor de template utilizar, a lo que asignamos Swig.
+app.engine('html', swig.renderFile);
+app.set('view engine', 'html');
+app.set('views', __dirname + '/views');
+
+//En desarrollo deshabilitamos el cacheo de templates, pero en un entorno de desarrollo es esencial, para el optimo rendimiento.
+//Leccion 4
+app.set('view cache', false);
+swig.setDefaults({ cache: false });
+
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+app.get('/', function (req, res){
+	res.render('index');
+});
+
+app.get('/segundo', function (req, res){
+	res.render('index2');
+});
+
+app.get('/tercero', function (req, res){
+	res.render('index3');
+});
+
+var port = Number(process.env.PORT || 3000);
+
+server.listen(port, function(){
+	console.log('Servidor corriendo en: '+port);
+});
