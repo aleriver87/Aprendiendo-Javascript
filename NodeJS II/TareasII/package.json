@@ -1,0 +1,24 @@
+{
+  "name": "TeamApp1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "author": "NEXT Teacher",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.10.2",
+    "bower": "^1.8.4",
+    "bson": "^4.0.0",
+    "connect-redis": "^2.2.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.3.14",
+    "morgan": "^1.9.1",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.2",
+    "swig": "^1.4.2"
+  }
+}
