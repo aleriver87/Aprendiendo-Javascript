@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="tablesorter/themes/blue/style.css" type="text/css" media="screen"/>
+	<style type="text/css">
+
+* {
+margin: 0;
+padding: 0;
+}
+
+header, footer, section, aside, nav, article {
+display: block;
+}
+
+body {
+line-height: 1;
+background: #A4A4A4;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+color: #666;
+font-size: 14px;
+line-height: 18px;
+}
+	
+
+#wrapper {
+width: 940px;
+margin: 0 auto;
+margin-top: 5px;
+margin-bottom: 5px;
+-webkit-box-shadow: 3px 3px 7px #777;
+-moz-box-shadow: 3px 3px 7px #777;
+}
+
+
+header {
+position:relative;
+width: 940px;
+height: 200px;
+margin: 0 auto;
+background: #D2E1F6;
+}
+
+#main {
+width: 940px;
+margin: 0 auto;
+padding: 10px 0 10px 0;
+background: #fff;
+overflow: hidden;
+}
+
+#content {
+float: right;
+width: 590px;
+margin-right: 30px;
+}
+
+	</style>
+	</head>
+<body>
+
+	<script type="text/javascript">
+            $(document).ready(function () {
+                $("#mytable").tablesorter();
+            });
+        </script>
+
+		<div id="wrapper">
+				<section id="main">
+				<section id="">
+			
+        				<b><h3><p>Lista Registro de Estudiante</p></h3></b>
+
+        			<form action="">
+
+            <br>
+            <table data-bind="visible: estudiantess().length > 0" class="tablesorter" id="mytable">
+
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Materia</th>
+                        <th>hora</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: estudiantess">
+                    <tr>
+                        <td><input type="text" data-bind="value: codigo" /></td>
+                        <td><input  type="text" data-bind="value: nombre " /></td>
+                        <td> <select name="" >
+                                <option>Matematicas</option>
+                                <option>Español</option>
+                                <option>Fisica</option>
+                                <option>Quimica</option>
+                                <option>Ingles</option>
+                            </select> </td>
+                        <td><input  type="text" data-bind="value: hora" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button data-bind="click: addestudiante">Agregar Campo</button> 
+            <button data-bind="click: imprimir">Imprimir Listado </button> 
+            <button data-bind="click: removEstudiante">Quitar Campos</button> 
+            <br>
+            <br>
+            <p>Agregados a tu lista&nbsp; <b><span data-bind="text: estudiantess().length">&nbsp;</span></b> estudiantes.</p>
+            <br>
+        </form>
+
+			</section>
+
+		
+	</section>
+
+		<footer>
+		
+	</footer>
+	
+</div>
+ <script type="text/javascript" src="js/libs/knockout/knockout-min.js"></script>
+        <script type="text/javascript" src="tablesorter/jquery-latest.js"></script>
+        <script type="text/javascript" src="tablesorter/jquery-latest.js"></script>
+<script type="text/javascript">
+      var EstudianteModel = function(estudiantes) {
+    var self = this;
+    self.estudiantess = ko.observableArray(estudiantes);
+    
+ 
+    self.addestudiante = function() {
+        self.estudiantess.push({codigo: "", nombre: "", masteria:"", hora: "" });
+    };
+
+    self.removEstudiante = function (){
+        self.estudiantess.removeAll();
+    };
+
+    self.imprimir = function (){
+		window.print();        
+    };
+  }
+      var modelo = new EstudianteModel([
+          {codigo: "1090", nombre: "jose carlos", materia:"matematicas", hora: "08:00-12:00" },
+          {codigo: "8985", nombre: "Pedro Nel", materia:"Fisica", hora: "06:45-05:45" },
+          {codigo: "3045", nombre: "Andres Felipe", materia:"Quimica", hora: "07:00-10:00" },
+          {codigo: "5896", nombre: "Luis Carlos", materia:"Ingles", hora: "08:00-12:00" },
+          {codigo: "7896", nombre: "Carlos Manuel", materia:"Español", hora: "09:10-13:00" },
+          {codigo: "1256", nombre: "Antonio Jose", materia:"Fisica", hora: "10:00-12:00" }
+      ]);
+      ko.applyBindings(modelo);
+        </script>
+</body>
+</html>
